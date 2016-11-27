@@ -1,5 +1,6 @@
-package eu.gestionservices;
+package eu.gestionservices.components.utilisateur;
 
+import eu.gestionservices.components.Utilisateur;
 import eu.gestionservices.exceptions.IllegalEnseignantException;
 
 /**
@@ -12,7 +13,7 @@ import eu.gestionservices.exceptions.IllegalEnseignantException;
  * @author Charlène Servantie
  *
  */
-public class Enseignant {
+public class Enseignant implements Utilisateur{
 	String nom;
 	String prenom;
 	
@@ -20,6 +21,7 @@ public class Enseignant {
 	 *  portant le même nom et prénom
 	 */
 	String mail;
+	
 	/** 
 	 * Les profs peuvent être à temps plein
 	 * 
@@ -76,6 +78,30 @@ public class Enseignant {
 			}
 		}
 		return false;
+	}
+
+	@Override
+	public void getListDemandes() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void makeDemande() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getListAffectations() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getListModules() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 

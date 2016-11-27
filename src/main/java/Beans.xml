@@ -8,5 +8,7 @@
    <bean id="systeme" class="eu.gestionservices.components.Systeme">
        <property name="message" value="I am sending a message!"/>
    </bean>
+   <bean id="persistance" class="eu.gestionservices.components.persistance.JDBCPersistance">
+   </bean>
 
 </beans>

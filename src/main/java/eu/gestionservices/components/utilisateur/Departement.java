@@ -1,7 +1,9 @@
-package eu.gestionservices;
+package eu.gestionservices.components.utilisateur;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import eu.gestionservices.components.Utilisateur;
 
 
 /**
@@ -14,7 +16,7 @@ import java.util.List;
  * @author Charlène Servantie
  *
  */
-public class Departement {
+public class Departement implements Utilisateur{
 	private String nom;
 	private List<Enseignant> enseignants;
 	
@@ -52,6 +54,30 @@ public class Departement {
 		if (enseignants.contains(e)) {
 			enseignants.remove(e);
 		}
+	}
+
+	@Override
+	public void getListDemandes() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void makeDemande() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getListAffectations() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getListModules() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

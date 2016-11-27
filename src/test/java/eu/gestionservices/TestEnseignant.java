@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import eu.gestionservices.components.utilisateur.Enseignant;
 import eu.gestionservices.exceptions.IllegalEnseignantException;
 
 
