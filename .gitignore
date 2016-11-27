@@ -2,6 +2,9 @@
 /target/
 .classpath
 *~
-.settings/
+/.settings/
+
 .project
 .gitignore
+/log/
+*.jar
