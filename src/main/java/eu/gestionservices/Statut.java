@@ -1,4 +1,4 @@
-package main.java;
+package eu.gestionservices;
 
 /**
  * Une interface pour le statut permet d'ouvrir à l'extension le 

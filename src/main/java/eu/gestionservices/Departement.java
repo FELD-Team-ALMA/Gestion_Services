@@ -1,6 +1,8 @@
-package main.java;
+package eu.gestionservices;
 
+import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Classe représentant les départements : entité administrative identifiée
@@ -13,8 +15,8 @@ import java.util.List;
  *
  */
 public class Departement {
-	String nom;
-	List<Enseignant> enseignants;
+	private String nom;
+	private List<Enseignant> enseignants;
 	
 	/**
 	 * Constructeur de Departement
@@ -22,6 +24,7 @@ public class Departement {
 	 */
 	public Departement(String nom) {
 		this.nom = nom;
+		this.enseignants = new ArrayList<Enseignant>();
 	}
 	
 	/**
@@ -33,7 +36,22 @@ public class Departement {
 	}
 	
 	/**
-	 * 
+	 * Ajout d'un enseignant au département
 	 */
+	public void addEnseignant(Enseignant e) {
+		if (!enseignants.contains(e)) {
+			enseignants.add(e);
+		}
+	}
+	
+	/**
+	 * Retrait d'un enseignant du département
+	 */
+	
+	public void removeEnseignant(Enseignant e) {
+		if (enseignants.contains(e)) {
+			enseignants.remove(e);
+		}
+	}
 
 }

@@ -1,4 +1,4 @@
-package test.java;
+package eu.gestionservices;
 
 public class TestContratDeService {
 

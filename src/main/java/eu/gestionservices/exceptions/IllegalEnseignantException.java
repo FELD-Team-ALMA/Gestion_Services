@@ -1,4 +1,4 @@
-package main.java.exceptions;
+package eu.gestionservices.exceptions;
 
 
 /**
@@ -6,7 +6,7 @@ package main.java.exceptions;
  * @author Charlène Servantie
  *
  */
-public class IllegalEnseignantNameException extends Exception {
+public class IllegalEnseignantException extends Exception {
 
 	/**
 	 * 
