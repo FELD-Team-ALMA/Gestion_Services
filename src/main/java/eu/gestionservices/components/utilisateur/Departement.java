@@ -3,12 +3,9 @@ package eu.gestionservices.components.utilisateur;
 import java.util.ArrayList;
 import java.util.List;
 
-<<<<<<< HEAD
-=======
 import eu.gestionservices.Affectation;
 import eu.gestionservices.Demande;
 import eu.gestionservices.Module;
->>>>>>> 1a9f109fcea9cf44c36ccf99508db3b5786c2038
 import eu.gestionservices.components.Utilisateur;
 
 
@@ -63,12 +60,8 @@ public class Departement implements Utilisateur{
 	}
 
 	@Override
-<<<<<<< HEAD
-	public void getListDemandes() {
-=======
 	public List<Demande> getListDemandes() {
 		return null;
->>>>>>> 1a9f109fcea9cf44c36ccf99508db3b5786c2038
 		// TODO Auto-generated method stub
 		
 	}
@@ -80,23 +73,15 @@ public class Departement implements Utilisateur{
 	}
 
 	@Override
-<<<<<<< HEAD
-	public void getListAffectations() {
-=======
 	public List<Affectation> getListAffectations() {
 		return null;
->>>>>>> 1a9f109fcea9cf44c36ccf99508db3b5786c2038
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-<<<<<<< HEAD
-	public void getListModules() {
-=======
 	public List<Module> getListModules() {
 		return null;
->>>>>>> 1a9f109fcea9cf44c36ccf99508db3b5786c2038
 		// TODO Auto-generated method stub
 		
 	}

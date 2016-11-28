@@ -1,13 +1,10 @@
 package eu.gestionservices.components.utilisateur;
 
-<<<<<<< HEAD
-=======
 import java.util.List;
 
 import eu.gestionservices.Affectation;
 import eu.gestionservices.Demande;
 import eu.gestionservices.Module;
->>>>>>> 1a9f109fcea9cf44c36ccf99508db3b5786c2038
 import eu.gestionservices.components.Utilisateur;
 import eu.gestionservices.exceptions.IllegalEnseignantException;
 
@@ -24,15 +21,11 @@ import eu.gestionservices.exceptions.IllegalEnseignantException;
 public class Enseignant implements Utilisateur{
 	String nom;
 	String prenom;
-	
-<<<<<<< HEAD
 	/** 
 	 * L'adresse mail est unique et permet de différencier deux enseignants 
 	 * portant le même nom et prénom
-=======
 	/** L'adresse mail est unique et permet de différencier deux enseignants 
 	 *  portant le même nom et prénom
->>>>>>> 1a9f109fcea9cf44c36ccf99508db3b5786c2038
 	 */
 	String mail;
 	
@@ -48,12 +41,7 @@ public class Enseignant implements Utilisateur{
 			this.nom = nom;
 			this.prenom = prenom;
 			this.mail = mail;
-<<<<<<< HEAD
 		} else {
-=======
-		}
-		else {
->>>>>>> 1a9f109fcea9cf44c36ccf99508db3b5786c2038
 			throw new IllegalEnseignantException();
 		}
 	}
@@ -99,12 +87,8 @@ public class Enseignant implements Utilisateur{
 	}
 
 	@Override
-<<<<<<< HEAD
-	public void getListDemandes() {
-=======
 	public List<Demande> getListDemandes() {
 		return null;
->>>>>>> 1a9f109fcea9cf44c36ccf99508db3b5786c2038
 		// TODO Auto-generated method stub
 		
 	}
@@ -116,23 +100,15 @@ public class Enseignant implements Utilisateur{
 	}
 
 	@Override
-<<<<<<< HEAD
-	public void getListAffectations() {
-=======
 	public List<Affectation> getListAffectations() {
 		return null;
->>>>>>> 1a9f109fcea9cf44c36ccf99508db3b5786c2038
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-<<<<<<< HEAD
-	public void getListModules() {
-=======
 	public List<Module> getListModules() {
 		return null;
->>>>>>> 1a9f109fcea9cf44c36ccf99508db3b5786c2038
 		// TODO Auto-generated method stub
 		
 	}
