@@ -1,5 +1,10 @@
 package eu.gestionservices.components.utilisateur;
 
+import java.util.List;
+
+import eu.gestionservices.Affectation;
+import eu.gestionservices.Demande;
+import eu.gestionservices.Module;
 import eu.gestionservices.components.Utilisateur;
 import eu.gestionservices.exceptions.IllegalEnseignantException;
 
@@ -81,7 +86,8 @@ public class Enseignant implements Utilisateur{
 	}
 
 	@Override
-	public void getListDemandes() {
+	public List<Demande> getListDemandes() {
+		return null;
 		// TODO Auto-generated method stub
 		
 	}
@@ -93,13 +99,15 @@ public class Enseignant implements Utilisateur{
 	}
 
 	@Override
-	public void getListAffectations() {
+	public List<Affectation> getListAffectations() {
+		return null;
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void getListModules() {
+	public List<Module> getListModules() {
+		return null;
 		// TODO Auto-generated method stub
 		
 	}

@@ -1,9 +1,15 @@
 package eu.gestionservices.components;
 
+import java.util.List;
+
+import eu.gestionservices.Affectation;
+import eu.gestionservices.Demande;
+import eu.gestionservices.Module;
+
 public interface Utilisateur {
-	void getListDemandes();
+	List<Demande> getListDemandes();
 	void makeDemande();
-	void getListAffectations();
-	void getListModules();
+	List<Affectation> getListAffectations();
+	List<Module> getListModules();
 
 }
