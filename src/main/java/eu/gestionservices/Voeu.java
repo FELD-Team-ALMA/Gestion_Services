@@ -1,5 +1,5 @@
 package eu.gestionservices;
 
-public class Demande {
+public class Voeu {
 
 }

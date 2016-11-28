@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import eu.gestionservices.Affectation;
-import eu.gestionservices.Demande;
+import eu.gestionservices.Souhait;
 import eu.gestionservices.Module;
 import eu.gestionservices.components.Utilisateur;
 
@@ -60,7 +60,7 @@ public class Departement implements Utilisateur{
 	}
 
 	@Override
-	public List<Demande> getListDemandes() {
+	public List<Souhait> getListDemandes() {
 		return null;
 		// TODO Auto-generated method stub
 		
