@@ -6,6 +6,7 @@ public class ContratDeService {
 	private HeuresTD minHeures;
 	private HeuresTD maxHeures;
 	
+
 	public ContratDeService(String nom, HeuresTD minHeures, HeuresTD maxHeures) {
 		this.nom = nom;
 		this.minHeures = minHeures;
