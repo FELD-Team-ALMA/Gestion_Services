@@ -1,5 +1,7 @@
 package eu.gestionservices;
 
+import eu.gestionservices.components.utilisateur.Enseignant;
+
 
 public class HeuresTD {
 	private int minutes;
@@ -15,12 +17,33 @@ public class HeuresTD {
 
 	
 	/**
+	 * Constructeur de HeuresTD
+	 */
+	public HeuresTD(int minutes){
+		this.minutes=minutes;
+	}
+	
+	/**
 	 * Get l'attribut minutes de la classe HeuresTD
 	 */
 	public int getMinute() {
 		return minutes;
 	}
 
+	/**
+	 * Equals de la classe HeuresTD
+	 */
+	public boolean equals(Object o) {
+		if (o != null) {
+			if (o instanceof HeuresTD) {
+				HeuresTD heures = (HeuresTD) o;
+				if (heures.minutes == this.minutes) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 	
 	/**
 	 * Convertie les minutes de TD en équivalent minutes de CM sachant que 1h de CM = 1h30 de TD
