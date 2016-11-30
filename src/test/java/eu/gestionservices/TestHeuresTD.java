@@ -9,12 +9,42 @@ import eu.gestionservices.exceptions.IllegalEnseignantException;
 public class TestHeuresTD {
 
 	
-
 	/**
-	 * Test la fonction toCM()
+	 * Test de la methode equals sur deux HeuresTD similaires
 	 */
 	@Test
-	public void TestToCMTrue() throws Exception{
+	public void TestEqualsSimilaires() throws Exception{
+		
+		HeuresTD heuresTD= new HeuresTD(90);
+		HeuresTD heuresTD2= new HeuresTD(90);
+		
+			
+		assertEquals(true, heuresTD.equals(heuresTD2));
+	
+	}
+	
+	
+	/**
+	 * Test de la methode equals sur deux HeuresTD similaires
+	 */
+	@Test
+	public void TestEqualsDifferent() throws Exception{
+		
+		HeuresTD heuresTD= new HeuresTD(90);
+		HeuresTD heuresTD2= new HeuresTD(42);
+		
+			
+		assertEquals(false, heuresTD.equals(heuresTD2));
+	
+	}
+	
+	
+
+	/**
+	 * Test la fonction toCM() valeur standar
+	 */
+	@Test
+	public void TestToCM() throws Exception{
 	
 		HeuresTD heuresTD= new HeuresTD(90);
 		HeuresTD heuresTD2= new HeuresTD(heuresTD.toCM());
@@ -26,19 +56,20 @@ public class TestHeuresTD {
 	
 	
 	/**
-	 * Test la fonction toCM() 
+	 * Test la fonction toCM() avec 0
 	 */
 	@Test
-	public void TestToCMFalse() throws Exception{
+	public void TestToCM0() throws Exception{
 	
-		HeuresTD heuresTD= new HeuresTD(95);
+		HeuresTD heuresTD= new HeuresTD();
 		HeuresTD heuresTD2= new HeuresTD(heuresTD.toCM());
-		HeuresTD heuresCM= new HeuresTD(60);
+		HeuresTD heuresCM= new HeuresTD();
 			
-		assertEquals(false, heuresCM.equals(heuresTD2));
+		assertEquals(true, heuresCM.equals(heuresTD2));
 	
 	}
 	
+
 	/**
 	 * Test la fonction toTP()
 	 */
@@ -54,16 +85,16 @@ public class TestHeuresTD {
 	}
 	
 	/**
-	 * Test la fonction toTP()
+	 * Test la fonction toTP() avec 0
 	 */
 	@Test
-	public void TestToTPFalse() throws Exception{
+	public void TestToTP0() throws Exception{
 	
-		HeuresTD heuresTD= new HeuresTD(42);
+		HeuresTD heuresTD= new HeuresTD();
 		HeuresTD heuresTD2= new HeuresTD(heuresTD.toTP());
-		HeuresTD heuresTP= new HeuresTD(90);
+		HeuresTD heuresTP= new HeuresTD();
 			
-		assertEquals(false, heuresTP.equals(heuresTD2));
+		assertEquals(true, heuresTP.equals(heuresTD2));
 	
 	}
 	
@@ -81,15 +112,15 @@ public class TestHeuresTD {
 	}
 	
 	/**
-	 * Test la fonction convertFromCM()
+	 * Test la fonction convertFromCM() avec 0
 	 */
 	@Test
-	public void TestconvertFromCMFalse() throws Exception{
+	public void TestconvertFromCM0() throws Exception{
 		
-		HeuresTD heuresTD = new HeuresTD(90); 
-		HeuresTD heuresConvertie = new HeuresTD(heuresTD.convertFromCM(42));
+		HeuresTD heuresTD = new HeuresTD(); 
+		HeuresTD heuresConvertie = new HeuresTD(heuresTD.convertFromCM(0));
 			
-		assertEquals(false, heuresTD.equals(heuresConvertie));
+		assertEquals(true, heuresTD.equals(heuresConvertie));
 	
 	}
 	
@@ -107,15 +138,15 @@ public class TestHeuresTD {
 	}
 	
 	/**
-	 * Test la fonction convertFromTP()
+	 * Test la fonction convertFromTP() avedc 0
 	 */
 	@Test
-	public void TestconvertFromTPFalse() throws Exception{
+	public void TestconvertFromTP0() throws Exception{
 		
-		HeuresTD heuresTD = new HeuresTD(60); 
-		HeuresTD heuresConvertie = new HeuresTD(heuresTD.convertFromTP(98));
+		HeuresTD heuresTD = new HeuresTD(); 
+		HeuresTD heuresConvertie = new HeuresTD(heuresTD.convertFromTP(0));
 			
-		assertEquals(false, heuresTD.equals(heuresConvertie));
+		assertEquals(true, heuresTD.equals(heuresConvertie));
 	
 	}
 	
@@ -137,13 +168,13 @@ public class TestHeuresTD {
 	 * Test la fonction add()
 	 */
 	@Test
-	public void TestAddFalse() throws Exception{
+	public void TestAdd0() throws Exception{
 		
 		HeuresTD heuresTD = new HeuresTD(690); 
-		HeuresTD heuresTD2 = new HeuresTD(660);
+		HeuresTD heuresTD2 = new HeuresTD(690);
 		
-		heuresTD2.add(90);
-		assertEquals(false, heuresTD.equals(heuresTD2));
+		heuresTD2.add(0);
+		assertEquals(true, heuresTD.equals(heuresTD2));
 	
 	}
 	
@@ -162,22 +193,22 @@ public class TestHeuresTD {
 	}
 	
 	/**
-	 * Test la fonction addFromCM()
+	 * Test la fonction addFromCM() avec 0
 	 */
 	@Test
-	public void TestAddFromCMFalse() throws Exception{
+	public void TestAddFromCM0() throws Exception{
 		
 		HeuresTD heuresTD = new HeuresTD(690); 
-		HeuresTD heuresTD2 = new HeuresTD(600);
+		HeuresTD heuresTD2 = new HeuresTD(690);
 		
-		heuresTD2.addFromCM(90);
-		assertEquals(false, heuresTD.equals(heuresTD2));
+		heuresTD2.addFromCM(0);
+		assertEquals(true, heuresTD.equals(heuresTD2));
 	
 	}
 	
 	
 	/**
-	 * Test la fonction addFromTP()
+	 * Test la fonction addFromTP() 
 	 */
 	@Test
 	public void TestAddFromTPTrue() throws Exception{
@@ -191,16 +222,16 @@ public class TestHeuresTD {
 	}
 	
 	/**
-	 * Test la fonction addFromTP()
+	 * Test la fonction addFromTP() avec 0
 	 */
 	@Test
-	public void TestAddFromTPFalse() throws Exception{
+	public void TestAddFromTP0() throws Exception{
 		
 		HeuresTD heuresTD = new HeuresTD(660); 
-		HeuresTD heuresTD2 = new HeuresTD(600);
+		HeuresTD heuresTD2 = new HeuresTD(660);
 		
-		heuresTD2.addFromTP(60);
-		assertEquals(false, heuresTD.equals(heuresTD2));
+		heuresTD2.addFromTP(0);
+		assertEquals(true, heuresTD.equals(heuresTD2));
 	
 	}
 	
@@ -220,16 +251,16 @@ public class TestHeuresTD {
 	}
 	
 	/**
-	 * Test la fonction soustrait()
+	 * Test la fonction soustrait() avec 0
 	 */
 	@Test
-	public void TestSoustraitFalse() throws Exception{
+	public void TestSoustrait0() throws Exception{
 		
-		HeuresTD heuresTD = new HeuresTD(600); 
+		HeuresTD heuresTD = new HeuresTD(690); 
 		HeuresTD heuresTD2 = new HeuresTD(690);
 		
-		heuresTD2.soustrait(60);
-		assertEquals(false, heuresTD.equals(heuresTD2));
+		heuresTD2.soustrait(0);
+		assertEquals(true, heuresTD.equals(heuresTD2));
 	
 	}
 	
@@ -249,16 +280,16 @@ public class TestHeuresTD {
 	}
 	
 	/**
-	 * Test la fonction soustraitFromCM()
+	 * Test la fonction soustraitFromCM() avec 0
 	 */
 	@Test
-	public void TestSoustraitFromCMFalse() throws Exception{
+	public void TestSoustraitFromCM0() throws Exception{
 		
-		HeuresTD heuresTD = new HeuresTD(600); 
+		HeuresTD heuresTD = new HeuresTD(690); 
 		HeuresTD heuresTD2 = new HeuresTD(690);
 		
-		heuresTD2.soustraitFromCM(90);
-		assertEquals(false, heuresTD.equals(heuresTD2));
+		heuresTD2.soustraitFromCM(0);
+		assertEquals(true, heuresTD.equals(heuresTD2));
 	
 	}
 	
@@ -277,16 +308,16 @@ public class TestHeuresTD {
 	}
 	
 	/**
-	 * Test la fonction soustraitFromTP()
+	 * Test la fonction soustraitFromTP() avec 0
 	 */
 	@Test
-	public void TestSoustraitFromTPFalse() throws Exception{
+	public void TestSoustraitFromTP0() throws Exception{
 		
-		HeuresTD heuresTD = new HeuresTD(600); 
+		HeuresTD heuresTD = new HeuresTD(660); 
 		HeuresTD heuresTD2 = new HeuresTD(660);
 		
-		heuresTD2.soustraitFromTP(60);
-		assertEquals(false, heuresTD.equals(heuresTD2));
+		heuresTD2.soustraitFromTP(0);
+		assertEquals(true, heuresTD.equals(heuresTD2));
 	
 	}
 	

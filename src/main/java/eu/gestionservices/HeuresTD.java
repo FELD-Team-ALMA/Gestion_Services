@@ -51,6 +51,8 @@ public class HeuresTD {
 	 * @warning les minutes sont arrondies à l'inférieur après convertion
 	 */
 	public int toCM(){
+
+		
 		int minutes=(int)(this.minutes*60)/90; 
 		return minutes;
 		
@@ -60,9 +62,11 @@ public class HeuresTD {
 	/**
 	 * Convertie les minutes de TD en équivalent minutes de TP sachant que 1h de TD = 1h30 de TP
 	 * @return minutes: un int -> nombre de minutes converties
-	 * @warning les minutes sont arrondies à l'inférieur après convertion
+	 * @warning les minutes sont arrondies à l'inferieur apres convertion et ne peut pas accepter des valeurs trop proche de MAX_VALUE
 	 */
 	public int toTP(){
+	
+		
 		int minutes= (int)(this.minutes*90)/60;
 		return minutes;
 	}
@@ -71,10 +75,13 @@ public class HeuresTD {
 	/**
 	 * Convertie les minutes de CM  en équivalent minutes de TD sachant que 1h de CM = 1h30 de TD
 	 * @return minutes: un int -> nombre de minutes converties
-	 * @warning les minutes sont arrondies à l'inférieur après convertion
+	 * @warning les minutes sont arrondies à l'inferieur apres convertion et ne peut pas accepter des valeurs trop proche de MAX_VALUE
 	 */
 	public int convertFromCM( int minutes){
-		int min= (int)(minutes*90)/60;
+	
+		int min=(int)(minutes*90.0)/60;
+		
+
 		return min;
 	}
 	
@@ -82,9 +89,10 @@ public class HeuresTD {
 	/**
 	 * Convertie les minutes de TP  en équivalent minutes de TD sachant que 1h de TD = 1h30 de TP
 	 * @return minutes: un int -> nombre de minutes converties
-	 * @warning les minutes sont arrondies à l'inférieur après convertion
+	 * @warning les minutes sont arrondies à l'inférieur après convertion et ne peut pas accepter des valeurs trop proche de MAX_VALUE
 	 */
 	public int convertFromTP( int minutes){
+	
 		int min= (int)(minutes*60)/90;
 		return min;
 	}
@@ -102,7 +110,7 @@ public class HeuresTD {
 	/**
 	 * Rajoute des minutes de CM à l'attribut minutes en les convertissant en minutes de  TD sachant que 1h de CM = 1h30 de TD
 	 * @param minutes : un int -> le nombre de minutes de CM à rajouter 
-	 * @warning les minutes sont arrondies à l'inférieur après convertion
+	 * @warning les minutes sont arrondies à l'inférieur après convertion et ne peut pas accepter des valeurs trop proche de MAX_VALUE
 	 */
 	public void addFromCM(int minutes){
 		this.minutes+=convertFromCM(minutes);
@@ -111,7 +119,7 @@ public class HeuresTD {
 	/**
 	 * Rajoute des minutes de TP à l'attribut minutes en les convertissant en minutes de TD sachant que 1h de TD = 1h30 de TP
 	 * @param minutes : un int -> le nombre de minutes de TP à rajouter 
-	 * @warning les minutes sont arrondies à l'inférieur après convertion
+	 * @warning les minutes sont arrondies à l'inférieur après convertion et ne peut pas accepter des valeurs trop proche de MAX_VALUE
 	 */
 	public void addFromTP(int minutes) {
 		this.minutes+=convertFromTP(minutes);
@@ -129,7 +137,7 @@ public class HeuresTD {
 	/**
 	 * Enlève des minutes de CM à l'attribut minutes en les convertissant en minutes de  TD sachant que 1h de CM = 1h30 de TD
 	 * @param minutes : un int -> le nombre de minutes de CM à soustraire 
-	 * @warning les minutes sont arrondies à l'inférieur après convertion
+	 * @warning les minutes sont arrondies à l'inférieur après convertion et ne peut pas accepter des valeurs trop proche de MAX_VALUE
 	 */
 	
 	public void soustraitFromCM(int minutes){
@@ -139,7 +147,7 @@ public class HeuresTD {
 	/**
 	 * Enlève des minutes de TP à l'attribut minutes en les convertissant en minutes de TD sachant que 1h de TD = 1h30 de TP
 	 * @param minutes : un int -> le nombre de minutes de TP à rajouter 
-	 * @warning les minutes sont arrondies à l'inférieur après convertion
+	 * @warning les minutes sont arrondies à l'inférieur après convertion et ne peut pas accepter des valeurs trop proche de MAX_VALUE
 	 */
 	
 	public void soustraitFromTP(int minutes){
