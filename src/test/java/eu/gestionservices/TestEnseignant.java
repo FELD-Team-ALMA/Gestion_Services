@@ -10,8 +10,11 @@ import eu.gestionservices.exceptions.IllegalEnseignantException;
 
 /**
  * Classe de test pour la classe Enseignant 
+ * 
+ * @author Montalvo Araya
+ * @author Charles-Eric Begaudeau
+ * @author Marie Delavergne
  * @author Charlène Servantie
- *
  */
 public class TestEnseignant {
 	

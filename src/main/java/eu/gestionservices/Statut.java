@@ -5,6 +5,9 @@ package eu.gestionservices;
  * logiciel (sinon le statut est pour le moment juste représenté 
  * par un String
  * 
+ * @author Montalvo Araya
+ * @author Charles-Eric Begaudeau
+ * @author Marie Delavergne
  * @author Charlène Servantie
  *
  */

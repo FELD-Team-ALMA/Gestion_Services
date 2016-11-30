@@ -1,5 +1,13 @@
 package eu.gestionservices;
-
+/**
+ * Classe pour gérer les contrats de services 
+ * 
+ * @author Montalvo Araya
+ * @author Charles-Eric Begaudeau
+ * @author Marie Delavergne
+ * @author Charlène Servantie
+ *
+ */
 public class ContratDeService {
 	
 	private String nom;

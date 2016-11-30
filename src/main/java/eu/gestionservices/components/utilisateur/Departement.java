@@ -16,6 +16,9 @@ import eu.gestionservices.components.Utilisateur;
  * Plusieurs enseignants peuvent donner des enseignements pour le compte de
  * chaque département
  * 
+ * @author Montalvo Araya
+ * @author Charles-Eric Begaudeau
+ * @author Marie Delavergne
  * @author Charlène Servantie
  *
  */

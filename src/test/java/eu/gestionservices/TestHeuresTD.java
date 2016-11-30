@@ -1,11 +1,18 @@
 package eu.gestionservices;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import eu.gestionservices.exceptions.IllegalEnseignantException;
-
+/**
+ * Classe de test pour la classe HeuresTD
+ * 
+ * @author Montalvo Araya
+ * @author Charles-Eric Begaudeau
+ * @author Marie Delavergne
+ * @author Charlène Servantie
+ *
+ */
 public class TestHeuresTD {
 
 	
