@@ -15,8 +15,10 @@ import eu.gestionservices.exceptions.IllegalEnseignantException;
  * un certain nombre d'enseignements. Il peut effectuer des voeux concernant
  * les enseignements qu'il souhaite donner.
  * 
+ * @author Montalvo Araya
+ * @author Charles-Eric Begaudeau
+ * @author Marie Delavergne
  * @author Charlène Servantie
- *
  */
 public class Enseignant implements Utilisateur{
 	String nom;

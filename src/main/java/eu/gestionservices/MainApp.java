@@ -8,6 +8,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import eu.gestionservices.components.Systeme;
 
+/**
+ * Classe principale pour faire des tests
+ * @author Montalvo Araya
+ * @author Charles-Eric Begaudeau
+ * @author Marie Delavergne
+ * @author Charlène Servantie
+ *
+ */
 public class MainApp {
 
 	static Logger log = LogManager.getLogger(MainApp.class.getName());

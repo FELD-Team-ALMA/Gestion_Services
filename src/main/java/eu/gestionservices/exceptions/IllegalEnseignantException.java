@@ -2,7 +2,11 @@ package eu.gestionservices.exceptions;
 
 
 /**
- * Classe d'exceptions pour les problèmes de nom
+ * Classe d'exceptions pour les problèmes de nom d'enseignant
+ * 
+ * @author Montalvo Araya
+ * @author Charles-Eric Begaudeau
+ * @author Marie Delavergne
  * @author Charlène Servantie
  *
  */
