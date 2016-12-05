@@ -26,8 +26,8 @@ public class Voeu {
 		return this.voeux;
 	}
 	
-	public boolean getPreference(Enseignement enseignment){
-		return voeux.get(enseignment);
+	public boolean getPreference(Enseignement enseignement){
+		return voeux.get(enseignement);
 	}
 	
 	public void addPreference(Enseignement enseignement, Boolean preference){
