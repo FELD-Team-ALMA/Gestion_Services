@@ -25,7 +25,7 @@ import eu.gestionservices.components.Utilisateur;
 public class Departement implements Utilisateur{
 	private String nom;
 	private List<Enseignant> enseignants;
-	
+	private List<Module> modules;
 	/**
 	 * Constructeur de Departement
 	 * @param nom : un String pour le nom du d√©partement
@@ -33,6 +33,7 @@ public class Departement implements Utilisateur{
 	public Departement(String nom) {
 		this.nom = nom;
 		this.enseignants = new ArrayList<Enseignant>();
+		this.modules= new ArrayList<Module>();
 	}
 	
 	/**
@@ -45,6 +46,7 @@ public class Departement implements Utilisateur{
 	
 	/**
 	 * Ajout d'un enseignant au d√©partement
+	 * @param e : Enseignant ‡ add
 	 */
 	public void addEnseignant(Enseignant e) {
 		if (!enseignants.contains(e)) {
@@ -54,6 +56,7 @@ public class Departement implements Utilisateur{
 	
 	/**
 	 * Retrait d'un enseignant du d√©partement
+	 * @param e : Enseignant ‡ remove
 	 */
 	
 	public void removeEnseignant(Enseignant e) {
@@ -61,6 +64,28 @@ public class Departement implements Utilisateur{
 			enseignants.remove(e);
 		}
 	}
+	
+	/**
+	 * Ajout d'un module au departement
+	 * @param m : Module ‡ add
+	 */
+	public void addModule(Module m) {
+		if (!this.modules.contains(m)) {
+			modules.add(m);
+		}
+	}
+	
+	/**
+	 * Retrait d'un Module au departement
+	 * @param m : Module ‡ remove
+	 */
+	
+	public void removeModule(Module m) {
+		if (!this.modules.contains(m)) {
+			this.modules.remove(m);
+		}
+	}
+	
 
 	@Override
 	public List<Souhait> getListDemandes() {
@@ -84,9 +109,7 @@ public class Departement implements Utilisateur{
 
 	@Override
 	public List<Module> getListModules() {
-		return null;
-		// TODO Auto-generated method stub
-		
+		return this.modules;		
 	}
 
 }
