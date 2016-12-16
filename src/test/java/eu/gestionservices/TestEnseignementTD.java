@@ -15,7 +15,7 @@ import org.junit.Test;
  *
  */
 
-public class TestEnseignement {
+public class TestEnseignementTD {
 
 	
 	/**
@@ -42,27 +42,9 @@ public class TestEnseignement {
 	}
 	
 	
-	/**
-	 * Test du constructeur de la classe filleEnseignementCM
-	 */
-	@Test	
-	public void TestConstructeursCM() throws Exception{
-		Enseignement enseignement = new EnseignementCM("fdggdf", 60, 42,1); 
-		int nbMin=90;
-		assertEquals(true, nbMin == enseignement.getEquivalentHeuresTD().getMinute());// rappele 1h30 TD (90min) = 1h CM 
 
-	}
 	
 	
-	/**
-	 * Test du constructeur de la classe fille  EnseignementTP
-	 */
-	@Test	
-	public void TestConstructeursTP() throws Exception{
-		Enseignement enseignement = new EnseignementTP("fdggdf", 90, 42,1); 
-		int nbMin=60;
-		assertEquals(true, nbMin == enseignement.getEquivalentHeuresTD().getMinute());// rappele 1h30 TP (90min) = 1h TD 
-
-	}
+	
 
 }

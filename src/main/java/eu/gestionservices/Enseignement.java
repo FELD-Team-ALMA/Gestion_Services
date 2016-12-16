@@ -64,7 +64,7 @@ public abstract class Enseignement {
 	//-----------------------------------
 	
 	/**
-	 * Crée une string qui affiche en heures le nombre de minute de l'enseignement pour un meilleur lecture
+	 * Crée une string qui affiche en heures le nombre de minute de l'enseignement pour un meilleur lecture ( nombre heures réelle et pas l'équivalent en HeuresTD)
 	 * @return stringHeures: une string -> une string qui affiche le nombre d'heure de l'enseignement
 	 * @warning Arondie a 1 decimale et affiche de la frome 20,5 et pas 20h30
 	 */
