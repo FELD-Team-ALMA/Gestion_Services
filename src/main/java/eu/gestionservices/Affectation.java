@@ -36,4 +36,20 @@ public class Affectation {
 	public void setEnseignement(Enseignement enseignement) {
 		this.enseignement = enseignement;
 	}
+
+
+	/**
+	 * @return the enseignant
+	 */
+	public Enseignant getEnseignant() {
+		return enseignant;
+	}
+
+
+	/**
+	 * @param enseignant the enseignant to set
+	 */
+	public void setEnseignant(Enseignant enseignant) {
+		this.enseignant = enseignant;
+	}
 }

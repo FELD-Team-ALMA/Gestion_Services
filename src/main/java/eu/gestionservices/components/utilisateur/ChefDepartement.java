@@ -87,8 +87,41 @@ public class ChefDepartement extends Enseignant {
 		}
 		
 	}
-
-
+	
+	/**
+	 * Affecter un enseignement à un enseignant
+	 * @param affectation : affectation à remove
+	 * @return boolean : return true si le remove a fait quelque chose
+	 */
+	
+	public boolean removeAffectation( Affectation affectation){
+		if (this.departement.getEnseignants().contains(affectation.getEnseignant())){
+			return affectation.getEnseignant().removeAffection(affectation); // removeAffectation retourn un boolean indiquant si le remove a fait quelque chose		
+		}else{
+			return false;
+		}	
+	}
+	
+	
+	
+	/**
+	 * Affecter l'affectation d'un enseignant à un autre  
+	 * @param affectation : affectation à remove
+	 * @param enseignant : l'enseignant à qui on attribut l'affectation
+	 * @return boolean : return true si l'affection existait dans la liste.
+	 * @warning meme si l'ancien enseignant n'avait pas cette affectation le nouveau l'obient quand meme
+	 */
+	
+	public boolean changeAffectation( Affectation affectation,Enseignant enseignant) throws RuntimeException{
+		if (this.departement.getEnseignants().contains(affectation.getEnseignant()) ||
+			this.departement.getEnseignants().contains(enseignant)){ // Verifie que les 2 enseignants appartiennent au departement
+			enseignant.addAffectation(affectation);
+			return affectation.getEnseignant().removeAffection(affectation); // removeAffectation retourn un boolean indiquant si le remove a fait quelque chose		
+		}else{
+			throw  new RuntimeException("Au moins 1 des deux enseignant n'appartient pas à votre departement");
+		}	
+	}
+	
 	
 	
 	
