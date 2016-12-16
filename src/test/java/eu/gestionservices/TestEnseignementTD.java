@@ -19,25 +19,25 @@ public class TestEnseignementTD {
 
 	
 	/**
-	 * Test de la methode displayHours avec un résultat qui tombe juste (pas de décimale)
+	 * Test de la methode toStringHours avec un résultat qui tombe juste (pas de décimale)
 	 */
 	@Test
-	public void TestDisplayHoursJuste() throws Exception{
+	public void TestToStringHoursJuste() throws Exception{
 		Enseignement enseignement= new EnseignementTD("fdggdf", 20*60, 42,1);
 		String stringCompartive= "20,0";
 			
-		assertEquals(true, stringCompartive.equals(enseignement.displayHours()));
+		assertEquals(true, stringCompartive.equals(enseignement.toStringHours()));
 		
 	}
 	
 	/**
-	 * Test de la methode displayHours avec un résultat avec des décimale et qui force un arrondie
+	 * Test de la methode toStringHours avec un résultat avec des décimale et qui force un arrondie
 	 */
 	@Test
-	public void TestDisplayHoursAvecArrondie() throws Exception{
+	public void TestToStringHoursAvecArrondie() throws Exception{
 		Enseignement enseignement= new EnseignementTD("fdggdf", 91, 42,1);
 		String stringCompartive= "1,5";
-		assertEquals(true, stringCompartive.equals(enseignement.displayHours()));
+		assertEquals(true, stringCompartive.equals(enseignement.toStringHours()));
 		
 	}
 	

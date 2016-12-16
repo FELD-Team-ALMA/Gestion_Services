@@ -21,14 +21,14 @@ public class TestEnseignementTP {
 	}
 	
 	/**
-	 * Test de la methode displayHours avec un résultat qui tombe juste (pas de décimale)
+	 * Test de la methode ToStringHours avec un résultat qui tombe juste (pas de décimale)
 	 */
 	@Test
-	public void TestDisplayHoursJuste() throws Exception{
+	public void TestToStringHoursJuste() throws Exception{
 		Enseignement enseignement= new EnseignementCM("fdggdf", 20*60, 42,1);
 		String stringCompartive= "20,0";
 			
-		assertEquals(true, stringCompartive.equals(enseignement.displayHours()));
+		assertEquals(true, stringCompartive.equals(enseignement.toStringHours()));
 		
 	}
 }

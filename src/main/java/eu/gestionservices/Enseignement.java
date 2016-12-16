@@ -69,7 +69,7 @@ public abstract class Enseignement {
 	 * @warning Arondie a 1 decimale et affiche de la frome 20,5 et pas 20h30
 	 */
 	
-	public String displayHours(){
+	public String toStringHours(){
 		
 		String stringHeures= String.format("%.1f", this.equivalentHeuresTD.getMinute()/60.0); // 1f indique qu'on veut le formet décimale et 1 décimale
 		
