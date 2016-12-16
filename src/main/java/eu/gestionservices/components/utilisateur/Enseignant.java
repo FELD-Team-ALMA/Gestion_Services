@@ -1,5 +1,6 @@
 package eu.gestionservices.components.utilisateur;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import eu.gestionservices.Affectation;
@@ -37,12 +38,42 @@ public class Enseignant implements Utilisateur{
 	 */
 	String statut; 
 	Departement departement;
+	List<Affectation> listeAffectations;
 	
+	
+	/**
+	 * Constructeur de Enseignant
+	 * @param nom : une String le nom de l'enseignant
+	 * @param prenom : une String le prenom de l'enseignant
+	 * @param mail : une String le mail de l'enseignant
+	 * @warning : l'enseignant n'a pas de status ou de departement
+	 */
 	public Enseignant(String nom, String prenom, String mail) throws IllegalEnseignantException {
 		if (!nom.isEmpty() || !prenom.isEmpty() || !mail.isEmpty()) {
 			this.nom = nom;
 			this.prenom = prenom;
 			this.mail = mail;
+			this.listeAffectations= new ArrayList<Affectation>();
+		} else {
+			throw new IllegalEnseignantException();
+		}
+	}
+	
+	/**
+	 * Constructeur de Enseignant
+	 * @param nom : une String le nom de l'enseignant
+	 * @param prenom : une String le prenom de l'enseignant
+	 * @param mail : une String le mail de l'enseignant
+	 * @param departement : le Departement de l'enseignant
+	 * @warning : l'enseignant n'a pas de status 
+	 */
+	public Enseignant(String nom, String prenom, String mail, Departement departement) throws IllegalEnseignantException {
+		if (!nom.isEmpty() || !prenom.isEmpty() || !mail.isEmpty()) {
+			this.nom = nom;
+			this.prenom = prenom;
+			this.mail = mail;
+			this.listeAffectations= new ArrayList<Affectation>();
+			this.departement=departement;
 		} else {
 			throw new IllegalEnseignantException();
 		}
@@ -70,6 +101,14 @@ public class Enseignant implements Utilisateur{
 	 */
 	public String getMail() {
 		return mail;
+	}
+	
+	/**
+	 * Getter du departement
+	 * @return un Departement
+	 */
+	public Departement getDepartement() {
+		return this.departement;
 	}
 	
 	/**
@@ -103,10 +142,11 @@ public class Enseignant implements Utilisateur{
 
 	@Override
 	public List<Affectation> getListAffectations() {
-		return null;
-		// TODO Auto-generated method stub
+		return this.listeAffectations;
 		
 	}
+	
+	
 
 	@Override
 	public List<Module> getListModules() {
@@ -115,5 +155,24 @@ public class Enseignant implements Utilisateur{
 		
 	}
 	
+	/**
+	 * Rajoute une affection à l'enseignant
+	 * @param affectation : l'Affectation à affecter
+	 */
+	public void addAffectation( Affectation affectation){
+		this.listeAffectations.add(affectation);
+	}
+	
+	/**
+	 * Rajoute une affection à l'enseignant
+	 * @param affectation : l'Affectation à retirer
+	 * @return 
+	 * @return boolean : return true si l'affactation ce trouver dans la liste sinon retourne false si on a voulu enlever une affectation qui n'existait pas
+	 */
+	
+	public boolean removeAffection( Affectation affectation) {
+		 
+		return this.listeAffectations.remove(affectation);
+	}
 
 }

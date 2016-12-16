@@ -44,7 +44,14 @@ public class Module {
 		this.publicConcerne=publicConcerne;
 		this.semestre=semestre;		
 	}
-
+	/**
+	 * getter  de idModule
+	 * @return  String : l'id du Module
+	 */
+	public String getIdModule() {
+		return this.idModule;
+	}
+	
 
 	/**
 	 * @param enseignementCM the enseignementCM to set
@@ -83,6 +90,7 @@ public class Module {
 		
 		return affichage;
 	}
+
 	
 	
 	

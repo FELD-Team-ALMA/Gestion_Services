@@ -10,11 +10,12 @@ import java.util.HashMap;
  * @author Charlène Servantie
  *
  */
-public class Voeu {
+public class Voeu extends Souhait {
 	
 	private HashMap<Enseignement, Boolean> voeux; 
 
 	public Voeu(){
+		super();
 		this.voeux = new HashMap<Enseignement, Boolean>();
 	}
 	
@@ -33,4 +34,12 @@ public class Voeu {
 	public void addPreference(Enseignement enseignement, Boolean preference){
 		voeux.put(enseignement, preference);
 	}
+	
+	public String toString(){
+		// TODO 
+		
+		return "";
+	}
+		
+	
 }
