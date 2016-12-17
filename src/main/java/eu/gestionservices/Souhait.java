@@ -34,4 +34,5 @@ public abstract class Souhait {
 	 * @return String : string des caracteristique du Souhait
 	 */
 	abstract public String toString();
+	
 }

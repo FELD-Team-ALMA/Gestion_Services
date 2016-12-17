@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import eu.gestionservices.Affectation;
+import eu.gestionservices.ContratDeService;
 import eu.gestionservices.Souhait;
 import eu.gestionservices.Module;
 import eu.gestionservices.components.Utilisateur;
@@ -38,7 +39,9 @@ public class Enseignant implements Utilisateur{
 	 */
 	String statut; 
 	Departement departement;
+	ContratDeService contrat;
 	List<Affectation> listeAffectations;
+	List<Souhait> listeDemande; // l'historique des souhait fait par l'enseignant
 	
 	
 	/**
@@ -54,6 +57,7 @@ public class Enseignant implements Utilisateur{
 			this.prenom = prenom;
 			this.mail = mail;
 			this.listeAffectations= new ArrayList<Affectation>();
+			this.listeDemande= new ArrayList<Souhait>();
 		} else {
 			throw new IllegalEnseignantException();
 		}
@@ -72,8 +76,10 @@ public class Enseignant implements Utilisateur{
 			this.nom = nom;
 			this.prenom = prenom;
 			this.mail = mail;
-			this.listeAffectations= new ArrayList<Affectation>();
 			this.departement=departement;
+			this.listeAffectations= new ArrayList<Affectation>();
+			this.listeDemande= new ArrayList<Souhait>();
+			
 		} else {
 			throw new IllegalEnseignantException();
 		}
@@ -129,15 +135,14 @@ public class Enseignant implements Utilisateur{
 
 	@Override
 	public List<Souhait> getListDemandes() {
-		return null;
-		// TODO Auto-generated method stub
+		return this.listeDemande;
 		
 	}
 
 	@Override
-	public void makeDemande() {
+	public void makeDemande( Souhait souhait) {
 		// TODO Auto-generated method stub
-		
+			
 	}
 
 	@Override
@@ -163,16 +168,6 @@ public class Enseignant implements Utilisateur{
 		this.listeAffectations.add(affectation);
 	}
 	
-	/**
-	 * Rajoute une affection à l'enseignant
-	 * @param affectation : l'Affectation à retirer
-	 * @return 
-	 * @return boolean : return true si l'affactation ce trouver dans la liste sinon retourne false si on a voulu enlever une affectation qui n'existait pas
-	 */
-	
-	public boolean removeAffection( Affectation affectation) {
-		 
-		return this.listeAffectations.remove(affectation);
-	}
+
 
 }

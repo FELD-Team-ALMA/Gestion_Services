@@ -17,7 +17,7 @@ import eu.gestionservices.Module;
  */
 public interface Utilisateur {
 	List<Souhait> getListDemandes();
-	void makeDemande();
+	void makeDemande(Souhait souhait);
 	List<Affectation> getListAffectations();
 	List<Module> getListModules();
 

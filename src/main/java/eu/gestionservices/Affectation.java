@@ -52,4 +52,6 @@ public class Affectation {
 	public void setEnseignant(Enseignant enseignant) {
 		this.enseignant = enseignant;
 	}
+	
+	
 }

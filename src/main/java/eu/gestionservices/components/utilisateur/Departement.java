@@ -158,7 +158,7 @@ public class Departement implements Utilisateur{
 	}
 
 	@Override
-	public void makeDemande() {
+	public void makeDemande(Souhait souhait) {
 		// TODO Auto-generated method stub
 		
 	}

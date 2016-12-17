@@ -96,7 +96,7 @@ public class ChefDepartement extends Enseignant {
 	
 	public boolean removeAffectation( Affectation affectation){
 		if (this.departement.getEnseignants().contains(affectation.getEnseignant())){
-			return affectation.getEnseignant().removeAffection(affectation); // removeAffectation retourn un boolean indiquant si le remove a fait quelque chose		
+			return affectation.getEnseignant().getListAffectations().remove(affectation); // remove retourn un boolean indiquant si le remove a fait quelque chose		
 		}else{
 			return false;
 		}	
@@ -116,7 +116,7 @@ public class ChefDepartement extends Enseignant {
 		if (this.departement.getEnseignants().contains(affectation.getEnseignant()) ||
 			this.departement.getEnseignants().contains(enseignant)){ // Verifie que les 2 enseignants appartiennent au departement
 			enseignant.addAffectation(affectation);
-			return affectation.getEnseignant().removeAffection(affectation); // removeAffectation retourn un boolean indiquant si le remove a fait quelque chose		
+			return affectation.getEnseignant().getListAffectations().remove(affectation); // removeretourn un boolean indiquant si le remove a fait quelque chose		
 		}else{
 			throw  new RuntimeException("Au moins 1 des deux enseignant n'appartient pas à votre departement");
 		}	
