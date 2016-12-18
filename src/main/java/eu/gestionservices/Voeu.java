@@ -1,6 +1,12 @@
 package eu.gestionservices;
 
+import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import eu.gestionservices.components.utilisateur.Enseignant;
 
 /**
  * Classe pour gÃ©rer les voeux
@@ -20,6 +26,7 @@ public class Voeu extends Souhait {
 	}
 	
 	public Voeu(HashMap<Enseignement, Boolean> voeux){
+		super();
 		this.voeux = voeux;
 	}
 	
@@ -35,11 +42,48 @@ public class Voeu extends Souhait {
 		voeux.put(enseignement, preference);
 	}
 	
+	
+	/**
+	 * Fonction indiquant si le souhait d'un enseignant est valide ou non 
+	 * pour eviter d'envoyer des souhait non valide à son chef
+	 * @return boolean : return true si le souhait est valide false sinon
+	 * @warning Une demande doit au minimum faire 1.5 fois le nombre d'heures minimum du contrat de l'enseignant
+	 */
+	
+	public boolean valide ( Enseignant enseignant) {
+		
+		ContratDeService contrat = enseignant.getContrat();
+		int nbHeuresVoeu=0; // variable contenant le nombre d'heure cumuler des enseignements du voeu
+		
+		// On prépare le parcourt de la HashMap
+		Set<Entry<Enseignement, Boolean>> setVoeux = this.voeux.entrySet();
+	    Iterator<Entry<Enseignement, Boolean>> it = setVoeux.iterator();
+
+	    // Une sorte de for_each
+		while (it.hasNext()){
+			Entry<Enseignement, Boolean> e= it.next(); // malgre ce que la syntaxe laisse penser on choppe quand meme le premier element
+			nbHeuresVoeu+=e.getKey().getEquivalentHeuresTD().getMinute();
+		}
+		
+		
+		//cf warning
+		return (contrat.getHeuresMin().getMinute()>=(nbHeuresVoeu*1.5));
+
+	}
+	
+	
+	/**
+	 * Fonction toString Necessaire pour l'affichage
+	 * @return String : string des caracteristique du Souhait
+	 */
 	public String toString(){
 		// TODO 
 		
 		return "";
 	}
+
+
+
 		
 	
 }

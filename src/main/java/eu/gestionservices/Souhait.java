@@ -29,6 +29,14 @@ public abstract class Souhait {
 		visible=true;
 	}
 	
+	
+	/**
+	 * Fonction indiquant si le souhait d'un enseignant est valide ou non 
+	 * pour eviter d'envoyer des souhait non valide à son chef
+	 * @return boolean : return true si le souhait est valide false sinon
+	 */
+	public abstract boolean valide(Enseignant enseignant);
+	
 	/**
 	 * Fonction toString Necessaire pour l'affichage
 	 * @return String : string des caracteristique du Souhait

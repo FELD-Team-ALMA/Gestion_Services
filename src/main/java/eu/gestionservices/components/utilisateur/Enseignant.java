@@ -118,6 +118,23 @@ public class Enseignant implements Utilisateur{
 	}
 	
 	/**
+	 * Getter du contrat
+	 * @return un String
+	 */
+	public ContratDeService getContrat() {
+		return contrat;
+	}
+	
+	/**
+	 * Setter du contrat
+	 * @return un String
+	 */
+	public void setContrat( ContratDeService contrat) {
+		this.contrat=contrat;
+	}
+	
+	
+	/**
 	 * Deux instances d'Enseignant sont égales si et seulement si
 	 * leurs emails sont identiques.
 	 */

@@ -2,6 +2,12 @@ package eu.gestionservices;
 
 import static org.junit.Assert.*;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
 import org.junit.Test;
 
 public class TestEnseignementTP {
@@ -31,4 +37,9 @@ public class TestEnseignementTP {
 		assertEquals(true, stringCompartive.equals(enseignement.toStringHours()));
 		
 	}
+	
+	
+
+		
+	
 }
