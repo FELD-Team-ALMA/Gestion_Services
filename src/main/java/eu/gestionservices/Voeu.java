@@ -65,9 +65,8 @@ public class Voeu extends Souhait {
 			nbHeuresVoeu+=e.getKey().getEquivalentHeuresTD().getMinute();
 		}
 		
-		
 		//cf warning
-		return (contrat.getHeuresMin().getMinute()>=(nbHeuresVoeu*1.5));
+		return (contrat.getHeuresMin().getMinute()<=(nbHeuresVoeu*1.5));
 
 	}
 	
