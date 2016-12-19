@@ -13,17 +13,20 @@ import eu.gestionservices.components.utilisateur.Enseignant;
  */
 public abstract class Souhait {
 	
-	// TODO Auto-generated method stub 
+ 
 	private boolean visible; // indique si le souhait doit être visible ou non
+	protected Enseignant expediteur; // l'enseignant qui envoie le souhait
 	/**
 	 * Constructeur de souhait. De base un souhait n'est pas visible
+	 * @param enseignant : l'enseignant emettant le souhait
 	 */
-	public Souhait(){
+	public Souhait(Enseignant enseignant){
+		this.expediteur=enseignant;
 		visible=false;
 	}
 	
 	/**
-	 * Rend visible (publie) un souhait
+	 * Rend visible (publie) un souhait --> visible=true
 	 */
 	public void publication(){
 		visible=true;
@@ -35,7 +38,7 @@ public abstract class Souhait {
 	 * pour eviter d'envoyer des souhait non valide à son chef
 	 * @return boolean : return true si le souhait est valide false sinon
 	 */
-	public abstract boolean valide(Enseignant enseignant);
+	public abstract boolean valide();
 	
 	/**
 	 * Fonction toString Necessaire pour l'affichage

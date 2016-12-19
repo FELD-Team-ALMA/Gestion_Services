@@ -12,6 +12,10 @@ package eu.gestionservices.exceptions;
  */
 public class IllegalEnseignantException extends Exception {
 
+	public IllegalEnseignantException(String string) {
+		super(string);
+	}
+
 	/**
 	 * 
 	 */

@@ -29,13 +29,13 @@ public class TestVoeu {
 		enseignant.setContrat(contrat);
 		//-----
 		
-		Voeu listVoeux = new Voeu();
+		Voeu listVoeux = new Voeu(enseignant);
 		listVoeux.addPreference(ens1, true);
 		listVoeux.addPreference(ens2, false);
 		
 		
 		
-		assert(listVoeux.valide(enseignant));
+		assert(listVoeux.valide());
 	}
 		
 	/**
@@ -57,13 +57,13 @@ public class TestVoeu {
 		enseignant.setContrat(contrat);
 		//-----
 		
-		Voeu listVoeux = new Voeu();
+		Voeu listVoeux = new Voeu(enseignant);
 		listVoeux.addPreference(ens1, true);
 		listVoeux.addPreference(ens2, false);
 		
 		
 		
-		assert(!(listVoeux.valide(enseignant)));
+		assert(!(listVoeux.valide()));
 	}	
 		
 

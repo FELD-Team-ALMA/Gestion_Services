@@ -22,7 +22,7 @@ import eu.gestionservices.exceptions.IllegalEnseignantException;
  * @author Marie Delavergne
  * @author Charlène Servantie
  */
-public class Enseignant implements Utilisateur{
+public class Enseignant implements Professeur{
 	String nom;
 	String prenom;
 	/** 
@@ -59,7 +59,7 @@ public class Enseignant implements Utilisateur{
 			this.listeAffectations= new ArrayList<Affectation>();
 			this.listeDemande= new ArrayList<Souhait>();
 		} else {
-			throw new IllegalEnseignantException();
+			throw new IllegalEnseignantException("Champ prenom,nom et mail sont obligatoires");
 		}
 	}
 	
@@ -81,7 +81,7 @@ public class Enseignant implements Utilisateur{
 			this.listeDemande= new ArrayList<Souhait>();
 			
 		} else {
-			throw new IllegalEnseignantException();
+			throw new IllegalEnseignantException("Champ prenom,nom et mail sont obligatoires");
 		}
 	}
 	

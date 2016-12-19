@@ -4,37 +4,50 @@ import java.util.ArrayList;
 import java.util.List;
 
 import eu.gestionservices.Affectation;
+import eu.gestionservices.ContratDeService;
 import eu.gestionservices.Enseignement;
+import eu.gestionservices.Module;
 import eu.gestionservices.Souhait;
 import eu.gestionservices.exceptions.IllegalEnseignantException;
 
-public class ChefDepartement extends Enseignant {
+public class ChefDepartement extends DecoratorProfesseur {
 
 	private List<Souhait> souhaitEnAttente; // Tout les souhaits que le chef doit traiter
 
 	/**
 	 * Constructeur de ChefDepartement 
-	 * @param nom : une String pour le nom du chef
-	 * @param prenom :une String pour le prenom du chef
-	 * @param mail :une String pour le mail du chef
-	 * @param departement : le Departement de l'enseignant
+	 * @param enseignant : l'enseignant qui devient chef de departement
+	 * @throws IllegalEnseignantException si l'enseignant n'a pas de departement
+	 * @warning un chef de departement doit avoir un departement et est forcement chef de celui-ci
 	 */
-	public ChefDepartement(String nom, String prenom, String mail, Departement departement) throws IllegalEnseignantException {
-		super(nom,prenom,mail,departement); 
-		this.souhaitEnAttente= new ArrayList<Souhait>();	
+	public ChefDepartement(Enseignant enseignant) throws IllegalEnseignantException {
+		super(enseignant);
+		if( enseignant.getDepartement()!=null){
+			this.souhaitEnAttente= new ArrayList<Souhait>();
+		}else{
+			throw new IllegalEnseignantException("Pour etre chef de departement on doit faire partie d'un department");
+		}
+			
 	}
 	
 	/**
 	 * Constructeur de ChefDepartement utilise pour transition de chef
-	 * @param nom : une String pour le nom du chef
-	 * @param prenom :une String pour le prenom du chef
-	 * @param mail :une String pour le mail du chef
-	 * @param departement : le Departement de l'enseignant
+	 * @param enseignant : l'enseignant qui devient chef de departement
+	 * @param souhaitEnAttente : la liste de souhait non traiter
+	 * @throws IllegalEnseignantException si l'enseignant n'a pas de departement
+	 * @warning un chef de departement doit avoir un departement et est forcement chef de celui-ci
 	 */
-	public ChefDepartement(String nom, String prenom, String mail, Departement departement, ArrayList<Souhait> souhaitEnAttente ) throws IllegalEnseignantException {
-		super(nom,prenom,mail,departement); 
-		this.souhaitEnAttente= souhaitEnAttente;	
+	public ChefDepartement(Enseignant enseignant, ArrayList<Souhait> souhaitEnAttente ) throws IllegalEnseignantException {
+		super(enseignant); 
+		if( enseignant.getDepartement()!=null){
+			this.souhaitEnAttente= souhaitEnAttente;
+		}else{
+			throw new IllegalEnseignantException("Pour etre chef de departement on doit faire partie d'un department");
+		}
+			
 	}
+	
+	
 	/**
 	 * @return the souhaitEnAttente
 	 */
@@ -48,7 +61,7 @@ public class ChefDepartement extends Enseignant {
 	 * @warning Ceci n'est pas une affectation
 	 */
 	public void valider( Souhait souhait) throws RuntimeException{
-		// TODO ameliore la complexitede la fonction
+		// TODO ameliore la complexite de la fonction
 		if (this.souhaitEnAttente.contains(souhait)){
 			int positionSouhait = this.souhaitEnAttente.indexOf(souhait); // On recupere la position de l'objet
 			this.souhaitEnAttente.get(positionSouhait).publication();
@@ -67,10 +80,12 @@ public class ChefDepartement extends Enseignant {
 	public void affecter(Enseignant enseignant, Enseignement enseignement)throws RuntimeException{
 		boolean contient =false; // indique si l'enseignement en question fait partie des enseignement du departement 
 		int i=0;// compteur pour parcourir une ArrayListe
-		if (this.departement.getEnseignants().contains(enseignant)){
+		
+		// Verifie si l'enseignant à qui on affecte l'enseignement fait partie du departement du chef
+		if (this.decorateProfesseur.getDepartement().getEnseignants().contains(enseignant)){ 
 			
-			while ((contient) || (i<this.departement.getListModules().size())){
-				if (enseignement.getIdModule()== this.departement.getListModules().get(i).getIdModule()){
+			while ((contient) || (i<this.decorateProfesseur.getDepartement().getListModules().size())){
+				if (enseignement.getIdModule()== this.decorateProfesseur.getDepartement().getListModules().get(i).getIdModule()){
 					contient=true;
 				}
 			++i;
@@ -95,7 +110,8 @@ public class ChefDepartement extends Enseignant {
 	 */
 	
 	public boolean removeAffectation( Affectation affectation){
-		if (this.departement.getEnseignants().contains(affectation.getEnseignant())){
+		// Verifie si l'enseignant à qui on affecte l'enseignement fait partie du departement du chef
+		if (this.decorateProfesseur.getDepartement().getEnseignants().contains(affectation.getEnseignant())){
 			return affectation.getEnseignant().getListAffectations().remove(affectation); // remove retourn un boolean indiquant si le remove a fait quelque chose		
 		}else{
 			return false;
@@ -113,16 +129,77 @@ public class ChefDepartement extends Enseignant {
 	 */
 	
 	public boolean changeAffectation( Affectation affectation,Enseignant enseignant) throws RuntimeException{
-		if (this.departement.getEnseignants().contains(affectation.getEnseignant()) ||
-			this.departement.getEnseignants().contains(enseignant)){ // Verifie que les 2 enseignants appartiennent au departement
+		// Verifie si l'enseignant à qui on affecte l'enseignement fait partie du departement du chef
+		if (this.decorateProfesseur.getDepartement().getEnseignants().contains(affectation.getEnseignant()) ||
+			this.decorateProfesseur.getDepartement().getEnseignants().contains(enseignant)){ // Verifie que les 2 enseignants appartiennent au departement
 			enseignant.addAffectation(affectation);
 			return affectation.getEnseignant().getListAffectations().remove(affectation); // removeretourn un boolean indiquant si le remove a fait quelque chose		
 		}else{
 			throw  new RuntimeException("Au moins 1 des deux enseignant n'appartient pas à votre departement");
 		}	
 	}
+
 	
 	
+	
+	
+	//------ Debut Implementation des methodes de Professeur
+	
+	@Override
+	public List<Souhait> getListDemandes() {
+		return this.decorateProfesseur.getListDemandes();
+	}
+
+	@Override
+	public void makeDemande(Souhait souhait) {
+		this.decorateProfesseur.makeDemande(souhait);
+		
+	}
+
+	@Override
+	public List<Affectation> getListAffectations() {
+		return this.decorateProfesseur.getListAffectations();
+	}
+
+	@Override
+	public List<Module> getListModules() {
+		return this.decorateProfesseur.getListModules();
+	}
+
+	@Override
+	public String getNom() {
+		
+		return this.decorateProfesseur.getNom();
+	}
+
+	@Override
+	public String getPrenom() {
+		return this.decorateProfesseur.getPrenom();
+	}
+
+	@Override
+	public String getMail() {
+		return this.decorateProfesseur.getMail();
+	}
+
+	@Override
+	public Departement getDepartement() {
+		return this.decorateProfesseur.getDepartement();
+	}
+
+	@Override
+	public ContratDeService getContrat() {
+		return this.decorateProfesseur.getContrat();
+	}
+
+	@Override
+	public void setContrat(ContratDeService contrat) {
+		this.decorateProfesseur.setContrat(contrat);
+		
+	}
+	
+	
+	//------ Fin Implementation des methodes de Professeur
 	
 	
 	

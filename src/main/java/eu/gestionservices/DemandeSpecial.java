@@ -8,8 +8,17 @@ public class DemandeSpecial extends Souhait{
 	private HeuresTD nbHeures;// Indique le nombre d'heures de travaille de l'enseignant qui sont affectee
 	private boolean plusOuMoins; // Indique si la demande va entrainer plus d'heures trvailler ou moins pour celui qui fait la demande
 	
-	
-	public DemandeSpecial( String motif, HeuresTD nbHeures, boolean plusOuMoins) throws RuntimeException {
+	/**
+	 * Constructeur de la classe {@link DemandeSpecial}
+	 * @param motif : string indiquant le motif et explication de la demande
+	 * @param nbHeures : HeuresTD combien d'heures (minutes) de travaille sont concerner
+	 * @param plusOuMoins : indique si la demande entraine plus ou moins d'heures travailler
+	 * @param enseignant : l'enseignant qui fait la demande 
+	 * @throws RuntimeException si le champ motif est vide
+	 * @warning  Une demande special est toujours valide c'est au chef de departement de decide si il est d'accord ou non
+	 */
+	public DemandeSpecial( String motif, HeuresTD nbHeures, boolean plusOuMoins,Enseignant enseignant) throws RuntimeException {
+		super(enseignant);
 		if (!motif.isEmpty()) {
 			this.motif=motif;
 			this.nbHeures=nbHeures;
@@ -25,7 +34,7 @@ public class DemandeSpecial extends Souhait{
 	 * @return boolean : return true
 	 * @warning Une demande special est toujours valide c'est au chef de departement de decide si il est d'accord ou non
 	 */
-	public boolean valide(Enseignant enseignant) {
+	public boolean valide() {
 		return true;
 	}
 

@@ -19,14 +19,17 @@ import eu.gestionservices.components.utilisateur.Enseignant;
 public class Voeu extends Souhait {
 	
 	private HashMap<Enseignement, Boolean> voeux; 
-
-	public Voeu(){
-		super();
+	/**
+	 * Constructeur de souhait. De base un souhait n'est pas visible
+	 * @param enseignant : l'enseignant emettant le souhait
+	 */
+	public Voeu(Enseignant enseignant){
+		super(enseignant);
 		this.voeux = new HashMap<Enseignement, Boolean>();
 	}
 	
-	public Voeu(HashMap<Enseignement, Boolean> voeux){
-		super();
+	public Voeu(HashMap<Enseignement, Boolean> voeux,Enseignant enseignant){
+		super(enseignant);
 		this.voeux = voeux;
 	}
 	
@@ -50,9 +53,9 @@ public class Voeu extends Souhait {
 	 * @warning Une demande doit au minimum faire 1.5 fois le nombre d'heures minimum du contrat de l'enseignant
 	 */
 	
-	public boolean valide ( Enseignant enseignant) {
+	public boolean valide () {
 		
-		ContratDeService contrat = enseignant.getContrat();
+		ContratDeService contrat = this.expediteur.getContrat();
 		int nbHeuresVoeu=0; // variable contenant le nombre d'heure cumuler des enseignements du voeu
 		
 		// On prépare le parcourt de la HashMap

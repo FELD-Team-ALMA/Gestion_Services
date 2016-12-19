@@ -73,8 +73,7 @@ public class Departement implements Utilisateur{
 		if (enseignants.contains(chefDepartement)){
 			try { // Le constructeur de Enseignant lance une exception si on donne les mauvais paramètre il faut s'en occuper
 				
-				this.chefDepartement = new ChefDepartement(chefDepartement.getNom(), chefDepartement.getPrenom(), 
-						chefDepartement.getMail(), chefDepartement.getDepartement());
+				this.chefDepartement = new ChefDepartement(chefDepartement);
 				
 			} catch (IllegalEnseignantException e) {
 				// TODO Auto-generated catch block
@@ -95,8 +94,7 @@ public class Departement implements Utilisateur{
 			try { // Le constructeur de Enseignant lance une exception si on donne les mauvais paramètre il faut s'en occuper
 				ArrayList<Souhait> souhaitRestants= (ArrayList<Souhait>) this.chefDepartement.getSouhaitEnAttente(); 
 				// On recupere les souhaits pas encore gere pas le precedent chef
-				this.chefDepartement = new ChefDepartement(chefDepartement.getNom(), chefDepartement.getPrenom(), 
-						chefDepartement.getMail(), chefDepartement.getDepartement(),souhaitRestants);
+				this.chefDepartement = new ChefDepartement(chefDepartement,souhaitRestants);
 				
 			} catch (IllegalEnseignantException e) {
 				// TODO Auto-generated catch block
