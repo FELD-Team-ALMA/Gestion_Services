@@ -11,30 +11,30 @@ import eu.gestionservices.components.Utilisateur;
 import eu.gestionservices.exceptions.IllegalEnseignantException;
 
 /**
- * Classe représentant les enseignants : personne physique travaillant
- * pour un département et identifié par son nom, prénom et statut. Un 
- * enseignant peut intervenir dans différents départements pour dispenser
+ * Classe reprÃ©sentant les enseignants : personne physique travaillant
+ * pour un dÃ©partement et identifiÃ© par son nom, prÃ©nom et statut. Un 
+ * enseignant peut intervenir dans diffÃ©rents dÃ©partements pour dispenser
  * un certain nombre d'enseignements. Il peut effectuer des voeux concernant
  * les enseignements qu'il souhaite donner.
  * 
  * @author Montalvo Araya
  * @author Charles-Eric Begaudeau
  * @author Marie Delavergne
- * @author Charlène Servantie
+ * @author CharlÃ¨ne Servantie
  */
 public class Enseignant implements Professeur{
 	String nom;
 	String prenom;
 	/** 
+	 * L'adresse mail est unique et permet de diffÃ©rencier deux enseignants 
+	 * portant le mÃªme nom et prÃ©nom
 	 * L'adresse mail est unique et permet de différencier deux enseignants 
-	 * portant le même nom et prénom
-	/** L'adresse mail est unique et permet de différencier deux enseignants 
-	 *  portant le même nom et prénom
+	 *  portant le mÃªme nom et prÃ©nom
 	 */
 	String mail;
 	
 	/** 
-	 * Les profs peuvent être à temps plein
+	 * Les profs peuvent Ãªtre Ã  temps plein
 	 * 
 	 */
 	String statut; 
@@ -94,7 +94,7 @@ public class Enseignant implements Professeur{
 	}
 	
 	/**
-	 * Getter du prénom
+	 * Getter du prÃ©nom
 	 * @return un String
 	 */
 	public String getPrenom() {
@@ -135,7 +135,7 @@ public class Enseignant implements Professeur{
 	
 	
 	/**
-	 * Deux instances d'Enseignant sont égales si et seulement si
+	 * Deux instances d'Enseignant sont Ã©gales si et seulement si
 	 * leurs emails sont identiques.
 	 */
 	public boolean equals(Object o) {
@@ -178,8 +178,8 @@ public class Enseignant implements Professeur{
 	}
 	
 	/**
-	 * Rajoute une affection � l'enseignant
-	 * @param affectation : l'Affectation � affecter
+	 * Rajoute une affection à l'enseignant
+	 * @param affectation : l'Affectation à affecter
 	 */
 	public void addAffectation( Affectation affectation){
 		this.listeAffectations.add(affectation);

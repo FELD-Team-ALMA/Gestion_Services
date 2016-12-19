@@ -83,7 +83,7 @@ public class Module {
 		
 		String affichage="";
 		
-		affichage+=this.nomModule+" id :"+this.idModule+" Public Concerné : "+this.publicConcerne+" semestre:  "+this.semestre+"\n";
+		affichage+=this.nomModule+" id :"+this.idModule+" Public ConcernÃ© : "+this.publicConcerne+" semestre:  "+this.semestre+"\n";
 		affichage+="CM : groupes : "+this.enseignementCM.getNbGroupes()+ " nbHeures : "+this.enseignementCM.toStringHours()+"\n";
 		affichage+="TD : groupes : "+this.enseignementTD.getNbGroupes()+ " nbHeures : "+this.enseignementTD.toStringHours()+"\n";
 		affichage+="TP : groupes : "+this.enseignementTP.getNbGroupes()+ " nbHeures : "+this.enseignementTP.toStringHours()+"\n";

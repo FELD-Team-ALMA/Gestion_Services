@@ -11,7 +11,7 @@ public class TestVoeu {
 
 	
 	/**
-	 * Test de la methode valide quand on s'attend à ce que la demande soit valider
+	 * Test de la methode valide quand on s'attend Ã  ce que la demande soit valider
 	 * @throws IllegalEnseignantException 
 	 * @throws Exception
 	 */
@@ -39,7 +39,7 @@ public class TestVoeu {
 	}
 		
 	/**
-	 * Test de la methode valide quand on s'attend à ce que la demande ne soit pas valider
+	 * Test de la methode valide quand on s'attend Ã  ce que la demande ne soit pas valider
 	 * @throws IllegalEnseignantException 
 	 * @throws Exception
 	 */	

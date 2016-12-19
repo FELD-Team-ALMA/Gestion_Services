@@ -11,7 +11,7 @@ import org.junit.Test;
  * @author Montalvo Araya
  * @author Charles-Eric Begaudeau
  * @author Marie Delavergne
- * @author Charl√®ne Servantie
+ * @author Charl√É¬®ne Servantie
  *
  */
 
@@ -19,7 +19,7 @@ public class TestEnseignementTD {
 
 	
 	/**
-	 * Test de la methode toStringHours avec un rÈsultat qui tombe juste (pas de dÈcimale)
+	 * Test de la methode toStringHours avec un r√©sultat qui tombe juste (pas de d√©cimale)
 	 */
 	@Test
 	public void TestToStringHoursJuste() throws Exception{
@@ -31,7 +31,7 @@ public class TestEnseignementTD {
 	}
 	
 	/**
-	 * Test de la methode toStringHours avec un rÈsultat avec des dÈcimale et qui force un arrondie
+	 * Test de la methode toStringHours avec un r√©sultat avec des d√©cimale et qui force un arrondie
 	 */
 	@Test
 	public void TestToStringHoursAvecArrondie() throws Exception{

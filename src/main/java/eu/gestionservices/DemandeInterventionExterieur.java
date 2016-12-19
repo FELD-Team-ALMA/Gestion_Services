@@ -12,7 +12,7 @@ public class DemandeInterventionExterieur extends Souhait{
 	 * Constructeur de la classe {@link DemandeInterventionExterieur}
 	 * @param motif : string indiquant le motif et explication de la demande
 	 * @param lieu : string l'endroit ou on souhaite ce deplacer
-	 * @param nbHeures : HeuresTD combien d'heures (minutes) de trvaille entraîne le deplacement
+	 * @param nbHeures : HeuresTD combien d'heures (minutes) de trvaille entraÃ®ne le deplacement
 	 * @param enseignant : l'enseignant qui fait la demande 
 	 * @throws RuntimeException si le champ motif ou lieu est vide
 	 * @warning Une demande d'intervention exterieur est toujours valide c'est au chef de departement de decide si il est d'accord ou non
@@ -32,7 +32,7 @@ public class DemandeInterventionExterieur extends Souhait{
 	
 	/**
 	 * Fonction indiquant si le souhait d'un enseignant est valide ou non 
-	 * pour eviter d'envoyer des souhait non valide à son chef
+	 * pour eviter d'envoyer des souhait non valide Ã  son chef
 	 * @return boolean : return true
 	 * @warning Une demande d'intervention exterieur est toujours valide c'est au chef de departement de decide si il est d'accord ou non
 	 */

@@ -3,18 +3,18 @@ package eu.gestionservices;
 import eu.gestionservices.components.utilisateur.Enseignant;
 
 /**
- * Classe pour gérer les souhaits des enseignants
+ * Classe pour gÃ©rer les souhaits des enseignants
  * 
  * @author Montalvo Araya
  * @author Charles-Eric Begaudeau
  * @author Marie Delavergne
- * @author Charlène Servantie
+ * @author CharlÃ¨ne Servantie
  *
  */
 public abstract class Souhait {
 	
  
-	private boolean visible; // indique si le souhait doit �tre visible ou non
+	private boolean visible; // indique si le souhait doit être visible ou non
 	protected Enseignant expediteur; // l'enseignant qui envoie le souhait
 	/**
 	 * Constructeur de souhait. De base un souhait n'est pas visible
@@ -35,7 +35,7 @@ public abstract class Souhait {
 	
 	/**
 	 * Fonction indiquant si le souhait d'un enseignant est valide ou non 
-	 * pour eviter d'envoyer des souhait non valide � son chef
+	 * pour eviter d'envoyer des souhait non valide à son chef
 	 * @return boolean : return true si le souhait est valide false sinon
 	 */
 	public abstract boolean valide();

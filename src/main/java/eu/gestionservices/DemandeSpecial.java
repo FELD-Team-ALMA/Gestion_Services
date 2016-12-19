@@ -30,7 +30,7 @@ public class DemandeSpecial extends Souhait{
 	
 	/**
 	 * Fonction indiquant si le souhait d'un enseignant est valide ou non 
-	 * pour eviter d'envoyer des souhait non valide à son chef
+	 * pour eviter d'envoyer des souhait non valide Ã  son chef
 	 * @return boolean : return true
 	 * @warning Une demande special est toujours valide c'est au chef de departement de decide si il est d'accord ou non
 	 */

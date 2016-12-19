@@ -48,7 +48,7 @@ public class Voeu extends Souhait {
 	
 	/**
 	 * Fonction indiquant si le souhait d'un enseignant est valide ou non 
-	 * pour eviter d'envoyer des souhait non valide à son chef
+	 * pour eviter d'envoyer des souhait non valide Ã  son chef
 	 * @return boolean : return true si le souhait est valide false sinon
 	 * @warning Une demande doit au minimum faire 1.5 fois le nombre d'heures minimum du contrat de l'enseignant
 	 */
@@ -58,7 +58,7 @@ public class Voeu extends Souhait {
 		ContratDeService contrat = this.expediteur.getContrat();
 		int nbHeuresVoeu=0; // variable contenant le nombre d'heure cumuler des enseignements du voeu
 		
-		// On prépare le parcourt de la HashMap
+		// On prÃ©pare le parcourt de la HashMap
 		Set<Entry<Enseignement, Boolean>> setVoeux = this.voeux.entrySet();
 	    Iterator<Entry<Enseignement, Boolean>> it = setVoeux.iterator();
 

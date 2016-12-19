@@ -13,16 +13,16 @@ import eu.gestionservices.exceptions.IllegalEnseignantException;
 
 
 /**
- * Classe représentant les départements : entité administrative identifiée
+ * Classe reprÃ©sentant les dÃ©partements : entitÃ© administrative identifiÃ©e
  * par un nom. Il comprend un ensemble de modules et d'enseignements qui lui
- * sont rattachés. Chaque département a pour responsable un chef de département
+ * sont rattachÃ©s. Chaque dÃ©partement a pour responsable un chef de dÃ©partement
  * Plusieurs enseignants peuvent donner des enseignements pour le compte de
- * chaque département
+ * chaque dÃ©partement
  * 
  * @author Montalvo Araya
  * @author Charles-Eric Begaudeau
  * @author Marie Delavergne
- * @author Charlène Servantie
+ * @author CharlÃ¨ne Servantie
  *
  */
 public class Departement implements Utilisateur{
@@ -43,7 +43,7 @@ public class Departement implements Utilisateur{
 	
 
 	/**
-	 * Getter pour le nom du département
+	 * Getter pour le nom du dÃ©partement
 	 * @return un String
 	 */
 	public String getNomDept() {
@@ -67,11 +67,11 @@ public class Departement implements Utilisateur{
 	/**
 	 * Definit le chef de departement quand le departement n'avait pas encore de chef
 	 * @param chefDepartement : l'Enseignant qui devient le chef
-	 * @warning le chef doit �tre un enseignant du departement
+	 * @warning le chef doit être un enseignant du departement
 	 */
 	public void setChefDepartementNew(Enseignant chefDepartement) throws RuntimeException {
 		if (enseignants.contains(chefDepartement)){
-			try { // Le constructeur de Enseignant lance une exception si on donne les mauvais param�tre il faut s'en occuper
+			try { // Le constructeur de Enseignant lance une exception si on donne les mauvais paramètre il faut s'en occuper
 				
 				this.chefDepartement = new ChefDepartement(chefDepartement);
 				
@@ -87,11 +87,11 @@ public class Departement implements Utilisateur{
 	/**
 	 * Definit le chef de departement quand le departement en avait deja un ( pour ne pas perdre les souhait en attente)
 	 * @param chefDepartement : l'Enseignant qui devient le chef
-	 * @warning le chef doit �tre un enseignant du departement
+	 * @warning le chef doit être un enseignant du departement
 	 */
 	public void setChefDepartementTransition(Enseignant chefDepartement) throws RuntimeException {
 		if (enseignants.contains(chefDepartement)){
-			try { // Le constructeur de Enseignant lance une exception si on donne les mauvais param�tre il faut s'en occuper
+			try { // Le constructeur de Enseignant lance une exception si on donne les mauvais paramètre il faut s'en occuper
 				ArrayList<Souhait> souhaitRestants= (ArrayList<Souhait>) this.chefDepartement.getSouhaitEnAttente(); 
 				// On recupere les souhaits pas encore gere pas le precedent chef
 				this.chefDepartement = new ChefDepartement(chefDepartement,souhaitRestants);
@@ -106,8 +106,8 @@ public class Departement implements Utilisateur{
 
 
 	/**
-	 * Ajout d'un enseignant au département
-	 * @param e : Enseignant � add
+	 * Ajout d'un enseignant au dÃ©partement
+	 * @param e : Enseignant à add
 	 */
 	public void addEnseignant(Enseignant e) {
 		if (!enseignants.contains(e)) {
@@ -116,8 +116,8 @@ public class Departement implements Utilisateur{
 	}
 	
 	/**
-	 * Retrait d'un enseignant du département
-	 * @param e : Enseignant � remove
+	 * Retrait d'un enseignant du dÃ©partement
+	 * @param e : Enseignant à remove
 	 */
 	
 	public void removeEnseignant(Enseignant e) {
@@ -128,7 +128,7 @@ public class Departement implements Utilisateur{
 	
 	/**
 	 * Ajout d'un module au departement
-	 * @param m : Module � add
+	 * @param m : Module à add
 	 */
 	public void addModule(Module m) {
 		if (!this.modules.contains(m)) {
@@ -138,7 +138,7 @@ public class Departement implements Utilisateur{
 	
 	/**
 	 * Retrait d'un Module au departement
-	 * @param m : Module � remove
+	 * @param m : Module à remove
 	 */
 	
 	public void removeModule(Module m) {

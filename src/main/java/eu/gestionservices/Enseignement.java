@@ -6,7 +6,7 @@ package eu.gestionservices;
  * @author Montalvo Araya
  * @author Charles-Eric Begaudeau
  * @author Marie Delavergne
- * @author CharlÃ¨ne Servantie
+ * @author CharlÃƒÂ¨ne Servantie
  *
  */
 
@@ -15,7 +15,7 @@ public abstract class Enseignement {
 	protected String idModule;
 	protected HeuresTD equivalentHeuresTD;
 	protected int nbEtudiants; // Le nomvre d'etudiant participant au module
-	protected int nbGroupes; // En combien de groupes on doit séparé les étudiant
+	protected int nbGroupes; // En combien de groupes on doit sÃ©parÃ© les Ã©tudiant
 	
 	public Enseignement (String id, int minutes, int nbEtudiants, int nbGroupes){
 		idModule=id;
@@ -64,14 +64,14 @@ public abstract class Enseignement {
 	//-----------------------------------
 	
 	/**
-	 * Crée une string qui affiche en heures le nombre de minute de l'enseignement pour un meilleur lecture ( nombre heures réelle et pas l'équivalent en HeuresTD)
+	 * CrÃ©e une string qui affiche en heures le nombre de minute de l'enseignement pour un meilleur lecture ( nombre heures rÃ©elle et pas l'Ã©quivalent en HeuresTD)
 	 * @return stringHeures: une string -> une string qui affiche le nombre d'heure de l'enseignement
 	 * @warning Arondie a 1 decimale et affiche de la frome 20,5 et pas 20h30
 	 */
 	
 	public String toStringHours(){
 		
-		String stringHeures= String.format("%.1f", this.equivalentHeuresTD.getMinute()/60.0); // 1f indique qu'on veut le formet décimale et 1 décimale
+		String stringHeures= String.format("%.1f", this.equivalentHeuresTD.getMinute()/60.0); // 1f indique qu'on veut le formet dÃ©cimale et 1 dÃ©cimale
 		
 		return stringHeures;
 		
