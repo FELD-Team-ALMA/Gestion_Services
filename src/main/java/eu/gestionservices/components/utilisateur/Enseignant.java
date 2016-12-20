@@ -26,7 +26,7 @@ import eu.gestionservices.exceptions.IllegalEnseignantException;
  * @author Montalvo Araya
  * @author Charles-Eric Begaudeau
  * @author Marie Delavergne
- * @author CharlÃ¨ne Servantie
+ * @author Charlène Servantie
  */
 
 @Entity
@@ -46,13 +46,16 @@ public class Enseignant implements Professeur{
 	String mail;
 	
 	/** 
-	 * Les profs peuvent Ãªtre Ã  temps plein
+	 * Les profs peuvent être à temps plein
 	 * 
 	 */
 	String statut; 
+
 	Departement departement;
 	ContratDeService contrat;
+	@OneToMany(mappedBy="enseignant")
 	List<Affectation> listeAffectations;
+	@OneToMany(mappedBy="expediteur")
 	List<Souhait> listeDemande; // l'historique des souhait fait par l'enseignant
 	
 	
