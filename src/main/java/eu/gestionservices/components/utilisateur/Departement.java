@@ -156,9 +156,12 @@ public class Departement implements Utilisateur{
 
 	@Override
 	public List<Souhait> getListDemandes() {
-		return null;
-		// TODO Auto-generated method stub
+		List<Souhait> demandes= new ArrayList<Souhait>();
 		
+		for (int i=0; i<this.enseignants.size();++i){
+			demandes.addAll(this.enseignants.get(i).getListDemandes());
+		}
+		return demandes;
 	}
 
 	@Override
