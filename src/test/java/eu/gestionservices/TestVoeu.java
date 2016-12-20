@@ -30,8 +30,8 @@ public class TestVoeu {
 		//-----
 		
 		Voeu listVoeux = new Voeu(enseignant);
-		listVoeux.addPreference(ens1, true);
-		listVoeux.addPreference(ens2, false);
+		listVoeux.addPreference(ens1, 1);
+		listVoeux.addPreference(ens2, 0);
 		
 		
 		
@@ -58,8 +58,8 @@ public class TestVoeu {
 		//-----
 		
 		Voeu listVoeux = new Voeu(enseignant);
-		listVoeux.addPreference(ens1, true);
-		listVoeux.addPreference(ens2, false);
+		listVoeux.addPreference(ens1, 1);
+		listVoeux.addPreference(ens2, 0);
 		
 		
 		

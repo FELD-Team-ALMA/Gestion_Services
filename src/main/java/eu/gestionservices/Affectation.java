@@ -52,6 +52,16 @@ public class Affectation {
 	public void setEnseignant(Enseignant enseignant) {
 		this.enseignant = enseignant;
 	}
-	
-	
+	/**
+	 * toString pour affectation
+	 * @return retour : une string des caracteristique de l'affectation
+	 * @warning Arondie a 1 decimale et affiche de la forme 20,5 et pas 20h30 le nombre d'heures
+	 */
+	public String toString(){
+		String retour="";
+		retour+=this.enseignant.toString()+"\n";
+		retour+=this.enseignement.toString();
+		return retour;
+	}
+
 }

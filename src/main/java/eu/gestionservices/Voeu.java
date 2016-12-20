@@ -18,30 +18,35 @@ import eu.gestionservices.components.utilisateur.Enseignant;
  */
 public class Voeu extends Souhait {
 	
-	private HashMap<Enseignement, Boolean> voeux; 
+	private HashMap<Enseignement,Integer> voeux; // integer =1 si enseignement fortement souhaite et 0 si tolere
 	/**
 	 * Constructeur de souhait. De base un souhait n'est pas visible
 	 * @param enseignant : l'enseignant emettant le souhait
 	 */
 	public Voeu(Enseignant enseignant){
 		super(enseignant);
-		this.voeux = new HashMap<Enseignement, Boolean>();
+		this.voeux = new HashMap<Enseignement,Integer>();
 	}
 	
-	public Voeu(HashMap<Enseignement, Boolean> voeux,Enseignant enseignant){
+	public Voeu(HashMap<Enseignement,Integer> voeux,Enseignant enseignant){
 		super(enseignant);
 		this.voeux = voeux;
 	}
 	
-	public HashMap<Enseignement, Boolean> getVoeux(){
+	public HashMap<Enseignement,Integer> getVoeux(){
 		return this.voeux;
 	}
 	
-	public boolean getPreference(Enseignement enseignement){
+	public int getPreference(Enseignement enseignement){
 		return voeux.get(enseignement);
 	}
-	
-	public void addPreference(Enseignement enseignement, Boolean preference){
+	/**
+	 * Fonction ajoutant souhait (preference) dans la liste de souhait
+	 * @param enseignement : enseignement souhaite
+	 * @param preference : int 1 si enseignement fortement souhaite et 0 si tolere 
+	 * @warning tout autre int que 1 sera considere comme un 0 lors de l'affichage plus tard	 
+	 */
+	public void addPreference(Enseignement enseignement,int preference ){
 		voeux.put(enseignement, preference);
 	}
 	
@@ -59,12 +64,12 @@ public class Voeu extends Souhait {
 		int nbHeuresVoeu=0; // variable contenant le nombre d'heure cumuler des enseignements du voeu
 		
 		// On prépare le parcourt de la HashMap
-		Set<Entry<Enseignement, Boolean>> setVoeux = this.voeux.entrySet();
-	    Iterator<Entry<Enseignement, Boolean>> it = setVoeux.iterator();
+		Set<Entry<Enseignement, Integer>> setVoeux = this.voeux.entrySet();
+	    Iterator<Entry<Enseignement, Integer>> it = setVoeux.iterator();
 
 	    // Une sorte de for_each
 		while (it.hasNext()){
-			Entry<Enseignement, Boolean> e= it.next(); // malgre ce que la syntaxe laisse penser on choppe quand meme le premier element
+			Entry<Enseignement, Integer> e= it.next(); // malgre ce que la syntaxe laisse penser on choppe quand meme le premier element
 			nbHeuresVoeu+=e.getKey().getEquivalentHeuresTD().getMinute();
 		}
 		
@@ -79,9 +84,24 @@ public class Voeu extends Souhait {
 	 * @return String : string des caracteristique du Souhait
 	 */
 	public String toString(){
-		// TODO 
 		
-		return "";
+		String retour ="";
+		Set<Entry<Enseignement, Integer>> setVoeux = this.voeux.entrySet();
+	    Iterator<Entry<Enseignement, Integer>> it = setVoeux.iterator();
+
+	    retour+=this.expediteur.toString()+"\n";
+	    
+	    // Une sorte de for_each
+		while (it.hasNext()){
+			Entry<Enseignement, Integer> e= it.next(); // malgre ce que la syntaxe laisse penser on choppe quand meme le premier element
+			retour+=e.getKey().toString()+" ";
+			if (e.getValue()==1){
+				retour+="Enseignement fortement souhaite";
+			}else{
+				retour+="Enseignement peu souhaite";
+			}
+		}
+		return retour;
 	}
 
 
