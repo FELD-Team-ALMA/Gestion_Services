@@ -229,7 +229,14 @@ public class TestDepartement {
      */
     @Test
     public void testGetListDemandes() throws Exception {
-        throw new RuntimeException("not yet implemented");
+    	Departement departement = new Departement("");
+		Enseignant enseignant1 = new Enseignant("a", "aa", "aaa"); 
+		Enseignant enseignant2 = new Enseignant("b", "bb", "bbb");
+
+    	departement.addEnseignant(enseignant1);
+    	departement.addEnseignant(enseignant2);
+    	
+    	
     }
 
     /**
