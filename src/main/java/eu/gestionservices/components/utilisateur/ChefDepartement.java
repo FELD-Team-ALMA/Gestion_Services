@@ -150,10 +150,10 @@ public class ChefDepartement extends DecoratorProfesseur {
 
 	
 	/**
-	 * Renvoit la string du souhait specifie de la liste de souhait en attente
+	 * renvoie la string du souhait specifie de la liste de souhait en attente
 	 * @param souhait : le souhait d'on on veut le toString
 	 * @return string : le toString() du souhait specifie
-	 * @warning si le souhait n'existe pas renvoit "Le souhait n'existe pas"
+	 * @warning si le souhait n'existe pas renvoie "Le souhait n'existe pas"
 	 */
 	public String toStringSpecifiqueSouhait( Souhait souhait){
 		
@@ -166,10 +166,9 @@ public class ChefDepartement extends DecoratorProfesseur {
 
 	}
 	
-	
 
 	/**
-	 * Renvoit le dernier souhait de la liste de souhait en attente
+	 * renvoie le dernier souhait de la liste de souhait en attente
 	 * @return Souhait : le dernier souhait de la liste de souhait en attente
 	 * @throws throws RunTimeException si la liste de souhait en attente est vide
 	 */
@@ -184,7 +183,7 @@ public class ChefDepartement extends DecoratorProfesseur {
 	}
 	
 	/**
-	 * Renvoit le premier souhait de la liste de souhait en attente
+	 * renvoie le premier souhait de la liste de souhait en attente
 	 * @return Souhait : le premier souhait de la liste de souhait en attente
 	 * @throws throws RunTimeException si la liste de souhait en attente est vide
 	 */
@@ -199,7 +198,7 @@ public class ChefDepartement extends DecoratorProfesseur {
 	}
 	
 	/**
-	 * Renvoit les souhait de l'enseignant specifie
+	 * renvoie les souhait de l'enseignant specifie
 	 * @param enseignant : l'enseignant d'on on veut les souhait
 	 * @return {@link Souhait}: le souhait de l'enseignant specifie
 	 * @throws throws RunTimeException si l'enseignant ne fait pas partie du departement du chef de departement
@@ -208,7 +207,7 @@ public class ChefDepartement extends DecoratorProfesseur {
 		
 		ArrayList<Souhait> souhaitsEnseignant= new ArrayList<Souhait>();
 		
-		// Verifie si l'enseignant Ã  qui on affecte l'enseignement fait partie du departement du chef
+		// Verifie si l'enseignant à qui on affecte l'enseignement fait partie du departement du chef
 		if (this.decorateProfesseur.getDepartement().getEnseignants().contains(enseignant)){
 			
 			for (int i=0;i<this.souhaitEnAttente.size();++i){
