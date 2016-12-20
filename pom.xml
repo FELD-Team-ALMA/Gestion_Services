@@ -24,13 +24,24 @@
 			</plugin>
 		</plugins>
 	</build>
-	<dependencies>	<!-- junit for tests -->
-
+	<dependencies>
+		<!-- junit for tests -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
-		</dependency>		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.9.5</version>
+		</dependency>
+
+
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 
 		<dependency>
 			<groupId>org.springframework</groupId>
