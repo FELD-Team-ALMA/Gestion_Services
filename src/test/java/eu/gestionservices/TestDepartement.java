@@ -54,7 +54,9 @@ public class TestDepartement {
      */
     @Test
     public void testGetNomDept() throws Exception {
-    	throw new RuntimeException("not yet implemented");
+    	String nom = "b";
+    	Departement departement = new Departement(nom);
+    	assertEquals(true, departement.getNomDept().equals(nom));
     }
 
     /**
@@ -70,7 +72,11 @@ public class TestDepartement {
      */
     @Test
     public void testGetChefDepartement() throws Exception {
-    	throw new RuntimeException("not yet implemented");
+    	Departement departement = new Departement("");
+    	Enseignant enseignant1 = new Enseignant("a", "aa", "aaa");
+    	departement.addEnseignant(enseignant1);
+		departement.setChefDepartementNew(enseignant1);
+		assertEquals(true, enseignant1.equals(departement.getChefDepartement()));
     }
 
     /**
@@ -87,7 +93,7 @@ public class TestDepartement {
 		}
     	departement.addEnseignant(enseignant1);
 		departement.setChefDepartementNew(enseignant1);
-		assertEquals(true, departement.getChefDepartement().equals(enseignant1));
+		assertEquals(true, enseignant1.equals(departement.getChefDepartement()));
     }
 
     /**
@@ -96,7 +102,8 @@ public class TestDepartement {
     @Test
     public void testSetChefDepartementTransition() throws Exception {
     	Departement departement = new Departement("");
-    	Enseignant enseignant1 = new Enseignant("a", "aa", "aaa"); 
+    	Enseignant enseignant1 = new Enseignant("a", "aa", "aaa");
+		Enseignant enseignant2 = new Enseignant("b", "bb", "bbb");
     	try{
     		departement.setChefDepartementNew(enseignant1);
     	}catch (RuntimeException e) {
@@ -104,7 +111,9 @@ public class TestDepartement {
 		}
     	departement.addEnseignant(enseignant1);
 		departement.setChefDepartementNew(enseignant1);
-		assertEquals(true, departement.getChefDepartement().equals(enseignant1));
+    	departement.addEnseignant(enseignant2);
+		departement.setChefDepartementTransition(enseignant2);
+		assertEquals(true, enseignant2.equals(departement.getChefDepartement()));
     }
 
     /**

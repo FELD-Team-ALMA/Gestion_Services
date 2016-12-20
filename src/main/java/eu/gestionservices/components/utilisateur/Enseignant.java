@@ -168,6 +168,11 @@ public class Enseignant implements Professeur{
 				if (ens.getMail() == this.getMail()) {
 					return true;
 				}
+			}else if (o instanceof ChefDepartement){
+				ChefDepartement chd = (ChefDepartement) o;
+				if (chd.getMail() == this.getMail()) {
+					return true;
+				}
 			}
 		}
 		return false;
