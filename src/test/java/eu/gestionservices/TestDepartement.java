@@ -276,5 +276,5 @@ public class TestDepartement {
     	assertEquals(false, modules.equals(departement.getListModules()));
         //throw new RuntimeException("not yet implemented");
     }
-
+    
 }
