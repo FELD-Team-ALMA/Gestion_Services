@@ -6,7 +6,7 @@ public class DemandeSpecial extends Souhait{
 
 	private String motif;// Indique le motif de la demande
 	private HeuresTD nbHeures;// Indique le nombre d'heures de travaille de l'enseignant qui sont affectee
-	private boolean plusOuMoins; // Indique si la demande va entrainer plus d'heures trvailler ou moins pour celui qui fait la demande
+	private boolean plusOuMoins; // true si la demande va entrainer plus d'heures travailler ou false si moins pour celui qui fait la demande
 	
 	/**
 	 * Constructeur de la classe {@link DemandeSpecial}
@@ -38,11 +38,24 @@ public class DemandeSpecial extends Souhait{
 		return true;
 	}
 
+	/**
+	 * Fonction toString Necessaire pour l'affichage
+	 * @return String : string des caracteristique de la demande d'intervention exterieur
+	 */
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		String retour="";
+		retour+=this.expediteur.toString()+"\n";
+		retour+=" Motif : "+this.motif;
+		if(plusOuMoins){
+			retour+=" nbHeures : "+this.nbHeures.toStringHeures()+" en plus";
+		}else{
+			retour+=" nbHeures : "+this.nbHeures.toStringHeures()+" en moins";
+
+		}
+				
+		return retour;
 	}
-	
+
 
 }

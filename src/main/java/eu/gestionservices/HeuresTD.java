@@ -157,4 +157,18 @@ public class HeuresTD {
 	public void soustraitFromTP(int minutes){
 		this.minutes-=convertFromTP(minutes);
 	}
+	
+	
+	/**
+	 * Cree une string qui affiche en heures le nombre de minute de HeuresTD
+	 * @return stringHeures: une string -> une string qui affiche le nombre d'heure de HeuresTD
+	 * @warning Arondie a 1 decimale et affiche de la frome 20,5 et pas 20h30
+	 */
+	public String toStringHeures(){
+		double nbminutes = this.minutes; // attention convertion int vers double
+		
+		String stringHeures= String.format("%.1f",nbminutes/60.0); // 1f indique qu'on veut le formet décimale et 1 décimale
+		
+		return stringHeures;
+	}
 }

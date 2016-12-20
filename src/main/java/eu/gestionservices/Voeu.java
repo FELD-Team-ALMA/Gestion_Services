@@ -81,7 +81,8 @@ public class Voeu extends Souhait {
 	
 	/**
 	 * Fonction toString Necessaire pour l'affichage
-	 * @return String : string des caracteristique du Souhait
+	 * @return String : string des caracteristique du voeu
+	 * @warning toutes preferences avec une valeur autre que 1 sera considere peu souhaite
 	 */
 	public String toString(){
 		

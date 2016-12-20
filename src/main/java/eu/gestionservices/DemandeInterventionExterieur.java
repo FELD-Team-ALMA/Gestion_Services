@@ -41,10 +41,16 @@ public class DemandeInterventionExterieur extends Souhait{
 		return true;
 	}
 
+	/**
+	 * Fonction toString Necessaire pour l'affichage
+	 * @return String : string des caracteristique de la demande d'intervention exterieur
+	 */
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		String retour="";
+		retour+=this.expediteur.toString()+"\n";
+		retour+=" Motif : "+this.motif+" lieu :"+this.lieu+" nbHeures : "+this.nbHeures.toStringHeures();
+		return retour;
 	}
 
 	
