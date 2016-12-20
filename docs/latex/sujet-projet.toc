@@ -1,0 +1,151 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}
+\contentsline {section}{\numberline {1.1}Objectifs}{4}{section.1.1}
+\contentsline {section}{\numberline {1.2}Prérequis}{4}{section.1.2}
+\contentsline {section}{\numberline {1.3}Travail à rendre}{4}{section.1.3}
+\contentsline {section}{\numberline {1.4}Critères d'évaluation}{5}{section.1.4}
+\contentsline {section}{\numberline {1.5}Organisation}{5}{section.1.5}
+\contentsline {section}{\numberline {1.6}Préambule}{5}{section.1.6}
+\contentsline {chapter}{\numberline {2}Spécification des exigences logicielles}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{6}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Objectif}{6}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Portée du document}{6}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Définitions, acronymes et abréviations}{6}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Références}{6}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Vue d’ensemble}{6}{subsection.2.1.5}
+\contentsline {subsection}{\numberline {2.1.6}Organisation du chapitre}{6}{subsection.2.1.6}
+\contentsline {section}{\numberline {2.2}Description générale}{6}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Fonctions du produit}{8}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Caractéristiques et classes d'utilisateurs}{8}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Environnement opérationnel}{9}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Contraintes de conception et de mise en œuvre}{9}{subsection.2.2.4}
+\contentsline {subsubsection}{Langage de programmation}{9}{section*.2}
+\contentsline {subsubsection}{Langage de conception}{9}{section*.3}
+\contentsline {subsubsection}{Conception}{9}{section*.4}
+\contentsline {subsubsection}{Mise en œuvre}{9}{section*.5}
+\contentsline {subsubsection}{Outils de construction}{9}{section*.6}
+\contentsline {subsubsection}{Outils de développement}{10}{section*.7}
+\contentsline {subsubsection}{Bibliothèques et composants logiciels}{10}{section*.8}
+\contentsline {subsection}{\numberline {2.2.5}Documentation utilisateur}{10}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}Hypothèses et dépendances}{10}{subsection.2.2.6}
+\contentsline {subsection}{\numberline {2.2.7}Exigences reportées}{10}{subsection.2.2.7}
+\contentsline {section}{\numberline {2.3}Exigences fonctionnelles}{10}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}\nameref {usecase:affecter}}{10}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}\nameref {usecase:publier}}{10}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}\nameref {usecase:analyse}}{10}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}\nameref {usecase:souhait}}{10}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}\nameref {usecase:publier}}{11}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.6}\nameref {usecase:consulter}}{11}{subsection.2.3.6}
+\contentsline {section}{\numberline {2.4}Exigences non-fonctionnelles}{11}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Interface utilisateur}{11}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Interface matérielle}{11}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Interface logicielle}{11}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}Interfaces ou protocoles de communication}{11}{subsection.2.4.4}
+\contentsline {subsection}{\numberline {2.4.5}Contraintes de mémoire}{11}{subsection.2.4.5}
+\contentsline {subsection}{\numberline {2.4.6}Hypothèses et dépendances}{11}{subsection.2.4.6}
+\contentsline {subsection}{\numberline {2.4.7}Correction}{11}{subsection.2.4.7}
+\contentsline {subsection}{\numberline {2.4.8}Interopérabilité}{12}{subsection.2.4.8}
+\contentsline {subsection}{\numberline {2.4.9}Portabilité}{12}{subsection.2.4.9}
+\contentsline {subsection}{\numberline {2.4.10}Exigences de performance}{12}{subsection.2.4.10}
+\contentsline {subsection}{\numberline {2.4.11}Maintenabilité}{12}{subsection.2.4.11}
+\contentsline {subsubsection}{Conventions de code Java}{12}{section*.9}
+\contentsline {subsection}{\numberline {2.4.12}Exigences de sûreté}{12}{subsection.2.4.12}
+\contentsline {subsection}{\numberline {2.4.13}Exigences de sécurité}{12}{subsection.2.4.13}
+\contentsline {subsection}{\numberline {2.4.14}Attributs de qualité logicielle}{12}{subsection.2.4.14}
+\contentsline {section}{\numberline {2.5}Autres exigences}{12}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Persistance}{12}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Système réparti}{13}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Outils de développement}{13}{subsection.2.5.3}
+\contentsline {chapter}{\numberline {3}Analyse du domaine}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{15}{section.3.1}
+\contentsline {section}{\numberline {3.2}Définition des cas d'utilisation}{15}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}UC---Affecter des enseignements}{15}{subsection.3.2.1}
+\contentsline {paragraph}{CHARACTERISTIC INFORMATION}{15}{section*.11}
+\contentsline {paragraph}{MAIN SUCCESS SCENARIO}{16}{section*.12}
+\contentsline {paragraph}{VARIATIONS}{16}{section*.13}
+\contentsline {subsubsection}{Spécification OCL}{17}{section*.14}
+\contentsline {subsubsection}{Exemple d'affectation de voeux}{17}{section*.15}
+\contentsline {subsubsection}{Exemple d'affectation à partir d'une demande extérieure}{17}{section*.16}
+\contentsline {subsubsection}{Exemple d'affectation à partir d'une demande spéciale}{17}{section*.17}
+\contentsline {subsubsection}{Exemple d'affectation imposée à un enseignant}{17}{section*.18}
+\contentsline {subsection}{\numberline {3.2.2}UC---Valider des souhaits et publication des possibles conflits}{20}{subsection.3.2.2}
+\contentsline {paragraph}{CHARACTERISTIC INFORMATION}{20}{section*.19}
+\contentsline {paragraph}{MAIN SUCCESS SCENARIO}{20}{section*.20}
+\contentsline {subsection}{\numberline {3.2.3}UC---Analyser des demandes}{20}{subsection.3.2.3}
+\contentsline {paragraph}{CHARACTERISTIC INFORMATION}{20}{section*.21}
+\contentsline {paragraph}{MAIN SUCCESS SCENARIO}{21}{section*.22}
+\contentsline {subsection}{\numberline {3.2.4}UC---Émettre un souhait}{21}{subsection.3.2.4}
+\contentsline {paragraph}{CHARACTERISTIC INFORMATION}{21}{section*.23}
+\contentsline {paragraph}{MAIN SUCCESS SCENARIO}{21}{section*.24}
+\contentsline {paragraph}{EXTENSIONS}{21}{section*.25}
+\contentsline {paragraph}{VARIATIONS}{22}{section*.26}
+\contentsline {subsubsection}{Spécification OCL}{22}{section*.27}
+\contentsline {subsubsection}{Exemple d'émission d'un souhait}{22}{section*.28}
+\contentsline {subsubsection}{Exemple d'émission d'une demande extérieure}{22}{section*.29}
+\contentsline {subsubsection}{Exemple d'émission d'une demande spéciale}{22}{section*.30}
+\contentsline {subsection}{\numberline {3.2.5}UC---Publier des souhaits}{24}{subsection.3.2.5}
+\contentsline {paragraph}{CHARACTERISTIC INFORMATION}{24}{section*.31}
+\contentsline {paragraph}{MAIN SUCCESS SCENARIO}{24}{section*.32}
+\contentsline {paragraph}{EXTENSIONS}{24}{section*.33}
+\contentsline {subsection}{\numberline {3.2.6}UC---Consulter des enseignements}{24}{subsection.3.2.6}
+\contentsline {paragraph}{CHARACTERISTIC INFORMATION}{25}{section*.34}
+\contentsline {paragraph}{MAIN SUCCESS SCENARIO}{25}{section*.35}
+\contentsline {paragraph}{EXTENSIONS}{25}{section*.36}
+\contentsline {section}{\numberline {3.3}Diagramme de classes métiers}{25}{section.3.3}
+\contentsline {chapter}{\numberline {4}Dictionnaire de données}{27}{chapter.4}
+\contentsline {chapter}{\numberline {5}Architecture}{30}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{30}{section.5.1}
+\contentsline {section}{\numberline {5.2}Vue physique}{30}{section.5.2}
+\contentsline {section}{\numberline {5.3}Vue du développement}{30}{section.5.3}
+\contentsline {section}{\numberline {5.4}Vue logique}{30}{section.5.4}
+\contentsline {section}{\numberline {5.5}Vue des processus}{31}{section.5.5}
+\contentsline {section}{\numberline {5.6}Vue de la fiabilité}{31}{section.5.6}
+\contentsline {section}{\numberline {5.7}Réponses aux exigences non-fonctionnelles}{31}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}Gestion de la concurrence}{31}{subsection.5.7.1}
+\contentsline {subsection}{\numberline {5.7.2}Gestion de la persistance}{31}{subsection.5.7.2}
+\contentsline {subsection}{\numberline {5.7.3}Gestion de la sécurité}{31}{subsection.5.7.3}
+\contentsline {section}{\numberline {5.8}Architecture technique : traduction de UML en code source}{31}{section.5.8}
+\contentsline {subsection}{\numberline {5.8.1}Règles de traduction des types de base}{32}{subsection.5.8.1}
+\contentsline {subsection}{\numberline {5.8.2}Règles de traduction des classes}{32}{subsection.5.8.2}
+\contentsline {subsection}{\numberline {5.8.3}Règles de traduction des associations, agrégations composites et agrégations partagées}{32}{subsection.5.8.3}
+\contentsline {subsection}{\numberline {5.8.4}Règles de traduction des composants}{32}{subsection.5.8.4}
+\contentsline {subsection}{\numberline {5.8.5}Autres règles}{32}{subsection.5.8.5}
+\contentsline {section}{\numberline {5.9}Patrons architecturaux utilisés}{32}{section.5.9}
+\contentsline {subsection}{\numberline {5.9.1}Patron A}{32}{subsection.5.9.1}
+\contentsline {subsection}{\numberline {5.9.2}Patron B}{32}{subsection.5.9.2}
+\contentsline {subsection}{\numberline {5.9.3}Patron C}{32}{subsection.5.9.3}
+\contentsline {subsection}{\numberline {5.9.4}Patron D}{32}{subsection.5.9.4}
+\contentsline {subsection}{\numberline {5.9.5}Patron D}{32}{subsection.5.9.5}
+\contentsline {subsection}{\numberline {5.9.6}Patron E}{32}{subsection.5.9.6}
+\contentsline {section}{\numberline {5.10}Choix techniques - Distribution des processus}{32}{section.5.10}
+\contentsline {section}{\numberline {5.11}Conclusion}{32}{section.5.11}
+\contentsline {chapter}{\numberline {6}Spécification des composants}{33}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introduction}{33}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Objectif}{33}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Organisation du chapitre}{33}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Description des composants}{33}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Le composant A}{33}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Interactions}{33}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Cas d'utilisation UC1}{33}{subsection.6.3.1}
+\contentsline {section}{\numberline {6.4}Spécification des interfaces}{34}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Interface A}{34}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Interface B}{34}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3}Interface C}{34}{subsection.6.4.3}
+\contentsline {section}{\numberline {6.5}Spécification des types utilisés}{34}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Task}{34}{subsection.6.5.1}
+\contentsline {section}{\numberline {6.6}Conclusion}{34}{section.6.6}
+\contentsline {chapter}{\numberline {7}Conception détaillée}{35}{chapter.7}
+\contentsline {section}{\numberline {7.1}Introduction}{35}{section.7.1}
+\contentsline {section}{\numberline {7.2}Répertoire des décisions de conception}{35}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Patron A}{35}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Patron B}{35}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Patron C}{35}{subsection.7.2.3}
+\contentsline {section}{\numberline {7.3}Spécification détaillée des composants}{35}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Composant A}{36}{subsection.7.3.1}
+\contentsline {subsubsection}{Structure}{36}{section*.37}
+\contentsline {subsubsection}{Comportement}{36}{section*.38}
+\contentsline {subsection}{\numberline {7.3.2}Composant B}{36}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Composant C}{36}{subsection.7.3.3}
+\contentsline {subsection}{\numberline {7.3.4}Composant D}{36}{subsection.7.3.4}
+\contentsline {section}{\numberline {7.4}Spécification détaillée des classes}{36}{section.7.4}
+\contentsline {section}{\numberline {7.5}Conclusion}{37}{section.7.5}

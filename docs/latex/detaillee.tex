@@ -1,0 +1,108 @@
+%!TEX root = ./sujet-projet.tex
+
+\chapter{Conception détaillée}
+
+\section{Introduction}
+
+\section{Répertoire des décisions de conception}
+
+Cette section doit contenir un répertoire regroupant l'ensemble de nos décisions de conception concernant votre système.
+
+Si vous utilisez des patrons de conception, ou \emph{design patterns}, décrivez leur utilisation dans les sections suivantes.
+
+\subsection{Patron A}
+Description de l'utilisation.
+
+\subsection{Patron B}
+Description de l'utilisation.
+
+\subsection{Patron C}
+Description de l'utilisation.
+
+
+
+%*******************************************************************
+%************** Spécification détaillée des composants *************
+%*******************************************************************
+
+
+\section{Spécification détaillée des composants}
+Cette section doit contenir une description détaillée de chacun des composants du système, dont l'interface a été présentée dans le Chapitre~\ref{chapter:composants}.
+
+Décrivez, pour chaque composant, sa structure sous la forme d'un diagramme statique (en l'occurence un diagramme de classes avec paquetages) et son comportement interne sous la forme de diagrammes dynamiques. 
+
+Comme UML propose plusieurs types de diagrammes statiques, pensez à bien choisir le diagramme qui permet de mieux spécifier ce que vous souhaitez décrire:
+\begin{enumerate}
+	\item Les diagrammes d'activités sont utiles à description d'algorithmes non-triviaux, comme la résolution de conflits, par exemple.
+	\item Les diagrammes état-transition sont utilises à décrire des comportements qui dépendent de l'état interne d'un composant ou d'une classe.
+	\item Les itérations sont utiles à la description d'enchainement de messages entre objets. Ils sont très utilises pour décrire des comportement nominaux et extra-nominaux, qui peuvent se traduire en tests.
+\end{enumerate}
+
+N'oubliez pas que les deux premiers diagrammes représentent des classes et des opérations, alors que le dernier représente des objets et des messages envoyés entre ces objets. Ils ne sont pas au même niveau. 
+
+
+
+\subsection{Composant A}
+
+\subsubsection{Structure}
+
+
+\begin{figure}[!htbp]
+\begin{center}
+
+\caption{Diagramme de classes du composant A}
+\end{center}
+\end{figure}
+ 
+\subsubsection{Comportement}
+
+\begin{figure}[!htbp]
+\begin{center}
+\caption{Diagramme état-transition du composant A}
+\end{center}
+\end{figure}
+
+Explications détaillées.
+
+\begin{figure}[!htbp]
+\begin{center}
+\caption{Diagramme d'activités de l'opération \code{a()} du composant \code{A}}
+\end{center}
+\end{figure}
+
+Explications détaillées.
+
+\begin{figure}[!htbp]
+\begin{center}
+\caption{Diagramme de séquences de l'opération \code{a()} du composant \code{A} (cas nominal)}
+\end{center}
+\end{figure}
+Explications détaillées.
+
+\begin{figure}[!htbp]
+\begin{center}
+\caption{Diagramme de séquences de l'opération \code{a()} du composant \code{A} (cas extra-nominal)}
+\end{center}
+\end{figure}
+
+Explications détaillées.
+
+
+\subsection{Composant B}
+\subsection{Composant C}
+\subsection{Composant D}
+
+%*******************************************************************
+%************** Spécification détaillée des classes ****************
+%*******************************************************************
+
+\section{Spécification détaillée des classes}
+Décrivez, dans cette section, les classes ou les opérations dont la mise en œuvre est complexe.
+Il ne s'agit pas de spécifier toutes les classes et opérations, mais seulement celles dont la traduction en code n'est pas triviale.
+
+Utilisez le langage OCL et des diagrammes dynamiques pour les décrire.
+
+
+\section{Conclusion}
+
+

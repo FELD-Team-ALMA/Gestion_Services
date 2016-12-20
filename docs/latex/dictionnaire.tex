@@ -1,0 +1,63 @@
+%!TEX root = /Users/sunye/Development/Workspaces/teaching/Gestion services/src/doc/latex/sujet-projet.tex
+
+\chapter{Dictionnaire de données}
+
+Dans une première partie, nous fournissons le dictionnaire des données que nous avons construit suite `a notre analyse du cahier des charges. Il s’agit d’un listing de l’ensemble des termes relatifs au domaine étudié (`a savoir le domaine “Gestion des services”) ainsi que leur définition précise.
+
+
+\begin{longtable}{p{3cm}p{8cm}p{2cm}p{2cm}}
+
+\toprule
+\textbf{Notion} & \textbf{Définition} &\textbf{Traduit en} & \textbf{Nom informatique} \\
+\midrule
+
+Affectation & Action de déterminer une \textbf{intervention}, i.e. d'associer un \textbf{enseignant} à un \textbf{enseignement} donné. C'est le \textbf{chef de département} qui est chargé de déterminer les différentes affectations en fonction, le plus souvent, des \textbf{v\oe ux} réalisés par les divers \textbf{enseignants}. & &\\
+
+Chef de département & Acteur du système. Il est le responsable d'un \textbf{département} : il gère les \textbf{modules} (ainsi que les \textbf{enseignements} associés), les \textbf{enseignants} et leurs \textbf{interventions} pour son \textbf{département}. & Acteur & ChefDepartement \\
+
+Conflit & Fait que deux \textbf{v\oe ux} soit incompatibles (i.e. que deux \textbf{enseignants} aient émis les mêmes choix concernant un ou des \textbf{enseignements}). C'est au \textbf{chef de département} de régler les conflits en réalisant les affectations. & &\\
+
+Contrat de service & Nombre d'heures minimum (et parfois nombre d'heures maximum) d'\textbf{enseignements} à effectuer pour un \textbf{enseignant} donné. Il est indépendant des \textbf{départements} dans lesquels l'\textbf{enseignant} intervient : il est unique et seulement déterminé par le statut de l'\textbf{enseignant}. & Classe & ContratDeService \\
+
+Département & Entité administrative (d'une université) identifiée par un nom. Il comprend un ensemble de \textbf{modules} et d'\textbf{enseignants} qui lui sont rattachés. Chaque département a pour responsable un \textbf{chef de département}. Plusieurs \textbf{enseignants} peuvent donner des \textbf{enseignements} pour le compte de chaque \textbf{département}. & Classe & Departement  \\
+
+Enseignant & Personne "physique" travaillant pour le compte d'un \textbf{département} et identifiée par son nom, son prénom et son statut. Un enseignant peut "intervenir" dans différents \textbf{départements} pour dispenser un certain nombre d'\textbf{enseignements}. C'est un également un acteur du sytème puisqu'il peut effectuer des \textbf{v\oe ux} concernant les \textbf{enseignements} qu'il désire donner. & Classe et Acteur & Enseignant \\
+
+Enseignement & Entité administrative représentant un cours dans un \textbf{module} donné. Il existe trois types d'enseignement avec, pour chacun, un coefficient différent en terme de volume horaire:
+\begin{itemize}
+\item CM : cours magistral se déroulant le plus souvent dans un amphithéâtre, un CM vaut 3/2 d'un TD ;
+\item TD : travaux dirigés se déroulant dans une salle de cours classique ;
+\item TP : travaux pratiques se déroulant dans des salles particulières dédiées à cet effet (salles machines, laboratoires...), un TP vaut 2/3 d'un TD (ou 1 TD, cela dépend du statut de l'\textbf{enseignant} concerné).
+\end{itemize} & Classe & Enseignement, CM, TD, TP \\
+
+Intervention & Fait qu'un \textbf{enseignant} intervienne dans un \textbf{département} donné. Elle a pour origine, la plupart du temps, un \textbf{souhait} formulé par un \textbf{enseignant}. Cette intervention peut être de différentes natures:
+\begin{itemize}
+\item il peut s'agir d'une intervention dans le département, c'est-à-dire qu'un \textbf{enseignement} soit affecté à un \textbf{enseignant} pour un volume horaire donné;
+\item il peut s'agir d'une intervention extérieure (dans une entreprise, une autre école...), d'un volume horaire donné ;
+\item il peut s'agir d'un cas spécial (congés, maladies, encadrement d'un stage ou d'un TER...), toujours d'un volume horaire donné.
+\end{itemize} & Classe & Intervention, InterventionDépartement, InterventionExtérieure, CasSpécial \\
+
+Jouer & Terme employé dans la description du domaine. Action, faite par un \textbf{enseignant}, de formuler un certain nombre de \textbf{souhaits} qu'il pourra décider, par la suite, de publier (de soumettre au \textbf{chef de département} et aux autres \textbf{enseignants}) ou pas. & &\\ 
+
+Module & Entité administrative (d'un \textbf{département}) regroupant un ensemble d'\textbf{enseignements} concernant un sujet donné. Chaque module est identifié par un nom (intitulé du module) et caractérisé par une année d'étude, un nom de parcours et un semestre. & Classe & Module \\
+
+Publication & Action de rendre public (i.e. accessible à tous les utilisateurs du système, qu'ils soient \textbf{enseignant} ou \textbf{chef de département}) un ou des \textbf{souhaits} formulés par un ou des \textbf{enseignants}. & Attribut & "publié" dans la classe Souhait \\
+
+Souhait & Fait qu'un \textbf{enseignant} effectue une demande d'un certain type concernant les interventions qu'il souhaite réaliser pour remplir son \textbf{contrat de service}. Ce souhait peut être :
+\begin{itemize}
+\item un \textbf{v\oe u};
+\item une demande d'intervention extérieure (dans une autre école, une entreprise...) d'un volume horaire donné;
+\item une demande spéciale (congé, arrêt maladie, encadrement d'un stage ou d'un TER...) d'un volume horaire donné.
+\end{itemize}
+
+Un souhait peut être à l'origine d'une \textbf{intervention} affectée (déterminée) par le \textbf{chef de département} (ou plusieurs dans le cas d'un \textbf{v\oe u}).
+& Classe & Souhait, Voeu, DemandeInterventionExtérieure, DemandeSpéciale \\
+
+V\oe u & Choix fait par un \textbf{enseignant}, pour un \textbf{département} donné, indiquant quels \textbf{enseignements} il désire dispenser ainsi que ses préférences concernant ces \textbf{enseignements}. Les préférences pour un \textbf{enseignement} sont déterminées de la manière suivante:
+\begin{itemize}
+\item 1 : si cet \textbf{enseignement} est réellement souhaité par l'\textbf{enseignant};
+\item 0 : si cet \textbf{enseignement} est toléré par l'\textbf{enseignant}.
+\end{itemize} 
+Un v\oe u pourra, après validation par le \textbf{chef de département}, faire l'objet d'une ou plusieurs \textbf{interventions}. & Classe & V\oe u \\
+\bottomrule
+\end{longtable}

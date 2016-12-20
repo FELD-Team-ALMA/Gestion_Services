@@ -1,0 +1,488 @@
+%!TEX root = ./sujet-projet.tex
+
+\chapter{Spécification des exigences logicielles}\label{chapter:exigences}
+% Template proposé par "The Unified Process for EDUcation (UPEDU)"
+% http://www.yoopeedoo.org/upedu/
+
+%Selon le wikipedia \url{http://fr.wikipedia.org/wiki/Exigence_(ingénierie)}
+%De bonnes exigences doivent être :
+% * Nécessaires – Elles doivent porter sur des éléments nécessaires, c'est-à-dire des éléments importants du système que d'autres composants du système ne pourraient pas compenser.
+% * Non ambiguës – Elles doivent être susceptibles de n'avoir qu'une seule interprétation.
+% * Concises – Elles doivent être énoncées dans un langage qui soit précis, bref et agréable à lire, et qui de plus communique l'essence de ce qui est exigé.
+% * Cohérentes – Elles ne doivent pas contredire d'autres exigences établies, ni être contredites par d'autres exigences. De plus, elle doit, d'un énoncé d'exigence au suivant, utiliser des termes et un langage qui signifie la même chose.
+% * Complètes – Elles doivent être énoncées entièrement en un endroit et d'une façon qui ne force pas le lecteur à regarder un texte supplémentaire pour savoir ce que l'exigence signifie.
+% * Accessibles – Elles doivent être réalistes quant à aux moyens mis en œuvre en termes d'argent disponible, avec les ressources disponibles, dans le temps disponible.
+% * Vérifiables – Elles doivent permettre de déterminer si elles ont été atteintes ou non selon l'une de quatre méthodes possibles : inspection, analyse, démonstration, ou test.
+
+\section{Introduction}
+
+Ce document énumère les exigences du projet «\projet{}». Il suit la norme IEEE 830-1998.
+
+
+\subsection{Objectif}
+%Préciser les objectifs de ce chapitre. La SEL doit décrire le comportement externe de l’application ou du sous-système identifié. Elle décrit aussi les exigences non-fonctionnelles et les autres facteurs nécessaires à une description complète et compréhensible des exigences pour le logiciel.
+Ce document a pour objectif de décrire les exigences fonctionnelles et non-fonctionnelles du projet «\projet».
+La description du comportement utilisateur attendu du système fera référence à l'analyse du domaine, présentée dans le Chapitre\ref{chapter:analyse}
+
+\subsection{Portée du document}
+Ce document s’applique seulement au développement de composants «métier» du système. Il ne concerne pas l’interface utilisateur.
+
+\subsection{Définitions, acronymes et abréviations}
+
+
+\begin{tabular}{ll}
+\toprule
+Acronyme & Description \\
+\midrule
+CM 			& Cours magistral\\
+IHM 		& Interface Homme-Machine\\
+REST 		& Representational State Transfer\\
+TD			& Travaux dirigés\\
+TP			& Travaux pratiques\\
+\bottomrule
+\end{tabular}
+
+\subsection{Références}
+
+\subsection{Vue d’ensemble} 
+
+\subsection{Organisation du chapitre}
+%Cette section décrit le contenu du reste du chapitre  et explique comment le document est organisé.
+
+\section{Description générale}
+%Décrire les principaux facteurs qui affectent le produit et ses exigences. On n’y énonce pas des exigences spécifiques, mais on y fournit une toile de fond aux exigences qui sont définies en détail à la section 3 afin d’en faciliter la compréhension. Cela comprend les items suivants:
+
+Deux rôles se confrontent lors de la gestion des services: le département et les enseignants.
+Le département doit:
+\begin{itemize}
+	\item Publier la liste des enseignants gérés par le département et donc y réalisant leur service.
+A chaque enseignant est associée le nombre d’heures qu’il doit réaliser.
+C’est en fait une fourchette MIN..MAX. Ces nombres varient d’un enseignant à l’autre et sont exprimés dans une unité eqTD (heures équivalentes Travaux Dirigés).
+Pour information, 1h de cours représente 1h30 de TD, alors que 1h30 de TP représente 1h de TD.
+	\item Publier la liste des enseignements qui doivent être couverts, avec les informations suivantes (cf. exemple Table~\ref{table:enseignements}):
+	\begin{itemize}
+		\item Nom du module.
+		\item Publics concernés (année d’étude, parcours).
+		\item Volume horaire par étudiants (Cours, TD, TP).
+		\item Nombre de groupes (Cours, TD, TP).
+		\item Semestre dans l’année universitaire.
+	\end{itemize}
+	\item Affecter les enseignants et visualiser leur nombres d’heures réalisées dans leur service (en éqTD) 
+\end{itemize}
+
+\begin{table}
+	\begin{center}
+	\begin{tabular}{lcrrrrrr}
+	\toprule
+	\textbf{Cours} & \textbf{Semestre} & \multicolumn{2}{c}\textbf{{CM}} & \multicolumn{2}{c}{\textbf{TD}} & \multicolumn{2}{c}{\textbf{TP}} \\
+				& & \textbf{HE} & \textbf{nb} & \textbf{HE} & \textbf{nb} & \textbf{HE} & \textbf{nb} \\
+	\midrule
+	S4I0100 & 1 & 18 & 1 & 15 & 3 & 18 & 5 \\
+	S3I0200 & 1 & 18 & 1 & 15 & 3 & 18 & 6 \\
+	S1I0100 & 2 & 16 & 1 & 20 & 1 & -  & - \\
+	S5I0400 & 2 & 5  & 1 & 20 & 1 & 20 & 2 \\
+	\bottomrule
+	\end{tabular}
+	\end{center}
+	\caption{Exemple de cours disponibles dans le département}
+	\label{table:enseignements}
+\end{table}
+
+Les enseignants doivent:
+\begin{itemize}
+	\item Prendre connaissance des enseignements disponibles sur le département.
+	\item Énoncer des préférences quant aux cours qu’ils souhaitent couvrir. Pour ce faire, un enseignant constitue la liste des enseignements qu’il souhaite couvrir en les classant du plus souhaité (en position 1) au moins souhaité (dernière position). Cf. Table~\ref{table:demande} pour un exemple. 
+Pour être acceptable, une demande doit correspondre à un volume horaire au moins égale à 1,5 fois le service que doit effectuer l’enseignant.
+	\item Prendre connaissance des préférences énoncées par les autres enseignants pour essayer de résoudre les problèmes éventuels autant que faire se peut.
+	\item Prendre connaissance des cours qui leur ont été affectés, les préparer, les assurer.
+\end{itemize}
+
+\begin{table}
+	\begin{center}
+	\begin{tabular}{cccccc}
+		\toprule
+		\textbf{Num} & \textbf{Nom Module} & \textbf{Catégorie} & \textbf{Volume Etudiant} & \textbf{Nb groupes demandés} & \textbf{éqTD} \\
+		\midrule
+		1 & S4I0200 & CM & 15 & 1 & 22,5 \\
+		2 & S4I0100 & TD & 18 & 1 & 18 \\
+		3 & S4I0100 & TP & 15 & 2 & 20 \\
+		\bottomrule
+	\end{tabular}
+	\end{center}
+	\caption{Exemple de demande de service}
+	\label{table:demande}
+\end{table}
+
+
+
+% \subsection{Perspectives du produit}
+% %<Describe the context and origin of the product being specified in this SRS. For example, state whether this product is a follow-on member of a product family, a replacement for certain existing systems, or a new, self-contained product. If the SRS defines a component of a larger system, relate the requirements of the larger system to the functionality of this software and identify interfaces between the two. A simple diagram that shows the major components of the overall system, subsystem interconnections, and external interfaces can be helpful.>
+%
+% \subsubsection{Interfaces système}
+% Le système ne communiquera pas avec d’autres systèmes.
+%
+% \subsubsection{Interfaces utilisateurs}
+%
+%
+% \subsubsection{Interfaces matérielles}
+% Aucune interface matérielle n’est exigée.
+%
+% \subsubsection{Interfaces logicielles}
+%
+%
+% \subsubsection{Interfaces de communication}
+% Le système ne communiquera avec aucun autre système ou serveur.
+%
+% \subsubsection{Contraintes de mémoire}
+% Le système doit pouvoir s’exécuter correctement sur un ordinateur personnel disposant d'au moins 4Go de mémoire vive.
+
+
+	\subsection{Fonctions du produit}
+%Décrire brièvement les fonctions principales du logiciel. Par exemple : 
+%Les fonctions d’un système de gestion peuvent être la maintenance d’un compte client, accéder à l’état de compte du client et produire la facturation.
+Le système doit permettre aux enseignants de émettre des souhaits de service et au directeur du département de valider ces souhaits.
+Il n’est pas question de réaliser un outil permettant d’optimiser automatiquement les affectations d’enseignants. 
+C’est un outil d’aide à la gestion qui doit être proposé aux départements et aux enseignants.
+
+Fonctionnalités souhaitées pour le département:
+\begin{itemize}
+	\item Mémorisation des services des années passées.
+	\item Constitution de la liste des enseignements à couvrir.
+	\item Récupération des choix des enseignants.
+	\item Affichage des services suivant différent modes (globalement, par modules, par enseignants, par formation, seulement les souhaits, seulement les affectations effectives, les deux, etc.).
+	\item Affectation des enseignants sur les enseignements.
+	\item Alertes concernant:
+\begin{itemize}
+	\item les enseignements non couverts
+	\item les enseignements trop demandés
+	\item les conflits entre les demandes
+	\item les enseignants n’entrant pas dans le cadre de leur contrat de service statutaire.
+\end{itemize}
+	\item La possibilité d’effectuer des affectations et des modifications sans les rendre publiques.
+	\item La possibilité de valider un état courant, c'est à dire de le rendre public.
+\end{itemize}
+
+Fonctionnalités souhaitées pour les enseignants:
+
+\begin{itemize}
+	\item Mémorisation du service de l’enseignant des années passées, éventuellement ses choix.
+	\item Récupération des choix des autres enseignants (globalement ou à la demande).
+	\item Afficher les services suivant différent modes (globalement, par modules, par enseignants, par formation, seulement les souhaits, seulement les affectations effectives, les deux, etc.).
+	\item Repérage facile des enseignements non encore demandés.
+	\item Alertes concernant:
+	\begin{itemize}
+		\item les conflits entre les demandes
+		\item les enseignants dépassant le minimum ou le maximum correspondant à leur contrat de service par rapport aux affectations réalisées. 
+	Plus particulièrement pour l’enseignant connecté.
+	\end{itemize}
+	\item Alarmes lorsque l’affectation effective des services ne respecte pas les choix de l’enseignant.
+	\item Publication du choix.
+\end{itemize}
+
+
+Attention, un enseignant doit pouvoir changer sa liste de choix à n’importe quel moment.
+
+	
+	\subsection{Caractéristiques et classes d'utilisateurs}
+%Décrire les caractéristiques générales des utilisateurs qui ont un impact sur les exigences du document. Cela inclut le niveau de scolarité, l’expérience et l’expertise technique.
+%<Identify the various user classes that you anticipate will use this product. User classes may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience. Describe the pertinent characteristics of each user class. Certain requirements may pertain only to certain user classes. Distinguish the favored user classes from those who are less important to satisfy.>
+
+Les utilisateurs du système seront des enseignants avec une certaine maîtrise de l'informatique.
+
+	\subsection{Environnement opérationnel}
+%<Describe the environment in which the software will operate, including the hardware platform, operating system and versions, and any other software components or applications with which it must peacefully coexist.>
+
+Le système sera déployé sur les machines des enseignants du département d'informatique: des ordinateurs de bureau et portables, sous Windows, Linux, OSX et FreeBSD.
+Il sera utilisé lorsque les ordinateurs sont connectés sur un réseau ou déconnectés en mode nomade. 
+
+
+%\subsection{Contraintes de plateforme}
+%  Les contraintes de plateforme sont des contraintes liées à l'aspect matériel (coût d'achat, licence\dots).
+%  Dans notre cas, nous nous sommes abstraits de la plupart de ces contraintes en décidant d'utiliser une plateforme gratuite et polyvalente : J2EE.\\
+%
+%  Java 2 Platform, Enterprise Edition est un framework pour le langage de programmation Java de Sun, plus particulièrement destiné aux applications d'entreprise. Dans ce but, il contient un ensemble d'extension au framework standard (JDK) afin de faciliter la création d'applications réparties. Notre application devant partager des bases de données, cette facilité nous avantage grandement.
+%
+%  Nous utilisons donc le langage Java qui est :
+%  \begin{itemize}
+%  \item Gratuit ;
+%  \item multi-plateformes.
+%  \end{itemize}
+%
+%  Les contraintes de plateforme sont ainsi limitées (cet environnement JAVA est librement téléchargable sur Internet).\\
+%
+%  Nous utilisons aussi le système de mapping Hibernate associé au SGBD ``Hypersonic SQL'' (libre d'utilisation et gratuit) pour la gestion de la persitence. Disponible sous forme de jar JAVA, il possède donc les même caractéristiques que celles mentionnées auparavant.\\
+%
+% De plus, la communication entre les différentes applications (système distribué) est assurée par le système CORBA (Common object request broker architecture), qui est destiné à permettre l'intercommunication entre tout système (multi-plateformes). Spécifié par l'OMG (Object management group) ce système est également libre d'utilisation et ne nécessite pas de licence.\\
+%
+%  Tous ces éléments sont tous librement disponibles sur Internet. Nous limitons ainsi les coûts associés aux contraintes de plateforme.
+
+
+	\subsection{Contraintes de conception et de mise en œuvre}
+%<Describe any items or issues that will limit the options available to the developers. These might include: corporate or regulatory policies; hardware limitations (timing requirements, memory requirements); interfaces to other applications; specific technologies, tools, and databases to be used; parallel operations; language requirements; communications protocols; security considerations; design conventions or programming standards (for example, if the customer’s organization will be responsible for maintaining the delivered software).>
+
+	\subsubsection{Langage de programmation}
+\begin{requirement}[Java]
+	L’application doit être mise en œuvre dans le langages de programmation Java (version $\ge$ 1.7).
+\end{requirement}
+
+
+\subsubsection{Langage de conception}
+\begin{requirement}[UML]
+	Les diagrammes utilisés comme support à la conception doivent respecter la norme UML (version > 2.4) et le langage d’expression de contraintes OCL (version > 2.4).
+\end{requirement}
+
+\subsubsection{Conception}
+La conception sera utilisée pour spécifier la mise en œuvre de la solution.
+
+\begin{requirement}[{Conception claire}]
+	La conception doit être claire et précise.
+	Les diagrammes de conception doivent être systématiquement accompagnées d'une description textuelle.
+\end{requirement}
+
+\begin{requirement}[{Conception pour la testabilité}]
+	La conception doit prioriser la testabilité: le code doit être facilement testable. 
+\end{requirement}
+
+\begin{requirement}[{Cohérence entre diagrammes}]
+Les diagrammes de conception doivent être cohérents entre eux.
+\end{requirement}
+
+%La conception comprendra un diagramme de classes, des diagrammes d'objet et pour les opérations complexes, des diagrammes de séquence et d'activités. 
+
+\subsubsection{Mise en œuvre}
+\begin{requirement}[{Cohérence entre la conception et le code}]
+La mise en œuvre doit être cohérente avec la conception.	
+\end{requirement}
+
+\begin{requirement}[{Lisibilité du code}]
+Le code source doit être simple à comprendre et à évaluer: il doit être possible de les compiler et d'exécuter les tests unitaires à partir de la ligne de commandes.	
+\end{requirement}
+
+
+
+\subsubsection{Outils de construction}
+\begin{requirement}[{Construction automatique}]
+	L’utilisation d’outil de construction automatique est obligatoire: Maven ou Gradle.
+\end{requirement}
+
+\subsubsection{Outils de développement}
+\begin{requirement}[{IDE}]
+	L’utilisation d’un environnement de développement (IDE) compatible avec Maven ou Gradle, comme IntelliJ IDEA ou NetBeans, est fortement recommandée. 
+\end{requirement}
+
+\subsubsection{Bibliothèques et composants logiciels}
+Les tests unitaires doivent utiliser JUnit (version > 4.10) ou son équivalent pour les autres langages de programmation.
+
+
+	\subsection{Documentation utilisateur}
+%<List the user documentation components (such as user manuals, on-line help, and tutorials) that will be delivered along with the software. Identify any known user documentation delivery formats or standards.>
+
+	\subsection{Hypothèses et dépendances}
+%Décrire tout élément de faisabilité technique, disponibilité de sous-système ou de composant ou toute autre hypothèse liée au projet de laquelle dépend la viabilité du logiciel.
+	
+%<List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).>
+
+\subsection{Exigences reportées}
+%Énumérer les exigences qui peuvent être réalisées dans des versions futures du système.
+% Les versions futures du système comprendront l’utilisation d’un mécanisme de persistance de données ainsi que différentes interfaces utilisateur: web, IHM classique, etc.
+% Elles permettront aussi l’accès distant à travers une interface REST.
+
+\begin{requirement}[{Import/export CSV}]
+	Le système permettra l'importation et l'exportation de données au format CSV.
+\end{requirement}
+
+\begin{requirement}[{Interface graphique}]
+	Le système sera accessible grâce à une interface graphique simple et ergonomique. 
+\end{requirement}
+
+\begin{requirement}[{Interface Web}]
+	Le système sera accessible à travers une interface web.
+\end{requirement}
+
+
+
+\section{Exigences fonctionnelles}
+%Décrire les exigences fonctionnelles du système qui peuvent être exprimées et langage naturel. Pour plusieurs applications, c’est la partie principale de la SEL et son organisation doit, par conséquent, être bien réfléchie. Elle est habituellement hiérarchisée par caractéristiques, mais elle peut l’être, par utilisateur ou par sous-système. Les exigences fonctionnelles peuvent inclure les caractéristiques, les capacités et la sécurité.
+
+%Lorsque des outils de développement, tels des référentiels d’exigences ou des outils de modélisation sont utilisés, on peut référer à ces données en indiquant l’endroit et le nom de cet outil]
+
+
+\subsection{\nameref{usecase:affecter}}
+\begin{requirement}[Affectation]
+	Confirmation, par le chef du département, d'un souhait d'un enseignant.
+\end{requirement}
+
+\subsection{\nameref{usecase:publier}}
+\begin{requirement}[Publication des interventions]
+	Le système doit permettre au chef du département de publier des interventions, des souhaits et des conflits.
+\end{requirement}
+
+\subsection{\nameref{usecase:analyse}}
+\begin{requirement}[Analyse]
+	Le système doit aider le chef du département à analyser les souhaits pour détecter des enseignants en sous-services et des modules non pourvus. 
+\end{requirement}
+
+\subsection{\nameref{usecase:souhait}}
+\begin{requirement}[Expression de souhaits]
+	Le système doit permettre aux enseignants d'émettre ses souhaits d'enseignement.
+\end{requirement}
+
+\subsection{\nameref{usecase:publier}}
+\begin{requirement}[Publication de souhaits]
+	Le système doit permettre aux enseignants de publier leurs souhaits.
+\end{requirement}
+
+\subsection{\nameref{usecase:consulter}}
+\begin{requirement}[Consultation des enseignements]
+	Le système doit permettre aux enseignants de consulter les enseignements.
+\end{requirement}
+
+\section{Exigences non-fonctionnelles}\label{section:non-fonctionnelles}
+	\subsection{Interface utilisateur}
+%<Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Define the software components for which a user interface is needed. Details of the user interface design should be documented in a separate user interface specification.>
+Le système se résume à des composants sans interface utilisateur. 
+Le bon fonctionnement des composants sera validé par des tests unitaires.
+
+	\subsection{Interface matérielle}
+%<Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used.>
+Non applicable.
+
+	\subsection{Interface logicielle}
+%<Describe the connections between this product and other specific software components (name and version), including databases, operating systems, tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Refer to documents that describe detailed application programming interface protocols. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint.>
+
+\begin{requirement}[Clarté des interfaces des composants]
+	Le système doit être divisé en composants disposant d’interfaces logicielles claires et simples.
+\end{requirement}
+
+	\subsection{Interfaces ou protocoles de communication}
+	
+%<Describe the requirements associated with any communications functions required by this product, including e-mail, web browser, network server communications protocols, electronic forms, and so on. Define any pertinent message formatting. Identify any communication standards that will be used, such as FTP or HTTP. Specify any communication security or encryption issues, data transfer rates, and synchronization mechanisms.>
+\begin{requirement}[Protocoles ouverts]
+	La communication entre les différents composants du système doit utiliser des protocoles ouverts et disponibles sur différentes plateformes.
+\end{requirement}
+
+	\subsection{Contraintes de mémoire}
+Non applicable.
+
+\subsection{Hypothèses et dépendances}
+
+%\section{Autres exigences non-fonctionnelles}
+
+\subsection{Correction}
+ La gestion des conflits étant problématique, il convient d'avoir une application fortement exacte, notamment au niveau de la communication entre les différents utilisateurs (d'autant plus qu'il s'agit d'une application distribuée). 
+%Mais cette distribution implique que l'exactitude ne pourra pas, dans certains cas, être parfaite (un serveur, un réseau peuvent tomber\dots).
+
+\begin{requirement}[Correction]
+	La correction de toutes les opérations de tous les classes du système doit être vérifiée par des tests unitaires. 
+	Plus particulièrement, les interfaces fournies par les composant doivent être testées de manière exhaustive.
+\end{requirement}
+
+
+ \subsection{Interopérabilité}
+Il est aussi difficile de supposer que toutes les applications fonctionnent sur les mêmes systèmes ou sont programmées dans les mêmes langages.
+Comme l'application doit interroger des bases distantes, elles-mêmes pouvant être gérées par un autre logiciel similaire, nous devons assurer une interopérabilité totale. 
+ 
+\begin{requirement}[Interopérabilité]
+	Le système doit être interopérable avec d'autres systèmes.
+\end{requirement}
+ 
+
+\subsection{Portabilité}
+\begin{requirement}[Portabilité]
+	L'application doit pouvoir s'appliquer à tous les systèmes d'exploitation, donc, le logiciel doit être complètement portable.
+\end{requirement}
+
+
+
+\subsection{Exigences de performance}
+L'application ne nécessite pas de performances particulières (du fait de l'utilisation par un homme) mais nous devons tout de même assurer des temps de réponse raisonnables aux demandes de consultation des bases distantes.
+	
+	%
+	% Décrire les caractéristiques de la performance du système. Référer les cas d’utilisation lorsque applicable.
+	%
+	% \begin{itemize}
+	% \item	Temps de réponse par transaction (moyen, maximum)
+	% \item	Débit (transactions par seconde)
+	% \item	Capacité (nombre de client ou de transaction que le système doit supporter)
+	% \item	Mode d’opération lors de dégradation (Mode d’opération acceptable lorsque la performance du système se détériore)
+	% \item	Utilisation de ressources (mémoire, disque, communications, etc.
+	% \end{itemize}
+	%
+	% \subsubsection{Nom de l’exigence de performance 1}
+	% Description de l’exigence
+
+\subsection{Maintenabilité}
+	
+%Décrire les exigences qui permettent d’assurer le support et la maintenabilité du système comme, par exemple, les normes de codage, le conventions d’identification, les bibliothèques de classe, l’accès à la maintenance, les services de maintenances, etc. 
+
+\subsubsection{Conventions de code Java}
+
+\begin{requirement}[Conventions de codage]
+	Le code source Java doit respecter le style proposé par Google:\\
+\url{https://google.github.io/styleguide/javaguide.html}
+\end{requirement}
+
+
+	% \subsubsection{Nom de l’exigence de maintenabilité 1}
+	% Description de l’exigence
+
+	\subsection{Exigences de sûreté}
+%<Specify those requirements that are concerned with possible loss, damage, or harm that could result from the use of the product. Define any safeguards or actions that must be taken, as well as actions that must be prevented. Refer to any external policies or regulations that state safety issues that affect the product’s design or use. Define any safety certifications that must be satisfied.>
+
+	\subsection{Exigences de sécurité}
+	% Identifier les données qui doivent être protégées et le type de menace auquel elles sont exposées comme, par exemple, menaces physiques, types de personnes qui peuvent être la source de menace, les exigences d’accès au système, l’encryptage des données, la vérifiabilité qui est la détection des anomalies et des opérations frauduleuses.
+	%
+	% Énumérer la liste des objets qui doivent faire l’objet d’une protection physique ou logique
+
+La sécurité influe beaucoup sur la performance d'exécution. Cette dernière n'étant pas prioritaire, nous pouvons demander une forte sécurité (bien que les données manipulées ne soient pas particulièrement sensibles).
+
+\begin{requirement}[Identification]
+	Le logiciel doit permettre d'identifier et authentifier les différentes applications des différentes personnes.
+\end{requirement}
+
+\subsection{Attributs de qualité logicielle}
+	
+%<Specify any additional quality characteristics for the product that will be important to either the customers or the developers. Some to consider are: adaptability, availability, correctness, flexibility, interoperability, maintainability, portability, reliability, reusability, robustness, testability, and usability. Write these to be specific, quantitative, and verifiable when possible. At the least, clarify the relative preferences for various attributes, such as ease of use over ease of learning.>
+
+\section{Autres exigences}
+%<Define any other requirements not covered elsewhere in the SRS. This might include database requirements, internationalization requirements, legal requirements, reuse objectives for the project, and so on. Add any new sections that are pertinent to the project.>
+
+\subsection{Persistance}
+
+\begin{requirement}[Persistance]
+	Les données saisies par le département doivent être persistances. En particulier, les demandes non-publiées des enseignants.
+\end{requirement}
+
+% L’application d’utilisateur doit fonctionner même lorsque ce dernier est déconnecté en particulier pour communiquer ses choix aux différentes personnes les sollicitant.
+
+
+\subsection{Système réparti}
+
+\begin{requirement}[Informatique nomade]
+	Un utilisateur doit pouvoir consulter et modifier l’état de sa déclaration de service avec son application où qu’il se trouve, même s'il n'est pas connecté à un réseau.
+\end{requirement}
+
+\begin{requirement}[Localisation des applications]
+	Il n’est pas raisonnable de supposer que tous les composants soient hébergées sur la même machine.
+	Il est donc nécessaire de les localiser.
+\end{requirement}
+
+\subsection{Outils de développement}
+
+\begin{requirement}[Contrôle de version]
+	Le développement du code source du logiciel doit utiliser un système de gestion de versions comme Git ou Subversion.
+\end{requirement}
+
+\begin{requirement}[UML Designer]
+	Les diagrammes de conception doivent être réalisés sur Eclipse, avec UML Designer de Obeo.
+\end{requirement}
+
+\begin{requirement}[Spring]
+	Le développement des composants doit se faire grâce au framework Spring.
+\end{requirement}
+
+\renewcommand{\listtheoremname}{Liste des exigences}
+
+\listoftheorems[ignoreall,show={requirement}]
+
+%\section{Conclusion}

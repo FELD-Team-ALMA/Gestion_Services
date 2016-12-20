@@ -1,0 +1,149 @@
+%!TEX TS-program = xelatex
+
+% Created by Gerson Sunyé on 2016-10-18.
+% Copyright (c) 2016 .
+\documentclass[a4]{report}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{french}
+%\usepackage{hyperref}
+\usepackage{alma}
+\usepackage{longtable}
+\usepackage{graphicx}
+\graphicspath{ {fig/} }
+\usepackage{grffile}
+\usepackage{lastpage}
+\hypersetup
+{
+  pdftitle   = {Title},
+  pdfsubject = {Subject},
+  pdfauthor  = {Gerson Sunyé}
+}
+\newcommand{\projet}{Gestion des services}
+
+\pagestyle{fancy}
+\fancyhf{}
+ \lhead{Master Informatique Alma/Atal}
+ \chead{\includegraphics*[width=7mm]{fig/logo_mini.jpg}}
+ \rhead{Université de Nantes}
+ \cfoot{\scriptsize{G. Sunyé}}
+ \lfoot{\scriptsize\textsl{\today}}
+ \rfoot{\scriptsize\textsl{Page \thepage / \pageref{LastPage}}}
+ \renewcommand{\footrulewidth} {0.4pt}
+
+
+\fancypagestyle{empty}{
+ \fancyhf{}
+ \fancyhead[R]{Team \#3243 Page \thepage  { }of \pageref{LastPage}}
+ \lhead{Master Informatique Alma/Atal}
+ \chead{\includegraphics*[width=7mm]{fig/logo_mini.jpg}}
+ \rhead{Université de Nantes}
+ \cfoot{\scriptsize{G. Sunyé}}
+ \lfoot{\scriptsize\textsl{\today}}
+ \rfoot{\scriptsize\textsl{Page \thepage / \pageref{LastPage}}}}
+
+
+\title{Projet «\projet»}
+\author{Gerson Sunyé\\
+\texttt{gerson.sunye@univ-nantes.fr}}
+
+\begin{document}
+
+\maketitle
+\stepcounter{page}
+
+\begin{abstract}
+L’objectif de ce projet  est de fournir un outil réparti capable de gérer les services de différents enseignants.
+\end{abstract}
+
+
+\tableofcontents
+
+
+\chapter{Introduction}
+\section{Objectifs}
+L’objectif de ce projet est de concevoir et de mettre en oeuvre un logiciel réparti permettant la gestion des services de différents enseignants.
+Cette application pourra être utilisée de manière indépendante dans les différents départements de l’université, par les enseignants et les chefs de département, pour réaliser le choix des services de chacun des enseignants.
+
+Pour répondre à ce besoin, vous disposez d'un document d'analyse du domaine, présentant de manière relativement complète le domaine “Gestion des services” au sein du département Informatique, d'un document de spécification des exigences logicielles et d'un dictionnaire de données, qui constitue une liste non-exhaustive de l’ensemble des termes relatifs au domaine étudié.
+Des informations complémentaires pourront être fournies dans le forum de discussions dédié au projet.
+
+
+
+\section{Prérequis}
+
+Pour réaliser ce projet, l'étudiant doit maîtriser les langages et outils suivants:
+\begin{enumerate}
+	\item UML, le langage de modélisation unifié.
+	\item OCL, le langage d'expression de contraintes de UML.
+	\item Le langage Java, ou éventuellement  un langage JVM, comme Kotlin ou Groovy.
+	\item Un outil de test unitaire de type xUnit: JUnit ou TestNG.
+	\item Un outil pour la gestion et l'automatisation de production des projets logiciels Java, comme Apache Maven ou Gradle.
+\end{enumerate}
+
+
+\section{Travail à rendre}
+Le projet se compose de deux livrables:
+\begin{enumerate}
+	\item Un document PDF contenant la description de la conception.
+	\item Une archive contenant le code source.
+\end{enumerate}
+
+La conception de l'application sera composée de trois parties:
+\begin{enumerate}
+	\item L'architecture.
+	\item La conception préliminaire (spécification des composants);
+	\item La conception détaillée.
+\end{enumerate} 
+
+Les chapitres qui décrivent la conception doivent être organisés en fonction de la solution proposée (de ses fonctionnalités).
+Suivez le modèle proposé dans ce document.
+
+
+\section{Critères d'évaluation}
+
+L'évaluation sera faite exclusivement sur le respect des exigences logicielles décrites dans le Chapitre~\ref{chapter:exigences}.
+Lisez attentivement toutes les exigences avant de commencer votre projet.
+
+\section{Organisation}
+
+Règles à respecter pendant la réalisation du projet:
+
+\begin{enumerate}
+	\item La réalisation du projet sera faite par des groupes d'au moins 2 et au plus 4 étudiants.
+	Les projets qui ne respectent pas cette règles ne seront pas évalués.
+
+	\item Chaque groupe déposera ses livrables sur le serveur Madoc: \url{http://madoc.univ-nantes.fr/}, \textbf{exclusivement}.
+	Les projets envoyés par un autre moyen ne seront pas évalués.
+	En cas de problèmes avec le dépôt d'un fichier, envoyez un message au responsable du module.
+	
+	\item Pour éviter tout problème de compatibilité, les rapports seront rendus en format PDF, \textbf{exclusivement}.
+	
+	\item Le code source et les tests seront rendus en une archive \texttt{tar.gz}, qui contiendra aussi un fichier \texttt{pom.xml} (Maven) ou \texttt{build.gradle} (Gradle) permettant la compilation du système et le lancement de la validation. Vous pouvez préciser s'il s'agit d'un projet Eclipse, IDEA ou un autre.
+	
+	\item Les fichiers Java compilés (*.class) ainsi que les éventuelles bibliothèques utilisées ne doivent pas être rendus avec le code source.
+\end{enumerate}
+
+\section{Préambule}
+
+Les sources de ce document sont disponibles sur l'adresse suivante:
+
+\url{https://github.com/sunye/tp-gestion-services}
+
+Si vous avez des commentaires sur le document ou si vous souhaitez me communiquer des erreurs, merci de le faire directement sur Github.
+Vous pouvez aussi modifier directement les sources du document et m'envoyer ensuite un \emph{pull request}.
+
+
+\input{exigences}
+\input{analyse}
+\input{dictionnaire}
+\input{architecture}
+\input{composants}
+\input{detaillee}
+
+
+
+\bibliographystyle{plain}
+\bibliography{alma} 
+
+\end{document}

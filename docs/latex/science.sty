@@ -1,0 +1,112 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{science}[2014/03/31 v1.0 science macros]
+\RequirePackage[binary-units=true]{siunitx}
+\RequirePackage{listings}
+\RequirePackage{comment}
+
+%\newtheorem{property}{Property}
+%\newtheorem{example}{Example}
+
+% \newtheorem{hypothesis}{Hypothesis}
+% \newtheorem{protocol}{Proof protocol}
+%\newtheorem{definition}{Definition}
+% \newtheorem{challenge}{Challenge}
+% \newtheorem{issue}{Issue}
+
+\lstnewenvironment{java}{\lstset{language=Java,
+		frame=tb,
+        tabsize=3,
+        morekeywords={implies, in, result},
+        basicstyle=\footnotesize,
+        keywordstyle=\bfseries,
+        ndkeywordstyle=\bfseries,
+        commentstyle=\itshape\magenta,
+		morecomment=[l]{--},
+        stringstyle=\ttfamily,
+		showspaces=false,
+        flexiblecolumns,
+        literate={->}{$\to$}{2} {--}{-$\,$-}{2} {<=}{$\le$}{2} {>=}{$\ge$}{2} {<>}{$<\,>$}{3},
+        sensitive, extendedchars, texcl}}{}
+		
+\lstnewenvironment{ocl}{\lstset{language=[decorative]OCL,
+	frame=tb,
+	tabsize=3,
+	morekeywords={implies,result,flatten,body,init,OrderedSet,Tuple,TupleType,def,attr,oclIsUndefined,oclIsInvalid,OclState,let,in},
+	basicstyle=\footnotesize,
+	keywordstyle=\bfseries,
+	ndkeywordstyle=\bfseries,
+	commentstyle=\itshape,
+	stringstyle=\ttfamily,
+	showspaces=false,
+	flexiblecolumns,
+	literate={->}{$\to$}{2} {--}{-$\,$-}{2} {<=}{$\le$}{2} {>=}{$\ge$}{2} {<>}{$<\,>$}{3},
+	sensitive, extendedchars, texcl}}{}
+
+
+
+
+\lstdefinelanguage{kscript}{
+morekeywords={addComponent,addChannel,addNode,bind,unbind,removeComponent,removeChannel,removeNode,moveComponent,
+	addChild,removeChild,moveChild,addGroup,removeGroup,addToGroup,merge,updateDictionary,addAsChild},
+sensitive=true,
+morecomment=[l]{//},
+morecomment=[s]{/*}{*/},
+literate={=>}{$\to$}{2} 
+}
+
+\lstset{language=kscript, 
+basicstyle=\scriptsize,
+frame=tb,
+numberbychapter=false}
+
+
+\newcommand{\etal}{et al.}
+\newcommand{\eg}[0]{e.\,g.}
+\newcommand{\ie}[0]{i.\,e.}
+\newcommand{\set}[1]{\ensuremath{\left \{ #1 \right \}}}
+\newcommand{\tuple}[1]{\ensuremath{\left \langle #1 \right \rangle }}
+\newcommand{\code}[1]{\textbf{#1}}
+\newcommand{\uml}[1]{\texttt{\textbf{#1}}}
+
+\newcommand{\thomas}[1]{\textcolor{green}{#1}}
+\newcommand{\adrien}[1]{\textcolor{blue}{#1}}
+\newcommand{\christina}[1]{\textcolor{red}{#1}}
+
+\newcommand{\add}[1]{\textcolor{blue}{#1\xspace}}
+\newcommand{\del}[1]{}%\textcolor{red}{#1\xspace}}
+
+\newcommand{\filename}[1]{{\small\texttt{#1}}}
+
+\newcommand{\testerL}{T}
+\newcommand{\instanceL}{I}
+\newcommand{\userL}{U}
+\newcommand{\bundleL}{B}
+\newcommand{\providerL}{P}
+\newcommand{\providerResourceL}{R}
+\newcommand{\providerFunctionsL}{F}
+\newcommand{\exampleL}{X}
+\newcommand{\scriptsL}{S}
+\newcommand{\scriptDeploymentL}{D}
+\newcommand{\scriptInstantiationL}{L}
+
+\newcommand{\tester}{$\testerL$\xspace}
+\newcommand{\instance}{$\instanceL$\xspace}
+\newcommand{\user}{$\userL$\xspace}
+\newcommand{\bundle}{$\bundleL$\xspace}
+\newcommand{\provider}{$\providerL$\xspace}
+\newcommand{\providerResource}{$\providerResourceL$\xspace}
+\newcommand{\providerFunctions}{$\providerFunctionsL$\xspace}
+%\newcommand{\example}{$\exampleL$\xspace}
+\newcommand{\scripts}{$\scriptsL$\xspace}
+\newcommand{\scriptDeployment}{$\scriptDeploymentL$\xspace}
+\newcommand{\scriptInstantiation}{$\scriptInstantiationL$\xspace}
+
+\newcommand{\scriptDeploymentI}[1]{$\scriptDeploymentL_{#1}$}
+\newcommand{\scriptInstantiationI}[1]{$\scriptInstantiationL_{#1}$}
+
+\newcommand{\subIntext}[2]{${#1}{_{#2}}$}
+\newcommand{\subInmath}[2]{{#1}{_{#2}}}
+\newcommand{\grammarIntext}[1]{$\mathcal{{#1}}$}
+
+
+\endinput

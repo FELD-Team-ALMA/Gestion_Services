@@ -1,0 +1,114 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Objectifs}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Prérequis}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Travail à rendre}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{Critères d'évaluation}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.5}{Organisation}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.6}{Préambule}{chapter.1}% 7
+\BOOKMARK [0][-]{chapter.2}{Spécification des exigences logicielles}{}% 8
+\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.1.1}{Objectif}{section.2.1}% 10
+\BOOKMARK [2][-]{subsection.2.1.2}{Portée du document}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.3}{Définitions, acronymes et abréviations}{section.2.1}% 12
+\BOOKMARK [2][-]{subsection.2.1.4}{Références}{section.2.1}% 13
+\BOOKMARK [2][-]{subsection.2.1.5}{Vue d’ensemble}{section.2.1}% 14
+\BOOKMARK [2][-]{subsection.2.1.6}{Organisation\040du\040chapitre}{section.2.1}% 15
+\BOOKMARK [1][-]{section.2.2}{Description générale}{chapter.2}% 16
+\BOOKMARK [2][-]{subsection.2.2.1}{Fonctions\040du\040produit}{section.2.2}% 17
+\BOOKMARK [2][-]{subsection.2.2.2}{Caractéristiques et classes d'utilisateurs}{section.2.2}% 18
+\BOOKMARK [2][-]{subsection.2.2.3}{Environnement opérationnel}{section.2.2}% 19
+\BOOKMARK [2][-]{subsection.2.2.4}{Contraintes de conception et de mise en œuvre}{section.2.2}% 20
+\BOOKMARK [2][-]{subsection.2.2.5}{Documentation\040utilisateur}{section.2.2}% 21
+\BOOKMARK [2][-]{subsection.2.2.6}{Hypothèses et dépendances}{section.2.2}% 22
+\BOOKMARK [2][-]{subsection.2.2.7}{Exigences reportées}{section.2.2}% 23
+\BOOKMARK [1][-]{section.2.3}{Exigences\040fonctionnelles}{chapter.2}% 24
+\BOOKMARK [2][-]{subsection.2.3.1}{UC—Affecter des enseignements}{section.2.3}% 25
+\BOOKMARK [2][-]{subsection.2.3.2}{UC—Publier des souhaits}{section.2.3}% 26
+\BOOKMARK [2][-]{subsection.2.3.3}{UC—Analyser des demandes}{section.2.3}% 27
+\BOOKMARK [2][-]{subsection.2.3.4}{UC—Émettre un souhait}{section.2.3}% 28
+\BOOKMARK [2][-]{subsection.2.3.5}{UC—Publier des souhaits}{section.2.3}% 29
+\BOOKMARK [2][-]{subsection.2.3.6}{UC—Consulter des enseignements}{section.2.3}% 30
+\BOOKMARK [1][-]{section.2.4}{Exigences\040non-fonctionnelles}{chapter.2}% 31
+\BOOKMARK [2][-]{subsection.2.4.1}{Interface\040utilisateur}{section.2.4}% 32
+\BOOKMARK [2][-]{subsection.2.4.2}{Interface matérielle}{section.2.4}% 33
+\BOOKMARK [2][-]{subsection.2.4.3}{Interface\040logicielle}{section.2.4}% 34
+\BOOKMARK [2][-]{subsection.2.4.4}{Interfaces\040ou\040protocoles\040de\040communication}{section.2.4}% 35
+\BOOKMARK [2][-]{subsection.2.4.5}{Contraintes de mémoire}{section.2.4}% 36
+\BOOKMARK [2][-]{subsection.2.4.6}{Hypothèses et dépendances}{section.2.4}% 37
+\BOOKMARK [2][-]{subsection.2.4.7}{Correction}{section.2.4}% 38
+\BOOKMARK [2][-]{subsection.2.4.8}{Interopérabilité}{section.2.4}% 39
+\BOOKMARK [2][-]{subsection.2.4.9}{Portabilité}{section.2.4}% 40
+\BOOKMARK [2][-]{subsection.2.4.10}{Exigences\040de\040performance}{section.2.4}% 41
+\BOOKMARK [2][-]{subsection.2.4.11}{Maintenabilité}{section.2.4}% 42
+\BOOKMARK [2][-]{subsection.2.4.12}{Exigences de sûreté}{section.2.4}% 43
+\BOOKMARK [2][-]{subsection.2.4.13}{Exigences de sécurité}{section.2.4}% 44
+\BOOKMARK [2][-]{subsection.2.4.14}{Attributs de qualité logicielle}{section.2.4}% 45
+\BOOKMARK [1][-]{section.2.5}{Autres\040exigences}{chapter.2}% 46
+\BOOKMARK [2][-]{subsection.2.5.1}{Persistance}{section.2.5}% 47
+\BOOKMARK [2][-]{subsection.2.5.2}{Système réparti}{section.2.5}% 48
+\BOOKMARK [2][-]{subsection.2.5.3}{Outils de développement}{section.2.5}% 49
+\BOOKMARK [0][-]{chapter.3}{Analyse\040du\040domaine}{}% 50
+\BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 51
+\BOOKMARK [1][-]{section.3.2}{Définition des cas d'utilisation}{chapter.3}% 52
+\BOOKMARK [2][-]{subsection.3.2.1}{UC—Affecter des enseignements}{section.3.2}% 53
+\BOOKMARK [2][-]{subsection.3.2.2}{UC—Valider des souhaits et publication des possibles conflits}{section.3.2}% 54
+\BOOKMARK [2][-]{subsection.3.2.3}{UC—Analyser des demandes}{section.3.2}% 55
+\BOOKMARK [2][-]{subsection.3.2.4}{UC—Émettre un souhait}{section.3.2}% 56
+\BOOKMARK [2][-]{subsection.3.2.5}{UC—Publier des souhaits}{section.3.2}% 57
+\BOOKMARK [2][-]{subsection.3.2.6}{UC—Consulter des enseignements}{section.3.2}% 58
+\BOOKMARK [1][-]{section.3.3}{Diagramme de classes métiers}{chapter.3}% 59
+\BOOKMARK [0][-]{chapter.4}{Dictionnaire de données}{}% 60
+\BOOKMARK [0][-]{chapter.5}{Architecture}{}% 61
+\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 62
+\BOOKMARK [1][-]{section.5.2}{Vue\040physique}{chapter.5}% 63
+\BOOKMARK [1][-]{section.5.3}{Vue du développement}{chapter.5}% 64
+\BOOKMARK [1][-]{section.5.4}{Vue\040logique}{chapter.5}% 65
+\BOOKMARK [1][-]{section.5.5}{Vue\040des\040processus}{chapter.5}% 66
+\BOOKMARK [1][-]{section.5.6}{Vue de la fiabilité}{chapter.5}% 67
+\BOOKMARK [1][-]{section.5.7}{Réponses aux exigences non-fonctionnelles}{chapter.5}% 68
+\BOOKMARK [2][-]{subsection.5.7.1}{Gestion\040de\040la\040concurrence}{section.5.7}% 69
+\BOOKMARK [2][-]{subsection.5.7.2}{Gestion\040de\040la\040persistance}{section.5.7}% 70
+\BOOKMARK [2][-]{subsection.5.7.3}{Gestion de la sécurité}{section.5.7}% 71
+\BOOKMARK [1][-]{section.5.8}{Architecture\040technique\040:\040traduction\040de\040UML\040en\040code\040source}{chapter.5}% 72
+\BOOKMARK [2][-]{subsection.5.8.1}{Règles de traduction des types de base}{section.5.8}% 73
+\BOOKMARK [2][-]{subsection.5.8.2}{Règles de traduction des classes}{section.5.8}% 74
+\BOOKMARK [2][-]{subsection.5.8.3}{Règles de traduction des associations, agrégations composites et agrégations partagées}{section.5.8}% 75
+\BOOKMARK [2][-]{subsection.5.8.4}{Règles de traduction des composants}{section.5.8}% 76
+\BOOKMARK [2][-]{subsection.5.8.5}{Autres règles}{section.5.8}% 77
+\BOOKMARK [1][-]{section.5.9}{Patrons architecturaux utilisés}{chapter.5}% 78
+\BOOKMARK [2][-]{subsection.5.9.1}{Patron\040A}{section.5.9}% 79
+\BOOKMARK [2][-]{subsection.5.9.2}{Patron\040B}{section.5.9}% 80
+\BOOKMARK [2][-]{subsection.5.9.3}{Patron\040C}{section.5.9}% 81
+\BOOKMARK [2][-]{subsection.5.9.4}{Patron\040D}{section.5.9}% 82
+\BOOKMARK [2][-]{subsection.5.9.5}{Patron\040D}{section.5.9}% 83
+\BOOKMARK [2][-]{subsection.5.9.6}{Patron\040E}{section.5.9}% 84
+\BOOKMARK [1][-]{section.5.10}{Choix\040techniques\040-\040Distribution\040des\040processus}{chapter.5}% 85
+\BOOKMARK [1][-]{section.5.11}{Conclusion}{chapter.5}% 86
+\BOOKMARK [0][-]{chapter.6}{Spécification des composants}{}% 87
+\BOOKMARK [1][-]{section.6.1}{Introduction}{chapter.6}% 88
+\BOOKMARK [2][-]{subsection.6.1.1}{Objectif}{section.6.1}% 89
+\BOOKMARK [2][-]{subsection.6.1.2}{Organisation\040du\040chapitre}{section.6.1}% 90
+\BOOKMARK [1][-]{section.6.2}{Description\040des\040composants}{chapter.6}% 91
+\BOOKMARK [2][-]{subsection.6.2.1}{Le\040composant\040A}{section.6.2}% 92
+\BOOKMARK [1][-]{section.6.3}{Interactions}{chapter.6}% 93
+\BOOKMARK [2][-]{subsection.6.3.1}{Cas\040d'utilisation\040UC1}{section.6.3}% 94
+\BOOKMARK [1][-]{section.6.4}{Spécification des interfaces}{chapter.6}% 95
+\BOOKMARK [2][-]{subsection.6.4.1}{Interface\040A}{section.6.4}% 96
+\BOOKMARK [2][-]{subsection.6.4.2}{Interface\040B}{section.6.4}% 97
+\BOOKMARK [2][-]{subsection.6.4.3}{Interface\040C}{section.6.4}% 98
+\BOOKMARK [1][-]{section.6.5}{Spécification des types utilisés}{chapter.6}% 99
+\BOOKMARK [2][-]{subsection.6.5.1}{Task}{section.6.5}% 100
+\BOOKMARK [1][-]{section.6.6}{Conclusion}{chapter.6}% 101
+\BOOKMARK [0][-]{chapter.7}{Conception détaillée}{}% 102
+\BOOKMARK [1][-]{section.7.1}{Introduction}{chapter.7}% 103
+\BOOKMARK [1][-]{section.7.2}{Répertoire des décisions de conception}{chapter.7}% 104
+\BOOKMARK [2][-]{subsection.7.2.1}{Patron\040A}{section.7.2}% 105
+\BOOKMARK [2][-]{subsection.7.2.2}{Patron\040B}{section.7.2}% 106
+\BOOKMARK [2][-]{subsection.7.2.3}{Patron\040C}{section.7.2}% 107
+\BOOKMARK [1][-]{section.7.3}{Spécification détaillée des composants}{chapter.7}% 108
+\BOOKMARK [2][-]{subsection.7.3.1}{Composant\040A}{section.7.3}% 109
+\BOOKMARK [2][-]{subsection.7.3.2}{Composant\040B}{section.7.3}% 110
+\BOOKMARK [2][-]{subsection.7.3.3}{Composant\040C}{section.7.3}% 111
+\BOOKMARK [2][-]{subsection.7.3.4}{Composant\040D}{section.7.3}% 112
+\BOOKMARK [1][-]{section.7.4}{Spécification détaillée des classes}{chapter.7}% 113
+\BOOKMARK [1][-]{section.7.5}{Conclusion}{chapter.7}% 114
