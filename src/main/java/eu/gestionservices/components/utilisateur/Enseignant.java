@@ -9,6 +9,7 @@ import eu.gestionservices.Souhait;
 import eu.gestionservices.Module;
 import eu.gestionservices.components.Utilisateur;
 import eu.gestionservices.exceptions.IllegalEnseignantException;
+import javax.persistence.*;
 
 /**
  * Classe reprÃ©sentant les enseignants : personne physique travaillant
@@ -22,7 +23,13 @@ import eu.gestionservices.exceptions.IllegalEnseignantException;
  * @author Marie Delavergne
  * @author CharlÃ¨ne Servantie
  */
+
+@Entity
 public class Enseignant implements Professeur{
+        @Id
+        @GeneratedValue(strategy=GenerationType.AUTO)
+        private int id;
+        
 	String nom;
 	String prenom;
 	/** 
