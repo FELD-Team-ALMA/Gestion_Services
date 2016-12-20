@@ -19,7 +19,7 @@ public class TestEnseignementCM {
 	
 	
 	/**
-	 * Test de la methode toStringHours avec un résultat qui tombe juste (pas de décimale)
+	 * Test de la methode toStringHours avec un rÃ©sultat qui tombe juste (pas de dÃ©cimale)
 	 */
 	@Test
 	public void TestToStringHoursJuste() throws Exception{

@@ -74,16 +74,16 @@ public class ChefDepartement extends DecoratorProfesseur {
 		
 		
 	/**
-	 * Affecter un enseignement à un enseignant
-	 * @param enseignant : l'enseignant à qui on affecte l'enseignement
-	 * @param enseignement : l'enseignement affecter à l'enseignant 
+	 * Affecter un enseignement Ã  un enseignant
+	 * @param enseignant : l'enseignant Ã  qui on affecte l'enseignement
+	 * @param enseignement : l'enseignement affecter Ã  l'enseignant 
 	 * @warning Marche meme si l'enseignant ne souhaitait pas cette enseignenent
 	 */
 	public void affecter(Enseignant enseignant, Enseignement enseignement)throws RuntimeException{
 		boolean contient =false; // indique si l'enseignement en question fait partie des enseignement du departement 
 		int i=0;// compteur pour parcourir une ArrayListe
 		
-		// Verifie si l'enseignant à qui on affecte l'enseignement fait partie du departement du chef
+		// Verifie si l'enseignant Ã  qui on affecte l'enseignement fait partie du departement du chef
 		if (this.decorateProfesseur.getDepartement().getEnseignants().contains(enseignant)){ 
 			
 			while ((contient) || (i<this.decorateProfesseur.getDepartement().getListModules().size())){
@@ -106,13 +106,13 @@ public class ChefDepartement extends DecoratorProfesseur {
 	}
 	
 	/**
-	 * Remove une affectation � un enseignant
-	 * @param affectation : affectation à remove
+	 * Remove une affectation à un enseignant
+	 * @param affectation : affectation Ã  remove
 	 * @return boolean : return true si le remove a fait quelque chose
 	 */
 	
 	public boolean removeAffectation( Affectation affectation){
-		// Verifie si l'enseignant à qui on affecte l'enseignement fait partie du departement du chef
+		// Verifie si l'enseignant Ã  qui on affecte l'enseignement fait partie du departement du chef
 		if (this.decorateProfesseur.getDepartement().getEnseignants().contains(affectation.getEnseignant())){
 			return affectation.getEnseignant().getListAffectations().remove(affectation); // remove retourn un boolean indiquant si le remove a fait quelque chose		
 		}else{
@@ -123,21 +123,21 @@ public class ChefDepartement extends DecoratorProfesseur {
 	
 	
 	/**
-	 * Affecter l'affectation d'un enseignant à un autre  
-	 * @param affectation : affectation à remove
-	 * @param enseignant : l'enseignant à qui on attribut l'affectation
+	 * Affecter l'affectation d'un enseignant Ã  un autre  
+	 * @param affectation : affectation Ã  remove
+	 * @param enseignant : l'enseignant Ã  qui on attribut l'affectation
 	 * @return boolean : return true si l'affection existait dans la liste.
 	 * @warning meme si l'ancien enseignant n'avait pas cette affectation le nouveau l'obient quand meme
 	 */
 	
 	public boolean changeAffectation( Affectation affectation,Enseignant enseignant) throws RuntimeException{
-		// Verifie si l'enseignant à qui on affecte l'enseignement fait partie du departement du chef
+		// Verifie si l'enseignant Ã  qui on affecte l'enseignement fait partie du departement du chef
 		if (this.decorateProfesseur.getDepartement().getEnseignants().contains(affectation.getEnseignant()) &&
 			this.decorateProfesseur.getDepartement().getEnseignants().contains(enseignant)){ // Verifie que les 2 enseignants appartiennent au departement
 			enseignant.addAffectation(affectation);
 			return affectation.getEnseignant().getListAffectations().remove(affectation); // removeretourn un boolean indiquant si le remove a fait quelque chose		
 		}else{
-			throw  new RuntimeException("Au moins 1 des deux enseignant n'appartient pas à votre departement");
+			throw  new RuntimeException("Au moins 1 des deux enseignant n'appartient pas Ã  votre departement");
 		}	
 	}
 
@@ -201,7 +201,7 @@ public class ChefDepartement extends DecoratorProfesseur {
 		
 		ArrayList<Souhait> souhaitsEnseignant= new ArrayList<Souhait>();
 		
-		// Verifie si l'enseignant à qui on affecte l'enseignement fait partie du departement du chef
+		// Verifie si l'enseignant Ã  qui on affecte l'enseignement fait partie du departement du chef
 		if (this.decorateProfesseur.getDepartement().getEnseignants().contains(enseignant)){
 			
 			for (int i=0;i<this.souhaitEnAttente.size();++i){
