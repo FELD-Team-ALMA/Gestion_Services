@@ -1,5 +1,6 @@
 package eu.gestionservices;
 
+import javax.persistence.*;
 import eu.gestionservices.components.utilisateur.Enseignant;
 
 /**
@@ -11,7 +12,11 @@ import eu.gestionservices.components.utilisateur.Enseignant;
  * @author Charlène Servantie
  *
  */
+@Entity
 public class Affectation {
+        @Id
+        @GeneratedValue(strategy=GenerationType.AUTO)
+        private int id;
 	private Enseignant enseignant;
 	private Enseignement enseignement;
 	

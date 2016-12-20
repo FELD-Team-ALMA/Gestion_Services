@@ -1,18 +1,26 @@
 package eu.gestionservices;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.*;
+
 import eu.gestionservices.components.utilisateur.Enseignant;
 
 /**
- * Classe pour gÃ©rer les souhaits des enseignants
+ * Classe pour gérer les souhaits des enseignants
  * 
  * @author Montalvo Araya
  * @author Charles-Eric Begaudeau
  * @author Marie Delavergne
- * @author CharlÃ¨ne Servantie
+ * @author Charlène Servantie
  *
  */
+
+@Entity
 public abstract class Souhait {
-	
+        @Id
+        @GeneratedValue(strategy=GenerationType.AUTO)
+        private int id;
  
 	private boolean visible; // indique si le souhait doit être visible ou non
 	protected Enseignant expediteur; // l'enseignant qui envoie le souhait

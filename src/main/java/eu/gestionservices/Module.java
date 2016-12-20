@@ -1,4 +1,5 @@
 package eu.gestionservices;
+import javax.persistence.*;
 
 /**
  * Classe pour gérer les modules
@@ -8,8 +9,12 @@ package eu.gestionservices;
  * @author Charlène Servantie
  *
  */
+@Entity
 public class Module {
-
+        @Id
+        @GeneratedValue(strategy=GenerationType.AUTO)
+        private int id;
+    
 	private String nomModule;
 	private String idModule;
 	private String publicConcerne; // Parcourt + annee d'enseignement

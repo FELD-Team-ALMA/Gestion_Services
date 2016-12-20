@@ -4,6 +4,9 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
+
+import javax.persistence.*;
+
 import java.util.Set;
 
 import eu.gestionservices.components.utilisateur.Enseignant;
@@ -16,7 +19,12 @@ import eu.gestionservices.components.utilisateur.Enseignant;
  * @author Charlène Servantie
  *
  */
+
+@Entity
 public class Voeu extends Souhait {
+        @Id
+        @GeneratedValue(strategy=GenerationType.AUTO)
+        private int id;
 	
 	private HashMap<Enseignement,Integer> voeux; // integer =1 si enseignement fortement souhaite et 0 si tolere
 	/**

@@ -1,9 +1,13 @@
 package eu.gestionservices.components.utilisateur;
 
+import javax.persistence.*;
 import eu.gestionservices.ContratDeService;
 import eu.gestionservices.components.Utilisateur;
 
+
+@Embeddable
 public interface Professeur extends Utilisateur {
+   
 	
 	public abstract String getNom();
 	
