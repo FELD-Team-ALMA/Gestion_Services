@@ -116,6 +116,7 @@ public class Departement implements Utilisateur{
 	 */
 	public void addEnseignant(Enseignant e) {
 		if (!enseignants.contains(e)) {
+			e.setDepartement(this);
 			enseignants.add(e);
 		}
 	}

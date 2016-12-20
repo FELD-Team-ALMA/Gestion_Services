@@ -129,6 +129,14 @@ public class Enseignant implements Professeur{
 		return this.departement;
 	}
 	
+	
+	/**
+	 * Getter du departement
+	 * @return un Departement
+	 */
+	public void setDepartement(Departement departement) {
+		this.departement=departement;
+	}
 	/**
 	 * Getter du contrat
 	 * @return un String
