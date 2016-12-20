@@ -1,5 +1,5 @@
 package eu.gestionservices;
-
+import javax.persistence.*;
 
 /**
  * Classe pour les enseignements
@@ -10,8 +10,13 @@ package eu.gestionservices;
  *
  */
 
+@Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="DISC", discriminatorType=DiscriminatorType.STRING)
 public abstract class Enseignement {
-
+        @Id
+        @GeneratedValue(strategy=GenerationType.AUTO)
+        private int id;
 	protected String idModule;
 	protected HeuresTD equivalentHeuresTD;
 	protected int nbEtudiants; // Le nomvre d'etudiant participant au module

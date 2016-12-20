@@ -1,4 +1,10 @@
 package eu.gestionservices;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Classe pour gérer les contrats de services 
  * 
@@ -8,8 +14,11 @@ package eu.gestionservices;
  * @author Charlène Servantie
  *
  */
+@Entity
 public class ContratDeService {
-	
+        @Id
+        @GeneratedValue(strategy=GenerationType.AUTO)
+        private int id;
 	private String nom;
 	private HeuresTD minHeures;
 	private HeuresTD maxHeures;

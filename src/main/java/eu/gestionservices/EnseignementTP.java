@@ -1,7 +1,13 @@
 package eu.gestionservices;
 
-public class EnseignementTP extends Enseignement {
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+public class EnseignementTP extends Enseignement {
+        @Id
+        @GeneratedValue(strategy=GenerationType.AUTO)
+        private int id;
 	public EnseignementTP(String id, int minutes, int nbEtudiants, int nbGroupes){
 		super(id,minutes,nbEtudiants,nbGroupes);
 		equivalentHeuresTD = new HeuresTD(equivalentHeuresTD.convertFromTP(minutes)); //On convetie le nombre d'heures du TP en nombre d'heures de TD

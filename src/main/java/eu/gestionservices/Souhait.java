@@ -1,7 +1,5 @@
 package eu.gestionservices;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.*;
 
 import eu.gestionservices.components.utilisateur.Enseignant;
@@ -17,6 +15,8 @@ import eu.gestionservices.components.utilisateur.Enseignant;
  */
 
 @Entity
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="DISC", discriminatorType=DiscriminatorType.STRING)
 public abstract class Souhait {
         @Id
         @GeneratedValue(strategy=GenerationType.AUTO)

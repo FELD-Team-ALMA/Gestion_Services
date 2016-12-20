@@ -1,7 +1,12 @@
 package eu.gestionservices;
 
-public class EnseignementCM extends Enseignement {
+import javax.persistence.*;
 
+@Entity
+public class EnseignementCM extends Enseignement {
+        @Id
+        @GeneratedValue(strategy=GenerationType.AUTO)
+        private int id;
 	
 	public EnseignementCM(String id, int minutes, int nbEtudiants, int nbGroupes){
 		super(id,minutes,nbEtudiants,nbGroupes);
