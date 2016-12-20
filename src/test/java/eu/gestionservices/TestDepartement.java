@@ -1,6 +1,18 @@
 package eu.gestionservices;
 
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
+import eu.gestionservices.components.utilisateur.Departement;
+import eu.gestionservices.components.utilisateur.Enseignant;
 
 /**
  * Classe de test pour la classe Departement 
@@ -11,20 +23,14 @@ package eu.gestionservices;
  * @author Charlène Servantie
  */
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
-
-import eu.gestionservices.components.utilisateur.Departement;
-import eu.gestionservices.components.utilisateur.Enseignant;
 
 
 
-@RunWith(MockitoJUnitRunner.class)
+
+//@RunWith(MockitoJUnitRunner.class)
 public class TestDepartement {
-    @Mock
+   /*
+	@Mock
     private Enseignant chefDepartementNew;
 
     @Mock
@@ -34,13 +40,13 @@ public class TestDepartement {
     private String nom;
     @InjectMocks
     private Departement departement;
-
+    */
     /**
      * Test method for {@link eu.gestionservices.components.utilisateur.Departement#Departement(java.lang.String)}.
      */
     @Test
     public void testDepartement() throws Exception {
-        throw new RuntimeException("not yet implemented");
+    	throw new RuntimeException("not yet implemented");
     }
 
     /**
@@ -48,7 +54,7 @@ public class TestDepartement {
      */
     @Test
     public void testGetNomDept() throws Exception {
-        throw new RuntimeException("not yet implemented");
+    	throw new RuntimeException("not yet implemented");
     }
 
     /**
@@ -56,7 +62,7 @@ public class TestDepartement {
      */
     @Test
     public void testGetEnseignants() throws Exception {
-        throw new RuntimeException("not yet implemented");
+    	throw new RuntimeException("not yet implemented");
     }
 
     /**
@@ -64,7 +70,7 @@ public class TestDepartement {
      */
     @Test
     public void testGetChefDepartement() throws Exception {
-        throw new RuntimeException("not yet implemented");
+    	throw new RuntimeException("not yet implemented");
     }
 
     /**
@@ -72,7 +78,16 @@ public class TestDepartement {
      */
     @Test
     public void testSetChefDepartementNew() throws Exception {
-        throw new RuntimeException("not yet implemented");
+    	Departement departement = new Departement("");
+    	Enseignant enseignant1 = new Enseignant("a", "aa", "aaa"); 
+    	try{
+    		departement.setChefDepartementNew(enseignant1);
+    	}catch (RuntimeException e) {
+    		assertNull(departement.getChefDepartement());
+		}
+    	departement.addEnseignant(enseignant1);
+		departement.setChefDepartementNew(enseignant1);
+		assertEquals(true, departement.getChefDepartement().equals(enseignant1));
     }
 
     /**
@@ -80,7 +95,16 @@ public class TestDepartement {
      */
     @Test
     public void testSetChefDepartementTransition() throws Exception {
-        throw new RuntimeException("not yet implemented");
+    	Departement departement = new Departement("");
+    	Enseignant enseignant1 = new Enseignant("a", "aa", "aaa"); 
+    	try{
+    		departement.setChefDepartementNew(enseignant1);
+    	}catch (RuntimeException e) {
+    		assertNull(departement.getChefDepartement());
+		}
+    	departement.addEnseignant(enseignant1);
+		departement.setChefDepartementNew(enseignant1);
+		assertEquals(true, departement.getChefDepartement().equals(enseignant1));
     }
 
     /**
@@ -88,7 +112,22 @@ public class TestDepartement {
      */
     @Test
     public void testAddEnseignant() throws Exception {
-        throw new RuntimeException("not yet implemented");
+	    Departement departement = new Departement("");
+		List<Enseignant> enseignants = new ArrayList<Enseignant>();
+		Enseignant enseignant1 = new Enseignant("a", "aa", "aaa"); 
+		Enseignant enseignant2 = new Enseignant("b", "bb", "bbb");
+		assertEquals(true, enseignants.equals(departement.getEnseignants()));
+
+		assertEquals(true, enseignants.equals(departement.getEnseignants()));
+		enseignants.add(enseignant2);
+    	departement.addEnseignant(enseignant2);
+		assertEquals(true, enseignants.equals(departement.getEnseignants()));
+		enseignants.add(enseignant1);
+    	departement.addEnseignant(enseignant1);
+		assertEquals(true, enseignants.equals(departement.getEnseignants()));
+		enseignants.add(enseignant2);
+    	departement.addEnseignant(enseignant2);
+		assertEquals(false, enseignants.equals(departement.getEnseignants()));
     }
 
     /**
@@ -96,7 +135,23 @@ public class TestDepartement {
      */
     @Test
     public void testRemoveEnseignant() throws Exception {
-        throw new RuntimeException("not yet implemented");
+    	Departement departement = new Departement("");
+    	List<Enseignant> enseignants = new ArrayList<Enseignant>();
+    	Enseignant enseignant1 = new Enseignant("a", "aa", "aaa"); 
+    	Enseignant enseignant2 = new Enseignant("b", "bb", "bbb");
+    	assertEquals(true, enseignants.equals(departement.getEnseignants()));
+    	
+    	assertEquals(true, enseignants.equals(departement.getEnseignants()));
+    	departement.removeEnseignant(enseignant1);
+    	assertEquals(true, enseignants.equals(departement.getEnseignants()));
+    	enseignants.add(enseignant2);
+    	departement.addEnseignant(enseignant2);
+    	assertEquals(true, enseignants.equals(departement.getEnseignants()));
+    	departement.removeEnseignant(enseignant1);
+    	assertEquals(true, enseignants.equals(departement.getEnseignants()));
+    	enseignants.remove(enseignant2);
+    	departement.removeEnseignant(enseignant2);
+    	assertEquals(true, enseignants.equals(departement.getEnseignants()));
     }
 
     /**
@@ -104,7 +159,21 @@ public class TestDepartement {
      */
     @Test
     public void testAddModule() throws Exception {
-        throw new RuntimeException("not yet implemented");
+    	Departement departement = new Departement("");
+    	List<Module> modules = new ArrayList<Module>();
+    	Module module1 = new Module("a", "aa", "aaa", 1);
+    	Module module2 = new Module("b", "bb", "bbb", 1);
+    	
+    	assertEquals(true, modules.equals(departement.getListModules()));
+    	modules.add(module2);
+    	departement.addModule(module2);
+    	assertEquals(true, modules.equals(departement.getListModules()));
+    	modules.add(module1);
+    	departement.addModule(module1);
+    	assertEquals(true, modules.equals(departement.getListModules()));
+    	modules.add(module2);
+    	departement.addModule(module2);
+    	assertEquals(false, modules.equals(departement.getListModules()));
     }
 
     /**
@@ -112,7 +181,22 @@ public class TestDepartement {
      */
     @Test
     public void testRemoveModule() throws Exception {
-        throw new RuntimeException("not yet implemented");
+    	Departement departement = new Departement("");
+    	List<Module> modules = new ArrayList<Module>();
+    	Module module1 = new Module("a", "aa", "aaa", 1);
+    	Module module2 = new Module("b", "bb", "bbb", 1);
+    	
+    	assertEquals(true, modules.equals(departement.getListModules()));
+    	departement.removeModule(module1);
+    	assertEquals(true, modules.equals(departement.getListModules()));
+    	modules.add(module2);
+    	departement.addModule(module2);
+    	assertEquals(true, modules.equals(departement.getListModules()));
+    	departement.removeModule(module1);
+    	assertEquals(true, modules.equals(departement.getListModules()));
+    	modules.remove(module2);
+    	departement.removeModule(module2);
+    	assertEquals(true, modules.equals(departement.getListModules()));
     }
 
     /**
@@ -128,7 +212,7 @@ public class TestDepartement {
      */
     @Test
     public void testMakeDemande() throws Exception {
-        throw new RuntimeException("not yet implemented");
+    	throw new RuntimeException("not yet implemented");
     }
 
     /**
@@ -136,7 +220,7 @@ public class TestDepartement {
      */
     @Test
     public void testGetListAffectations() throws Exception {
-        throw new RuntimeException("not yet implemented");
+    	throw new RuntimeException("not yet implemented");
     }
 
     /**
@@ -144,7 +228,21 @@ public class TestDepartement {
      */
     @Test
     public void testGetListModules() throws Exception {
-        throw new RuntimeException("not yet implemented");
+    	Departement departement = new Departement("");
+    	List<Module> modules = new ArrayList<Module>();
+    	assertEquals(true, modules.equals(departement.getListModules()));
+    	
+    	Module module1 = new Module("a", "aa", "aaa", 1);
+    	Module module2 = new Module("b", "bb", "bbb", 1);
+    	Module module3 = new Module("c", "cc", "ccc", 1);
+    	modules.add(module1);
+    	modules.add(module2);
+    	departement.addModule(module1);
+    	departement.addModule(module2);
+    	assertEquals(true, modules.equals(departement.getListModules()));
+    	modules.add(module3);
+    	assertEquals(false, modules.equals(departement.getListModules()));
+        //throw new RuntimeException("not yet implemented");
     }
 
 }
