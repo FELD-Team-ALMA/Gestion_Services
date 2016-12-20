@@ -21,4 +21,16 @@ public class EnseignementCM extends Enseignement {
 		return stringHeures;
 		
 	}
+	
+	
+	/**
+	 * toString pour enseignement
+	 * @return retour : une string qui des caracteristique de l'enseignement 
+	 * @warning Arondie a 1 decimale et affiche de la forme 20,5 et pas 20h30 le nombre d'heures
+	 */
+	public String toString(){
+		String retour="";
+		retour="Module : "+this.idModule+ "Type : CM   Nbheures : "+this.toStringHours()+" Nb etudiant "+this.nbEtudiants+" Nbgroupes :"+this.nbGroupes;
+		return retour;
+	}
 }
