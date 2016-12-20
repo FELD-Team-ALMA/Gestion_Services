@@ -1,7 +1,12 @@
 package eu.gestionservices;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -16,20 +21,29 @@ import eu.gestionservices.components.Systeme;
  * @author Charlène Servantie
  *
  */
+@SpringBootApplication
 public class MainApp {
-
-	static Logger log = LogManager.getLogger(MainApp.class.getName());
+    
+    
+    private static final Logger log = LoggerFactory.getLogger(MainApp.class);
+	//static Logger log = LogManager.getLogger(MainApp.class.getName());
 
 	public static void main(String[] args) {
-		ApplicationContext context = 
-				new ClassPathXmlApplicationContext("Beans.xml");
+	    
+	    SpringApplication.run(MainApp.class);
+	    
+/*	     ApplicationContext context = 
+                           new ClassPathXmlApplicationContext("Beans.xml");
 
-		log.info("Going to create Systeme Obj");
+           log.info("Going to create Systeme Obj");
 
-		Systeme obj = (Systeme) context.getBean("systeme");
+           Systeme obj = (Systeme) context.getBean("systeme");
 
-		log.info(obj.getMessage());
+           log.info(obj.getMessage());
 
-		log.info("Exiting the program");
+           log.info("Exiting the program");*/
 	}
+
+
+
 }
