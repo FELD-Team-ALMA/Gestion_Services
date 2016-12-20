@@ -2,6 +2,9 @@ package eu.gestionservices.components.persistance;
 
 import eu.gestionservices.components.Persistance;
 
+
+import org.springframework.context.annotation.Bean;
+
 /**
  * Classe gérant la persistance par JDBC
  * @author Montalvo Araya
