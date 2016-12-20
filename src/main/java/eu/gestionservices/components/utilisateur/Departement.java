@@ -2,7 +2,7 @@ package eu.gestionservices.components.utilisateur;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import javax.persistence.*;
 import javax.management.RuntimeErrorException;
 
 import eu.gestionservices.Affectation;
@@ -13,21 +13,26 @@ import eu.gestionservices.exceptions.IllegalEnseignantException;
 
 
 /**
- * Classe reprÃ©sentant les dÃ©partements : entitÃ© administrative identifiÃ©e
+ * Classe représentant les départements : entité administrative identifiée
  * par un nom. Il comprend un ensemble de modules et d'enseignements qui lui
- * sont rattachÃ©s. Chaque dÃ©partement a pour responsable un chef de dÃ©partement
+ * sont rattachés. Chaque département a pour responsable un chef de département
  * Plusieurs enseignants peuvent donner des enseignements pour le compte de
- * chaque dÃ©partement
+ * chaque département
  * 
  * @author Montalvo Araya
  * @author Charles-Eric Begaudeau
  * @author Marie Delavergne
- * @author CharlÃ¨ne Servantie
+ * @author Charlène Servantie
  *
  */
+
+@Entity
 public class Departement implements Utilisateur{
+        @Id
+        @GeneratedValue(strategy=GenerationType.AUTO)
+        private int id;
 	private String nom;
-	private ChefDepartement chefDepartement; // Il fait aussi partie des eneignant du departement
+	private ChefDepartement chefDepartement; // Il fait aussi partie des eneignants du departement
 	private List<Enseignant> enseignants;
 	private List<Module> modules;
 	/**

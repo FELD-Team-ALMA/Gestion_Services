@@ -1,5 +1,7 @@
 package eu.gestionservices.components.utilisateur;
 
+import javax.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +14,13 @@ import eu.gestionservices.Module;
 import eu.gestionservices.Souhait;
 import eu.gestionservices.exceptions.IllegalEnseignantException;
 
+@Entity
 public class ChefDepartement extends DecoratorProfesseur {
 
+        @Id
+        @GeneratedValue(strategy=GenerationType.AUTO)
+        private int id;
+    
 	private List<Souhait> souhaitEnAttente; // Tout les souhaits que le chef doit traiter
 
 	/**
@@ -106,7 +113,7 @@ public class ChefDepartement extends DecoratorProfesseur {
 	}
 	
 	/**
-	 * Remove une affectation à un enseignant
+	 * Remove une affectation ï¿½ un enseignant
 	 * @param affectation : affectation Ã  remove
 	 * @return boolean : return true si le remove a fait quelque chose
 	 */

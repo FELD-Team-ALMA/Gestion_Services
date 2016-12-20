@@ -2,6 +2,7 @@ package eu.gestionservices.components.utilisateur;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 
 import eu.gestionservices.Affectation;
 import eu.gestionservices.ContratDeService;
@@ -9,7 +10,7 @@ import eu.gestionservices.Souhait;
 import eu.gestionservices.Module;
 import eu.gestionservices.components.Utilisateur;
 import eu.gestionservices.exceptions.IllegalEnseignantException;
-import javax.persistence.*;
+
 
 /**
  * Classe reprÃ©sentant les enseignants : personne physique travaillant
