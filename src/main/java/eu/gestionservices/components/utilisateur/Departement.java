@@ -43,7 +43,7 @@ public class Departement implements Utilisateur{
 	public Departement(String nom) {
 		this.nom = nom;
 		this.enseignants = new ArrayList<Enseignant>();
-		this.modules= new ArrayList<Module>();
+		this.modules = new ArrayList<Module>();
 	}
 	
 
@@ -116,6 +116,7 @@ public class Departement implements Utilisateur{
 	 */
 	public void addEnseignant(Enseignant e) {
 		if (!enseignants.contains(e)) {
+			e.setDepartement(this);
 			enseignants.add(e);
 		}
 	}
@@ -147,7 +148,7 @@ public class Departement implements Utilisateur{
 	 */
 	
 	public void removeModule(Module m) {
-		if (!this.modules.contains(m)) {
+		if (this.modules.contains(m)) {
 			this.modules.remove(m);
 		}
 	}
