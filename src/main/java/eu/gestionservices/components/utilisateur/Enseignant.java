@@ -4,18 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import eu.gestionservices.Affectation;
 import eu.gestionservices.ContratDeService;
-import eu.gestionservices.Souhait;
 import eu.gestionservices.Module;
-import eu.gestionservices.components.Utilisateur;
+import eu.gestionservices.Souhait;
 import eu.gestionservices.exceptions.IllegalEnseignantException;
 
 
 /**
- * Classe reprÃ©sentant les enseignants : personne physique travaillant
- * pour un dÃ©partement et identifiÃ© par son nom, prÃ©nom et statut. Un 
- * enseignant peut intervenir dans diffÃ©rents dÃ©partements pour dispenser
+ * Classe représentant les enseignants : personne physique travaillant
+ * pour un département et identifié par son nom, prénom et statut. Un 
+ * enseignant peut intervenir dans différents départements pour dispenser
  * un certain nombre d'enseignements. Il peut effectuer des voeux concernant
  * les enseignements qu'il souhaite donner.
  * 
@@ -34,10 +38,10 @@ public class Enseignant implements Professeur{
 	String nom;
 	String prenom;
 	/** 
-	 * L'adresse mail est unique et permet de diffÃ©rencier deux enseignants 
-	 * portant le mÃªme nom et prÃ©nom
 	 * L'adresse mail est unique et permet de différencier deux enseignants 
-	 *  portant le mÃªme nom et prÃ©nom
+	 * portant le mÃªme nom et prénom
+	 * L'adresse mail est unique et permet de différencier deux enseignants 
+	 *  portant le mÃªme nom et prénom
 	 */
 	String mail;
 	
@@ -102,7 +106,7 @@ public class Enseignant implements Professeur{
 	}
 	
 	/**
-	 * Getter du prÃ©nom
+	 * Getter du prénom
 	 * @return un String
 	 */
 	public String getPrenom() {
@@ -143,7 +147,7 @@ public class Enseignant implements Professeur{
 	
 	
 	/**
-	 * Deux instances d'Enseignant sont Ã©gales si et seulement si
+	 * Deux instances d'Enseignant sont égales si et seulement si
 	 * leurs emails sont identiques.
 	 */
 	public boolean equals(Object o) {

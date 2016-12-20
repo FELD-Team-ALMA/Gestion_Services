@@ -2,7 +2,13 @@ package eu.gestionservices;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import eu.gestionservices.components.utilisateur.Enseignant;
 import eu.gestionservices.exceptions.IllegalEnseignantException;
@@ -16,8 +22,10 @@ import eu.gestionservices.exceptions.IllegalEnseignantException;
  * @author Marie Delavergne
  * @author Charlène Servantie
  */
+@RunWith(MockitoJUnitRunner.class)
 public class TestEnseignant {
-	
+    @Mock
+    private Enseignement enseignement;
 	/**
 	 * Vérifier qu'on ne peut pas faire d'enseignant sans nom 
 	 * ni prénom, ni mail
@@ -56,5 +64,23 @@ public class TestEnseignant {
 		}
 	}
 	
+	/**
+	 * Test de l'ajout d'affectation (addAffectation()) 
+	 */
+	@Test
+	public void testAjoutAffectation() {
+		try {
+			Enseignant test = new Enseignant("bob", "smith", "bob.smith@email.com");
+			Affectation aff = new Affectation(test, enseignement); 
+			ArrayList<Affectation> list = new ArrayList<Affectation>();
+			list.add(aff);
+			test.addAffectation(aff);
+			assertEquals(list.size(), test.getListAffectations().size());
+			assertEquals(list.get(0), test.getListAffectations().get(0));
+			
+		} catch (IllegalEnseignantException e) {
+			e.printStackTrace();
+		}
+	}
 
 }
