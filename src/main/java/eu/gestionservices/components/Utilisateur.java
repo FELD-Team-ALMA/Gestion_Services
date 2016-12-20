@@ -1,6 +1,7 @@
 package eu.gestionservices.components;
 
 import java.util.List;
+import javax.persistence.*;
 
 import eu.gestionservices.Affectation;
 import eu.gestionservices.Souhait;
@@ -15,6 +16,8 @@ import eu.gestionservices.Module;
  * @author Charlène Servantie
  * 
  */
+
+@Entity
 public interface Utilisateur {
 	List<Souhait> getListDemandes();
 	void makeDemande(Souhait souhait);
