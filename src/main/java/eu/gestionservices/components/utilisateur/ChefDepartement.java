@@ -3,6 +3,8 @@ package eu.gestionservices.components.utilisateur;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.management.RuntimeErrorException;
+
 import eu.gestionservices.Affectation;
 import eu.gestionservices.ContratDeService;
 import eu.gestionservices.Enseignement;
@@ -104,7 +106,7 @@ public class ChefDepartement extends DecoratorProfesseur {
 	}
 	
 	/**
-	 * Affecter un enseignement à un enseignant
+	 * Remove une affectation � un enseignant
 	 * @param affectation : affectation à remove
 	 * @return boolean : return true si le remove a fait quelque chose
 	 */
@@ -130,7 +132,7 @@ public class ChefDepartement extends DecoratorProfesseur {
 	
 	public boolean changeAffectation( Affectation affectation,Enseignant enseignant) throws RuntimeException{
 		// Verifie si l'enseignant à qui on affecte l'enseignement fait partie du departement du chef
-		if (this.decorateProfesseur.getDepartement().getEnseignants().contains(affectation.getEnseignant()) ||
+		if (this.decorateProfesseur.getDepartement().getEnseignants().contains(affectation.getEnseignant()) &&
 			this.decorateProfesseur.getDepartement().getEnseignants().contains(enseignant)){ // Verifie que les 2 enseignants appartiennent au departement
 			enseignant.addAffectation(affectation);
 			return affectation.getEnseignant().getListAffectations().remove(affectation); // removeretourn un boolean indiquant si le remove a fait quelque chose		
@@ -140,8 +142,111 @@ public class ChefDepartement extends DecoratorProfesseur {
 	}
 
 	
+	/**
+	 * Renvoit la string du souhait specifie de la liste de souhait en attente
+	 * @param souhait : le souhait d'on on veut le toString
+	 * @return string : le toString() du souhait specifie
+	 * @warning si le souhait n'existe pas renvoit "Le souhait n'existe pas"
+	 */
+	public String toStringSpecifiqueSouhait( Souhait souhait){
+		
+		if (this.souhaitEnAttente.contains(souhait)){
+			int positionSouhait = this.souhaitEnAttente.indexOf(souhait); // On recupere la position de l'objet
+			return this.souhaitEnAttente.get(positionSouhait).toString();
+		}else{
+			return " Le souhait n'existe pas";
+		}
+
+	}
 	
 	
+
+	/**
+	 * Renvoit le dernier souhait de la liste de souhait en attente
+	 * @return Souhait : le dernier souhait de la liste de souhait en attente
+	 * @throws throws RunTimeException si la liste de souhait en attente est vide
+	 */
+	public Souhait getLastSouhait() throws RuntimeException{
+		
+		if(!(this.souhaitEnAttente.isEmpty())){
+			return this.souhaitEnAttente.get(this.souhaitEnAttente.size()-1);
+		}else {
+			throw new RuntimeException(" Il n'y a plus de souhait en attente");
+		}
+		
+	}
+	
+	/**
+	 * Renvoit le premier souhait de la liste de souhait en attente
+	 * @return Souhait : le premier souhait de la liste de souhait en attente
+	 * @throws throws RunTimeException si la liste de souhait en attente est vide
+	 */
+	public Souhait getFirstSouhait() throws RuntimeException{
+		
+		if(!(this.souhaitEnAttente.isEmpty())){
+			return this.souhaitEnAttente.get(0);
+		}else {
+			throw new RuntimeException(" Il n'y a plus de souhait en attente");
+		}
+		
+	}
+	
+	/**
+	 * Renvoit les souhait de l'enseignant specifie
+	 * @param enseignant : l'enseignant d'on on veut les souhait
+	 * @return {@link Souhait}: le souhait de l'enseignant specifie
+	 * @throws throws RunTimeException si l'enseignant ne fait pas partie du departement du chef de departement
+	 */
+	public List<Souhait> getEnseignantSouhait(Enseignant enseignant) throws RuntimeException{
+		
+		ArrayList<Souhait> souhaitsEnseignant= new ArrayList<Souhait>();
+		
+		// Verifie si l'enseignant à qui on affecte l'enseignement fait partie du departement du chef
+		if (this.decorateProfesseur.getDepartement().getEnseignants().contains(enseignant)){
+			
+			for (int i=0;i<this.souhaitEnAttente.size();++i){
+				// Choppe tout les souhait de l'enseignant
+				if(this.souhaitEnAttente.get(i).getExpiditeur()==enseignant){
+					souhaitsEnseignant.add(this.souhaitEnAttente.get(i));
+				}
+			}		
+			return souhaitsEnseignant;
+			
+		}else {
+			throw new RuntimeException("L'enseignant ne fait pas partie de votre departement");
+		}
+		
+	}
+	
+	
+	
+	/**
+	 * Remove le dernier souhait des souhait en attente
+	 * @throws throws RunTimeException si la liste de souhait en attente est vide
+	 */
+	public void removeLastSouhait() throws RuntimeException{
+		
+		if(!(this.souhaitEnAttente.isEmpty())){
+			this.souhaitEnAttente.remove(this.souhaitEnAttente.size()-1);
+		}else {
+			throw new RuntimeException(" Il n'y a plus de souhait en attente");
+		}
+		
+	}
+	
+	/**
+	 * Remove le premier souhait des souhait en attente
+	 * @throws throws RunTimeException si la liste de souhait en attente est vide
+	 */
+	public void removeFirstSouhait() throws RuntimeException{
+		
+		if(!(this.souhaitEnAttente.isEmpty())){
+			this.souhaitEnAttente.remove(0);
+		}else {
+			throw new RuntimeException(" Il n'y a plus de souhait en attente");
+		}
+		
+	}
 	
 	//------ Debut Implementation des methodes de Professeur
 	

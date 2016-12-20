@@ -26,11 +26,20 @@ public abstract class Souhait {
 	}
 	
 	/**
+	 * getter expiditeur
+	 */
+	public Enseignant getExpiditeur(){
+		return this.expediteur;
+	}
+	
+	/**
 	 * Rend visible (publie) un souhait --> visible=true
 	 */
 	public void publication(){
 		visible=true;
 	}
+	
+
 	
 	
 	/**
