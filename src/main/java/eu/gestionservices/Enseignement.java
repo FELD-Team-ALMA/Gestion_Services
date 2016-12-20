@@ -70,10 +70,12 @@ public abstract class Enseignement {
 	 */
 	
 	public String toStringHours(){
+		String retour="";
+		String stringHeures= String.format("%.1f", this.equivalentHeuresTD.getMinute()/60.0); // 1f indique qu'on veut le format décimale et 1 décimale
 		
-		String stringHeures= String.format("%.1f", this.equivalentHeuresTD.getMinute()/60.0); // 1f indique qu'on veut le formet décimale et 1 décimale
+		retour="Module : "+this.idModule+" Nb heures : "+stringHeures+" Nb etudiant "+this.nbEtudiants+" Nb groupes :"+this.nbGroupes;
 		
-		return stringHeures;
+		return retour;
 		
 	}
 		

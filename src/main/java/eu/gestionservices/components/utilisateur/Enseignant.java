@@ -185,6 +185,14 @@ public class Enseignant implements Professeur{
 		this.listeAffectations.add(affectation);
 	}
 	
+	public String toString(){
+		String retour="";
+		
+		retour+=this.nom+" "+this.prenom+" "+this.mail;
+		
+		return retour;
+	}
+	
 
 
 }
