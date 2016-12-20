@@ -23,6 +23,7 @@ public abstract class Souhait {
         private int id;
  
 	private boolean visible; // indique si le souhait doit être visible ou non
+	@ManyToOne
 	protected Enseignant expediteur; // l'enseignant qui envoie le souhait
 	/**
 	 * Constructeur de souhait. De base un souhait n'est pas visible

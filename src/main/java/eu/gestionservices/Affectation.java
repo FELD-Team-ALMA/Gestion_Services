@@ -17,6 +17,7 @@ public class Affectation {
         @Id
         @GeneratedValue(strategy=GenerationType.AUTO)
         private int id;
+        @ManyToOne
 	private Enseignant enseignant;
 	private Enseignement enseignement;
 	
